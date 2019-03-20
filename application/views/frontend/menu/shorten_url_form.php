@@ -11,13 +11,13 @@
       <h6 class="m-0 font-weight-bold text-primary">Create Your Shorten URL</h6>
     </div>
     <div class="card-body">
-      <form class="form-horizontal" method="POST" id="peminjam_form" action="<?php echo base_url('home/shorten_url_add') ?>">
+      <form class="form-horizontal" method="POST" id="shorten_url_form" action="<?php echo base_url('home/shorten_url_add') ?>">
         <input type="hidden" name="id" value="0">
         <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
         <div class="panel-body">
-          <!-- <div class="alert alert-success hidden"><strong>Berhasil! </strong><span></span></div>
-					<div class="alert alert-warning hidden"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
-					<div class="alert alert-danger hidden"><strong>Gagal! </strong><span></span></div> -->
+          <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
+          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
+          <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
 
           <!--				-------------------------------------------------------------------------------------------------------->
           <div class="form-group">
@@ -37,6 +37,23 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="col-md-5 col-xs-12">
+              <input type="checkbox" class="" value="" id="use_pass" onclick="pass()">
+              <label class="control-label" for="use_pass">Gunakan Password</label>
+            </div>
+          </div>
+
+          <div class="d-none" id="input_pass">
+            <hr>
+            <div class="form-group">
+              <label class="col-md-4 col-xs-12 control-label">Password</label>
+              <div class="col-md-5 col-xs-12">
+                <input type="password" name="password" class="form-control" id="form_pass" value="0" placeholder="Input Password">
+              </div>
+            </div>
+          </div>
+
           <small class="text-muted">
             URL yang anda masukkan dapat di akses di "www.skinnyrat.tk/(custom url anda)"
           </small>
@@ -52,3 +69,21 @@
 
 </div>
 <!-- /.container-fluid -->
+<!-- WARNING SCRIPT ------------------------- -->
+<script type="text/javascript">
+  var use_pass = document.getElementById('use_pass');
+  var input_pass = document.getElementById('input_pass');
+  var form_pass = document.getElementById('form_pass');
+
+  function pass() {
+    if (use_pass.checked == true) {
+      input_pass.classList.remove('d-none');
+      form_pass.required = true;
+      form_pass.value = '';
+    }else{
+      input_pass.classList.add('d-none');
+      form_pass.required = false;
+      form_pass.value = '0';
+    }
+  }
+</script>

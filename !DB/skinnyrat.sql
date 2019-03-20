@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Mar 2019 pada 18.28
+-- Generation Time: 20 Mar 2019 pada 17.20
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -32,8 +32,18 @@ CREATE TABLE `px_shorten_url` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `link` text NOT NULL,
+  `password` text NOT NULL,
   `date_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `px_shorten_url`
+--
+
+INSERT INTO `px_shorten_url` (`id`, `name`, `link`, `password`, `date_created`) VALUES
+(1, 'rpl2_foto', 'https://drive.google.com/drive/folders/1J0vcoGkrxFWEDHsDaMcovqgzNOK1E1wG?usp=sharing	', 'Ns3Iv7qaUr8C9ZxicIeNxDl/aSxVuGa1bXH0aKx6bWdCVGhEsek/3HPvbnMRo7AQNryZP8gfdWTp0yvXSSgpfw==', '2019-03-20 23:18:45'),
+(2, 'rpl2_fotoformal', 'https://drive.google.com/drive/folders/1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9?usp=sharing', '4zT2chsFFdXXJLOceDu44TR3Z+4FtPjbkjHasQS+aJVbe5jQqJtlmA/BM2OrtNusAonoSYEUvchuN00YtW2AdQ==', '2019-03-20 23:19:22'),
+(3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35');
 
 --
 -- Indexes for dumped tables
@@ -53,7 +63,7 @@ ALTER TABLE `px_shorten_url`
 -- AUTO_INCREMENT for table `px_shorten_url`
 --
 ALTER TABLE `px_shorten_url`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

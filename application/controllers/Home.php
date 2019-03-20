@@ -14,7 +14,13 @@ class Home extends PX_Controller {
 		if($name){
 			$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 			if($get_data != null){
-					redirect($get_data->link);
+					if ($get_data->password != '0') {
+						$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
+						$data['content'] = $this->load->view('frontend/menu/pass',$data,true);
+						$this->load->view('frontend/index',$data);
+					}else{
+						redirect($get_data->link);
+					}
 			}else{
 					redirect('home/error_404');
 			}
@@ -25,6 +31,19 @@ class Home extends PX_Controller {
 		}
 
 	}
+
+	function pass_go(){
+		$id = $this->input->post('id');
+		$password = $this->input->post('password');
+
+		$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'id',$id)->row();
+		$real_pass = $this->encrypt->decode($get_data->password);
+		if ($real_pass == $password ) {
+			$this->returnJson(array('status' => 'ok','msg' => 'Redirecting ...', 'redirect' => $get_data->link));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password'));
+			}
+  }
 
 	function error_404(){
 		$data['shorten_url'] = $this->model_basic->select_all($this->tbl_shorten_url);
@@ -55,34 +74,20 @@ class Home extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = $this->input->post($field);
 		}
-		$check_username = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
-		if ($check_username != null) { ?>
-			<script type="text/javascript">
-				alert('Custom Name Sudah Digunakan / Tidak Tersedia');
-				document.location = "<?php echo base_url('home/shorten_url_form') ?>";
-			</script>
-			<?php
-			redirect('home/shorten_url_form');
-			// $this->returnJson(array('status' => 'error','msg' => 'Username sudah digunakan!'));
+		if ($insert['password'] != '0') {
+			$insert['password'] = $this->encrypt->encode($insert['password']);
+		}
+		$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
+		if ($cek_name != null) {
+			$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
 		}else{
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
-				?>
-				<script type="text/javascript">
-					alert('Insert Data Berhasil');
-					document.location = "<?php echo base_url('home/shorten_url_form') ?>";
-				</script>
-				<?php
-				// redirect('home/shorten_url_form');
-				// $this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'shorten_url'));
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'shorten_url'));
+				redirect('home/shorten_url_form');
 			}else{
-				?>
-				<script type="text/javascript">
-					alert('Periksa kembali form');
-					document.location = "<?php echo base_url('home/shorten_url_form') ?>";
-				</script>
-				<?php
-				// $this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
 		}
   }

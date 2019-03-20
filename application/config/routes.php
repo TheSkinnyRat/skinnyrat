@@ -37,12 +37,10 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['(:any)'] = "home/index/$1";
-$route['home/shorten_url_form'] = "home/shorten_url_form";
-$route['home/shorten_url'] = "home/shorten_url";
-$route['home/shorten_url_add'] = "home/shorten_url_add";
+$route['home/(:any)'] = "home/$1";
 
-$route['home/error_404'] = "home/error_404";
+$route['(:any)'] = "home/index/$1";
+
 $route['default_controller'] = "home";
 $route['404_override'] = 'home/error_404';
 

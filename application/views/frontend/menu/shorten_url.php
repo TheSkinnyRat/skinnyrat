@@ -4,7 +4,7 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Data Link Tersedia</h1>
-          <p class="mb-4">Data Link</a>.</p>
+          <p class="mb-4">Login Sebagai Admin Untuk Menghapus / Mengedit Data</a>.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -19,6 +19,7 @@
                       <th>Id</th>
                       <th>Name</th>
                       <th>Link</th>
+                      <!-- <th>Password</th> -->
                       <th>Date Created</th>
                     </tr>
                   </thead>
@@ -35,7 +36,20 @@
                       <tr>
                         <td><?php echo $d->id ?></td>
                         <td><?php echo $d->name ?></td>
-                        <td><?php echo $d->link ?></td>
+                        <td>
+                          <?php if ($d->password != '0') { ?>
+                            <span class="text-info font-italic">Password encrypted</span>
+                          <?php }else{
+                            echo $d->link;
+                          } ?>
+                        </td>
+                        <!-- <td>
+                          <?php if ($d->password != '0') { ?>
+                            <span class="text-success">YES</span>
+                          <?php }else{ ?>
+                            <span class="text-bold">NO</span>
+                          <?php } ?>
+                        </td> -->
                         <td><?php echo $d->date_created ?></td>
                       </tr>
                     <?php } ?>

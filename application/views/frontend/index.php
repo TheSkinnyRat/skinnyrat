@@ -11,12 +11,17 @@
 
   <title>Skinny Rat</title>
 
+  <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/rat.png') ?>">
+
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('assets/frontend/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+
+  <!-- Custom styles for data tables page -->
+  <link href="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
 </head>
 
@@ -26,12 +31,12 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-meh-rolling-eyes"></i>
+          <i class="fas fa-grin-beam"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Skinny Rat <sup>^^</sup></div>
       </a>
@@ -228,7 +233,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; BY スキニーラット。2019</span>
+            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v1.2</span>
           </div>
         </div>
       </footer>
@@ -280,6 +285,79 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
   <script src="<?php echo base_url('assets/frontend/js/demo/chart-pie-demo.js') ?>"></script>
+
+  <!-- Page data tables level plugins -->
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+
+  <!-- Page data tables level custom scripts -->
+  <script src="<?php echo base_url('assets/frontend/js/demo/datatables-demo.js') ?>"></script>
+
+  <!-- Validation Plugin -->
+  <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.js') ?>"></script>
+
+  <!-- WARNING CHANGE DEFAULT VALIDATE SCRIPT  -->
+  <script type="text/javascript">
+    jQuery.validator.setDefaults({
+      errorElement: 'span',
+      errorClass: 'invalid-feedback',
+      errorPlacement: function (error, element) {
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  </script>
+
+  <!-- WARNING VALIDATE SCRIPT  -->
+    <script type="text/javascript">
+      var jvalidate = $("#shorten_url_form").validate({
+        ignore: [],
+        rules: {
+          id: {
+            required: true
+          },
+          name: {
+            required: true
+          },
+          link: {
+            required: true
+          },
+          date_created: {
+            required: true
+          },
+        },
+        submitHandler: function(form) {
+          var target = $(form).attr('action');
+          $('#shorten_url_form .alert-warning').removeClass('d-none');
+          $('#shorten_url_form .alert-success').addClass('d-none');
+          $('#shorten_url_form .alert-danger').addClass('d-none');
+          $.ajax({
+            url : target,
+            type : 'POST',
+            dataType : 'json',
+            data : $(form).serialize(),
+            success : function(response){
+              $('#shorten_url_form .alert-warning').addClass('d-none');
+              if(response.status == 'ok'){
+                $('#shorten_url_form .alert-success').removeClass('d-none').children('span').text(response.msg);
+                window.location.href = response.redirect;
+              }
+              else
+                $('#shorten_url_form .alert-danger').removeClass('d-none').children('span').text(response.msg);
+            },
+            error : function(jqXHR, textStatus, errorThrown) {
+              alert(textStatus, errorThrown);
+            }
+          });
+        }
+      });
+    </script>
+
 
 </body>
 
