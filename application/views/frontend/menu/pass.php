@@ -18,7 +18,7 @@
         <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
         <div class="panel-body">
           <div class="alert alert-success d-none"><strong>Access Granted! </strong><span></span></div>
-          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
+          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Authenticating...</span></div>
           <div class="alert alert-danger d-none"><strong>Access Denied! </strong><span></span></div>
 
           <!--				-------------------------------------------------------------------------------------------------------->

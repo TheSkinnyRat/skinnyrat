@@ -19,13 +19,14 @@ class Home extends PX_Controller {
 						$data['content'] = $this->load->view('frontend/menu/pass',$data,true);
 						$this->load->view('frontend/index',$data);
 					}else{
+						$up_click = $this->model_basic->update_one($this->tbl_shorten_url,'id',$get_data->id,'click','+1');
 						redirect($get_data->link);
 					}
 			}else{
 					redirect('home/error_404');
 			}
 		}else{
-			$data['shorten_url'] = $this->model_basic->select_all($this->tbl_shorten_url);
+			$data['count_tbl_shorten_url'] = $this->model_basic->get_count($this->tbl_shorten_url);
 			$data['content'] = $this->load->view('frontend/home/main_page',$data,true);
 			$this->load->view('frontend/index',$data);
 		}
@@ -39,7 +40,8 @@ class Home extends PX_Controller {
 		$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'id',$id)->row();
 		$real_pass = $this->encrypt->decode($get_data->password);
 		if ($real_pass == $password ) {
-			$this->returnJson(array('status' => 'ok','msg' => 'Redirecting ...', 'redirect' => $get_data->link));
+			$up_click = $this->model_basic->update_one($this->tbl_shorten_url,'id',$get_data->id,'click','+1');
+			$this->returnJson(array('status' => 'ok','msg' => 'Redirecting...', 'redirect' => $get_data->link));
 		}else{
 			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password'));
 			}
@@ -72,7 +74,7 @@ class Home extends PX_Controller {
 		$table_field = $this->db->list_fields($this->tbl_shorten_url);
 		$insert = array();
 		foreach ($table_field as $field) {
-			$insert[$field] = $this->input->post($field);
+			$insert[$field] = htmlspecialchars($this->input->post($field));
 		}
 		if ($insert['password'] != '0') {
 			$insert['password'] = $this->encrypt->encode($insert['password']);
@@ -91,6 +93,27 @@ class Home extends PX_Controller {
 			}
 		}
   }
+
+	function login(){
+		$data['shorten_url'] = $this->model_basic->select_all($this->tbl_shorten_url);
+		// $data['content'] = $this->load->view('frontend/menu/login',$data,true);
+		$data['content'] = $this->load->view('frontend/error/unco',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function register(){
+		$data['shorten_url'] = $this->model_basic->select_all($this->tbl_shorten_url);
+		// $data['content'] = $this->load->view('frontend/menu/register',$data,true);
+		$data['content'] = $this->load->view('frontend/error/unco',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function about(){
+		$data['shorten_url'] = $this->model_basic->select_all($this->tbl_shorten_url);
+		// $data['content'] = $this->load->view('frontend/menu/register',$data,true);
+		$data['content'] = $this->load->view('frontend/error/unco',$data,true);
+		$this->load->view('frontend/index',$data);
+	}
 
 	function main_page() {
 

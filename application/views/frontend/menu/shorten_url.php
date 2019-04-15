@@ -21,6 +21,7 @@
                       <th>Link</th>
                       <!-- <th>Password</th> -->
                       <th>Date Created</th>
+                      <th>Click</th>
                     </tr>
                   </thead>
                   <!-- <tfoot>
@@ -51,6 +52,7 @@
                           <?php } ?>
                         </td> -->
                         <td><?php echo $d->date_created ?></td>
+                        <td><?php echo $d->click ?></td>
                       </tr>
                     <?php } ?>
                   </tbody>

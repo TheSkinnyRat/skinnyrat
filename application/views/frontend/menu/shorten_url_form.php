@@ -69,21 +69,6 @@
 
 </div>
 <!-- /.container-fluid -->
-<!-- WARNING SCRIPT ------------------------- -->
-<script type="text/javascript">
-  var use_pass = document.getElementById('use_pass');
-  var input_pass = document.getElementById('input_pass');
-  var form_pass = document.getElementById('form_pass');
 
-  function pass() {
-    if (use_pass.checked == true) {
-      input_pass.classList.remove('d-none');
-      form_pass.required = true;
-      form_pass.value = '';
-    }else{
-      input_pass.classList.add('d-none');
-      form_pass.required = false;
-      form_pass.value = '0';
-    }
-  }
-</script>
+<!-- WARNING Custom scripts for Index pages-->
+<script src="<?php echo base_url('assets/frontend/js/page/shorten_url_form.js') ?>"></script>

@@ -23,6 +23,35 @@
   <!-- Custom styles for data tables page -->
   <link href="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
+  <!-- WARNING ALL SCRIPT MOVE HERE FROM BOTTOM -->
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?php echo base_url('assets/frontend/vendor/jquery/jquery.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="<?php echo base_url('assets/frontend/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+
+  <!-- Page level plugins -->
+  <script src="<?php echo base_url('assets/frontend/vendor/chart.js/Chart.min.js') ?>"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/js/demo/chart-pie-demo.js') ?>"></script>
+
+  <!-- Page data tables level plugins -->
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+
+  <!-- Page data tables level custom scripts -->
+  <script src="<?php echo base_url('assets/frontend/js/demo/datatables-demo.js') ?>"></script>
+
+  <!-- Validation Plugin -->
+  <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.js') ?>"></script>
+
+  <!-- Custom scripts for Index pages-->
+  <script src="<?php echo base_url('assets/frontend/js/page/index.js') ?>"></script>
+
 </head>
 
 <body id="page-top">
@@ -56,29 +85,6 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Feature
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-link"></i>
-          <span>Perpendek Url</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Perpendek Url:</h6>
-            <a class="collapse-item active" href="<?php echo base_url('home/shorten_url_form') ?>">Getting Started</a>
-            <a class="collapse-item" href="<?php echo base_url('home/shorten_url') ?>">View Url</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
         Main Feature
       </div>
 
@@ -87,6 +93,36 @@
         <a class="nav-link" href="<?php echo base_url('home/shorten_url_form') ?>">
           <i class="fas fa-fw fa-link"></i>
           <span>Shorten Url</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('home/shorten_url') ?>">
+          <i class="fas fa-fw fa-eye"></i>
+          <span>View Url</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo base_url('home/login') ?>">
+          <i class="fas fa-fw fa-sign-in-alt"></i>
+          <span>Login</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('home/register') ?>">
+          <i class="fas fa-fw fa-user-plus"></i>
+          <span>Register</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('home/about') ?>">
+          <i class="fas fa-fw fa-info-circle"></i>
+          <span>About</span></a>
       </li>
 
       <!-- Divider -->
@@ -233,7 +269,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v1.2</span>
+            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v1.3.0</span>
           </div>
         </div>
       </footer>
@@ -269,95 +305,10 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/frontend/vendor/jquery/jquery.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url('assets/frontend/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+<!-- WARNING ALL SCRIPT FOR ALL PAGE -->
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.min.js') ?>"></script>
-
-  <!-- Page level plugins -->
-  <script src="<?php echo base_url('assets/frontend/vendor/chart.js/Chart.min.js') ?>"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
-  <script src="<?php echo base_url('assets/frontend/js/demo/chart-pie-demo.js') ?>"></script>
-
-  <!-- Page data tables level plugins -->
-  <script src="<?php echo base_url('assets/frontend/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
-
-  <!-- Page data tables level custom scripts -->
-  <script src="<?php echo base_url('assets/frontend/js/demo/datatables-demo.js') ?>"></script>
-
-  <!-- Validation Plugin -->
-  <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.js') ?>"></script>
-
-  <!-- WARNING CHANGE DEFAULT VALIDATE SCRIPT  -->
-  <script type="text/javascript">
-    jQuery.validator.setDefaults({
-      errorElement: 'span',
-      errorClass: 'invalid-feedback',
-      errorPlacement: function (error, element) {
-        element.closest('.form-group').append(error);
-      },
-      highlight: function (element, errorClass, validClass) {
-        $(element).addClass('is-invalid');
-      },
-      unhighlight: function (element, errorClass, validClass) {
-        $(element).removeClass('is-invalid');
-      }
-    });
-  </script>
-
-  <!-- WARNING VALIDATE SCRIPT  -->
-    <script type="text/javascript">
-      var jvalidate = $("#shorten_url_form").validate({
-        ignore: [],
-        rules: {
-          id: {
-            required: true
-          },
-          name: {
-            required: true
-          },
-          link: {
-            required: true
-          },
-          date_created: {
-            required: true
-          },
-        },
-        submitHandler: function(form) {
-          var target = $(form).attr('action');
-          $('#shorten_url_form .alert-warning').removeClass('d-none');
-          $('#shorten_url_form .alert-success').addClass('d-none');
-          $('#shorten_url_form .alert-danger').addClass('d-none');
-          $.ajax({
-            url : target,
-            type : 'POST',
-            dataType : 'json',
-            data : $(form).serialize(),
-            success : function(response){
-              $('#shorten_url_form .alert-warning').addClass('d-none');
-              if(response.status == 'ok'){
-                $('#shorten_url_form .alert-success').removeClass('d-none').children('span').text(response.msg);
-                window.location.href = response.redirect;
-              }
-              else
-                $('#shorten_url_form .alert-danger').removeClass('d-none').children('span').text(response.msg);
-            },
-            error : function(jqXHR, textStatus, errorThrown) {
-              alert(textStatus, errorThrown);
-            }
-          });
-        }
-      });
-    </script>
-
 
 </body>
 

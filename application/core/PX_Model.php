@@ -8,7 +8,8 @@ class PX_Model extends CI_Model {
 		date_default_timezone_set('Asia/Jakarta');
 		// TABLE
 		$this->tbl_prefix = 'px_';
-		$this->tbl_shorten_url = $this->tbl_prefix.'shorten_url';
+    $this->tbl_shorten_url = $this->tbl_prefix.'shorten_url';
+		$this->tbl_user = $this->tbl_prefix.'user';
 
     }
 }

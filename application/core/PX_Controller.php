@@ -11,6 +11,7 @@ class PX_Controller extends CI_Controller {
 		// TABLE
 		$this->tbl_prefix = 'px_';
 		$this->tbl_shorten_url = $this->tbl_prefix.'shorten_url';
+		$this->tbl_user = $this->tbl_prefix.'user';
 
 		// MODELS
 		$this->load->model('model_basic');
