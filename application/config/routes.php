@@ -39,10 +39,21 @@
 */
 $route['home/(:any)'] = "home/$1";
 
+$route['admin'] = "admin";
+$route['admin/(:any)'] = "admin/$1";
+$route['admin_system/(:any)'] = "admin_system/$1";
+
+$route['member'] = "member";
+$route['member/(:any)'] = "member/$1";
+$route['member_system/(:any)'] = "member_system/$1";
+
+$route['error'] = "error";
+$route['error/(:any)'] = "error/$1";
+
 $route['(:any)'] = "home/index/$1";
 
 $route['default_controller'] = "home";
-$route['404_override'] = 'home/error_404';
+$route['404_override'] = 'error/error_404';
 
 
 /* End of file routes.php */

@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Model_basic extends PX_Model {
-	
+class Model_basic extends CI_Model {
+
 	public function __construct() {
 		parent::__construct();
 	}
@@ -36,10 +36,54 @@ class Model_basic extends PX_Model {
 		$data = $this->db->get();
 		return $data->result();
 	}
+	function select_all_join_1($table,$select,$table_join1,$join1,$join2){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join1, $join1.' = '.$join2);
+		$data = $this->db->get();
+		return $data->result();
+	}
+	function select_all_join_2($table,$select,$table_join1,$join1,$join2,$table_join2,$join3,$join4){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join1, $join1.' = '.$join2);
+		$this->db->join($table_join2, $join3.' = '.$join4);
+		$data = $this->db->get();
+		return $data->result();
+	}
+	function select_all_left_join_1($table,$select,$table_join1,$join1,$join2){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join1, $join1.' = '.$join2, 'left');
+		$data = $this->db->get();
+		return $data->result();
+	}
 	function select_where($table,$column,$where){
 		$this->load->database('default',TRUE);
 		$this->db->select('*');
 		$this->db->from($table);
+		$this->db->where($column,$where);
+		$data = $this->db->get();
+		return $data;
+	}
+	function select_where_join($table,$select,$column,$where,$table_join,$join1,$join2){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join, $join1.' = '.$join2);
+		$this->db->where($column,$where);
+		$data = $this->db->get();
+		return $data;
+	}
+	function select_where_join_2($table,$select,$column,$where,$table_join1,$join1,$join2,$table_join2,$join3,$join4){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join1, $join1.' = '.$join2);
+		$this->db->join($table_join2, $join3.' = '.$join4);
 		$this->db->where($column,$where);
 		$data = $this->db->get();
 		return $data;
@@ -97,7 +141,7 @@ class Model_basic extends PX_Model {
 	function update($table,$data,$column,$where){
 		$this->load->database('default',TRUE);
 		$this->db->where($column,$where);
-		return $this->db->update($table,$data); 
+		return $this->db->update($table,$data);
 	}
 	function update_one($table,$column,$where,$target,$action){
 		$this->db->set($target, $target.$action, FALSE);
@@ -148,7 +192,7 @@ class Model_basic extends PX_Model {
 		$this->db->where($where);
 		$this->db->from($table);
 		return $this->db->count_all_results();
-	} 
+	}
     function select_all_order($table, $order_by, $order){
 		$this->load->database('default',TRUE);
 		$this->db->select('*');
@@ -189,13 +233,13 @@ class Model_basic extends PX_Model {
 		$this->db->order_by($order,$type);
 		return $this->db->get()->result();
 	}
-	
+
 	function upload(){
     $config['upload_path'] = './images/';
     $config['allowed_types'] = 'jpg|png|jpeg';
     $config['max_size']  = '2048';
     $config['remove_space'] = TRUE;
-  
+
     $this->load->library('upload', $config); // Load konfigurasi uploadnya
     if($this->upload->do_upload('input_gambar')){ // Lakukan upload dan Cek jika proses upload berhasil
       // Jika berhasil :
@@ -215,7 +259,7 @@ class Model_basic extends PX_Model {
       'ukuran_file' => $upload['file']['file_size'],
       'tipe_file' => $upload['file']['file_type']
     );
-    
+
     $this->db->insert('gambar', $data);
   }
 

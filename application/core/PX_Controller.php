@@ -11,7 +11,8 @@ class PX_Controller extends CI_Controller {
 		// TABLE
 		$this->tbl_prefix = 'px_';
 		$this->tbl_shorten_url = $this->tbl_prefix.'shorten_url';
-		$this->tbl_user = $this->tbl_prefix.'user';
+		$this->tbl_member = $this->tbl_prefix.'member';
+		$this->tbl_admin = $this->tbl_prefix.'admin';
 
 		// MODELS
 		$this->load->model('model_basic');
@@ -100,7 +101,7 @@ class PX_Controller extends CI_Controller {
 		}
 		return $data;
 	}
-	function check_login(){
+	function check_login_admin(){
 		if($this->session->userdata('admin') == FALSE){
 			redirect('admin');
 		}
