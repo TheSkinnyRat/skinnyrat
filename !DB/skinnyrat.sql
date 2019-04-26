@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Apr 2019 pada 16.47
+-- Generation Time: 26 Apr 2019 pada 05.20
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -84,12 +84,9 @@ CREATE TABLE `px_shorten_url` (
 
 INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `date_created`, `id_member`, `click`) VALUES
 (1, 'rpl2_foto', 'https://drive.google.com/drive/folders/1J0vcoGkrxFWEDHsDaMcovqgzNOK1E1wG?usp=sharing	', 'Ns3Iv7qaUr8C9ZxicIeNxDl/aSxVuGa1bXH0aKx6bWdCVGhEsek/3HPvbnMRo7AQNryZP8gfdWTp0yvXSSgpfw==', '2019-03-20 23:18:45', 0, 2),
-(2, 'rpl2_fotoformal', 'https://drive.google.com/drive/folders/1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9?usp=sharing', '4zT2chsFFdXXJLOceDu44TR3Z+4FtPjbkjHasQS+aJVbe5jQqJtlmA/BM2OrtNusAonoSYEUvchuN00YtW2AdQ==', '2019-03-20 23:19:22', 0, 0),
+(2, 'rpl2_fotoformal', 'https://drive.google.com/drive/folders/1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9?usp=sharing', '4zT2chsFFdXXJLOceDu44TR3Z+4FtPjbkjHasQS+aJVbe5jQqJtlmA/BM2OrtNusAonoSYEUvchuN00YtW2AdQ==', '2019-03-20 23:19:22', 0, 1),
 (3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35', 0, 2),
-(5, 'r_dnkg_220319', 'https://danaid.onelink.me/qQ4h/2fe74384?orderId=20190322101214755815010300166061301540768', 'gBq7IjmLAQirl41w2QfllJgt7tyBAX+D3OOnsXTDX6sMZgCwkMfI8w4EgM0FNZMEz1cBWRTgTgMuvOn/cZjF/Q==', '2019-04-21 21:05:59', 1, 0),
 (6, 'hngryrain', 'https://hngryrain.000webhostapp.com', '0', '2019-03-23 13:04:41', 0, 1),
-(7, 'alhe7_foto', 'bit.ly/fotoalhe7', 'hRxuWgJqQAXeAxWOjfEESaP/deRsiirH8jYAkKsXcIcu22ZXg1rAfU3QAIV29+aW3U+yo0kGUK173Oqut2L25g==', '2019-03-24 18:41:21', 0, 0),
-(8, 'R_dnkg_wa', 'https://danaid.onelink.me/qQ4h/2fe74384?orderId=20190402101214545515010300166061301656831', '0', '2019-04-02 15:55:54', 0, 0),
 (11, 'villa_cuk', 'https://drive.google.com/open?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz', '0', '2019-04-04 08:20:57', 0, 0),
 (12, 'villa_cuk_azz', 'https://drive.google.com/uc?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz&amp;export=download', '0', '2019-04-04 08:34:41', 0, 4),
 (14, 'r_lsp', 'https://github.com/TheSkinnyRat/smkindonesia', '0', '2019-04-14 12:19:26', 0, 33),
@@ -99,7 +96,11 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (18, 'r_weblsp', 'http://psr-smkindonesia.000webhostapp.com/', '0', '2019-04-16 11:57:20', 0, 8),
 (19, 'r_sclsp', 'https://drive.google.com/drive/folders/10eVBy1QxFqmClDo7Q9_bajt8v8ePEmos?usp=sharing', 'BXk/liEzx7RhaMmakr1Is5IVuZOqibSLc8KpQIShd8xvily+bcZxBX1eRvx1vOOhbSryq9EcmWOx92ulSMA7bA==', '2019-04-16 11:57:46', 0, 6),
 (20, 'maullsp', 'https://drive.google.com/open?id=1m7aRw3cmSAhuT1Daks9110mUQtii5PCZ', '0', '2019-04-16 17:50:58', 0, 3),
-(21, 'wardun', 'https://drive.google.com/open?id=1_U3XX_LKp3HASKywau7OsXWA14JQ86Gz', '0', '2019-04-16 18:27:35', 0, 3);
+(21, 'wardun', 'https://drive.google.com/open?id=1_U3XX_LKp3HASKywau7OsXWA14JQ86Gz', '0', '2019-04-16 18:27:35', 0, 3),
+(32, 'r_fb', 'https://m.facebook.com/theskinnyratt', ' 0', '2019-04-22 17:45:10', 1, 2),
+(33, 'r_ig', 'https://instagram.com/theskinnyrat', ' 0', '2019-04-22 17:46:16', 1, 2),
+(34, 'r_tw', 'https://twitter.com/theskinnyrat', ' 0', '2019-04-22 17:47:20', 1, 2),
+(35, 'r_gh', 'https://github.com/theskinnyrat', ' 0', '2019-04-22 17:47:52', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -137,13 +138,13 @@ ALTER TABLE `px_admin`
 -- AUTO_INCREMENT for table `px_member`
 --
 ALTER TABLE `px_member`
-  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `px_shorten_url`
 --
 ALTER TABLE `px_shorten_url`
-  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
