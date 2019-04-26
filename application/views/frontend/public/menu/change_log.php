@@ -9,10 +9,24 @@
   <div class="card shadow mb-2">
     <!-- Card Header - Accordion -->
     <a href="#log1" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log1">
-      <h6 class="m-0 font-weight-bold text-primary">Version 2.0.0</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Version 2.0.1</h6>
     </a>
     <!-- Card Content - Collapse -->
     <div class="collapse show" id="log1">
+      <div class="card-body">
+        - Add Management Profile Feature <br>
+        - Fix Bugs <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow mb-2">
+    <!-- Card Header - Accordion -->
+    <a href="#log6" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log6">
+      <h6 class="m-0 font-weight-bold text-primary">Version 2.0.0</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse show" id="log6">
       <div class="card-body">
         - Add Login Feature <br>
         - Add Register Feature <br>

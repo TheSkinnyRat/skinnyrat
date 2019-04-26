@@ -89,5 +89,14 @@ class Member extends PX_Controller {
 			redirect(base_url() );
 	}
 
+	function do_logout_login() {
+		if($this->session->userdata('member') != FALSE){
+			$this->session->unset_userdata('member');
+			redirect(base_url('member/login'));
+		}
+		else
+			redirect(base_url('member/login'));
+	}
+
 
 }

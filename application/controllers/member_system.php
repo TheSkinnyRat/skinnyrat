@@ -107,4 +107,125 @@ class Member_system extends PX_Controller {
 		}
   }
 
+	function profile(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/profile',$data,true);
+		$this->load->view('frontend/index',$data);
+	}
+
+	function profile_form(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_member = $data['userdata']['id_member'];
+		$data['data'] = $this->model_basic->select_where($this->tbl_member,'id_member',$id_member)->row();
+
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/profile_form',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function profile_update(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$check_password = $this->input->post('check_password');
+		$table_field = $this->db->list_fields($this->tbl_member);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+		$update['id_member'] = $data['userdata']['id_member'];
+
+		$check_data = $this->model_basic->select_where($this->tbl_member,'id_member',$update['id_member'])->row();
+		$check_username = $this->model_basic->select_where($this->tbl_member,'username',$update['username'])->row();
+
+		$update['password'] = $check_data->password;
+
+		if ($check_password != $this->encrypt->decode($check_data->password)) {
+			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password!'));
+		}else{
+			if ($check_username != null && $check_username->id_member != $update['id_member']) {
+				$this->returnJson(array('status' => 'error','msg' => 'Username sudah digunakan!'));
+			}else{
+				if($update){
+					$do_update = $this->model_basic->update($this->tbl_member,$update,'id_member',$update['id_member']);
+					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => base_url('member/do_logout_login') ));
+				}else{
+					$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				}
+			}
+		}
+  }
+
+	function password_form(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_member = $data['userdata']['id_member'];
+		$data['data'] = $this->model_basic->select_where($this->tbl_member,'id_member',$id_member)->row();
+
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/password_form',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function password_update(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_member = $data['userdata']['id_member'];
+		$old_password = $this->input->post('old_password');
+		$update = array(
+			'password' => $this->encrypt->encode($this->input->post('password')),
+		);
+
+		$check_data = $this->model_basic->select_where($this->tbl_member,'id_member',$id_member)->row();
+
+		if ($old_password != $this->encrypt->decode($check_data->password)) {
+			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password!'));
+		}else{
+			if($update){
+				$do_update = $this->model_basic->update($this->tbl_member,$update,'id_member',$id_member);
+				$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => base_url('member/do_logout_login') ));
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
+	function member_delete(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_member = $data['userdata']['id_member'];
+		$data['data'] = $this->model_basic->select_where($this->tbl_member,'id_member',$id_member)->row();
+
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/member_delete',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function member_delete_do(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_member = $data['userdata']['id_member'];
+		$password = $this->input->post('password');
+
+		$check_data = $this->model_basic->select_where($this->tbl_member,'id_member',$id_member)->row();
+
+		if ($password != $this->encrypt->decode($check_data->password)) {
+			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password!'));
+		}else{
+			if($password){
+				$do_delete = $this->model_basic->delete($this->tbl_member,'id_member',$id_member);
+				$this->returnJson(array('status' => 'ok','msg' => 'Hapus data berhasil', 'redirect' => base_url('member/do_logout_login') ));
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
 }

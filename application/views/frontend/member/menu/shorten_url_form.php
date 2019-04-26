@@ -77,5 +77,5 @@
 </div>
 <!-- /.container-fluid -->
 
-<!-- WARNING Custom scripts for Index pages-->
+<!-- WARNING Custom scripts for This pages-->
 <script src="<?php echo base_url('assets/frontend/js/page/shorten_url_form.js') ?>"></script>
