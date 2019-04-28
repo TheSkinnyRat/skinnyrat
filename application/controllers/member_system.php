@@ -27,6 +27,9 @@ class Member_system extends PX_Controller {
 		$id_shorten_url = $this->input->post('id_shorten_url');
 		if($id_shorten_url){
 		$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
+		if ($data['data']->id_member != $data['userdata']['id_member']) {
+			redirect('error/error_403');
+		}
 		}else{
 		$data['data'] = null;
 		}
@@ -98,12 +101,14 @@ class Member_system extends PX_Controller {
     $this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$id_shorten_url = $this->input->post('id_shorten_url');
-		$do_delete = $this->model_basic->delete($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url);
-		if($do_delete){
-			redirect('member_system/shorten_url');
-		}
-		else{
-
+		$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
+		if ($data['data']->id_member == $data['userdata']['id_member']) {
+			$do_delete = $this->model_basic->delete($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url);
+			if($do_delete){
+				redirect('member_system/shorten_url');
+			}
+		}	else{
+			redirect('error/error_403');
 		}
   }
 
@@ -225,6 +230,105 @@ class Member_system extends PX_Controller {
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
+		}
+  }
+
+	function article(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+
+		$data['article'] = $this->model_basic->select_where($this->tbl_article,'id_member',$data['userdata']['id_member'])->result();
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/article',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function article_form(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+
+		$id_article = $this->input->post('id_article');
+		if($id_article){
+		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		if ($data['data']->id_member != $data['userdata']['id_member']) {
+			redirect('error/error_403');
+		}
+		}else{
+		$data['data'] = null;
+		}
+		$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/member/menu/article_form',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function article_add(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+
+		$table_field = $this->db->list_fields($this->tbl_article);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = htmlspecialchars($this->input->post($field));
+		}
+		$insert['konten'] = $this->input->post('konten');
+		$insert['id_member'] = $data['userdata']['id_member'];
+		$insert['click'] = '0';
+
+		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+		if ($cek_name != null) {
+			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
+		}else{
+			if($insert){
+				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'article'));
+				redirect('home/shorten_url_form');
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+	}
+
+	function article_update(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+
+		$table_field = $this->db->list_fields($this->tbl_article);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+		$update['id_member'] = $data['userdata']['id_member'];
+
+		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
+		if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {
+			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
+		}else{
+			if($update){
+				$do_update = $this->model_basic->update($this->tbl_article,$update,'id_article',$update['id_article']);
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
+				redirect('home/article_form');
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
+	function article_delete(){
+		$this->check_login_member();
+		$data['userdata'] = $this->session_member;
+		$id_article = $this->input->post('id_article');
+		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		if ($data['data']->id_member == $data['userdata']['id_member']) {
+			$do_delete = $this->model_basic->delete($this->tbl_article,'id_article',$id_article);
+			if($do_delete){
+				redirect('member_system/article');
+			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 

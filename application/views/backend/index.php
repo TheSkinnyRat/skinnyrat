@@ -54,6 +54,9 @@
     <!-- Validation Plugin -->
     <script src="<?php echo base_url() ?>assets/backend/vendor/jquery-validation/jquery.validate.js"></script>
 
+    <!-- Text Editor Plugin -->
+    <script src="<?php echo base_url('assets/backend/vendor/ckeditor/ckeditor.js') ?>"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -113,17 +116,6 @@
                           <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                          <a href="#"><i class="fa fa-users fa-fw"></i> Data Member<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/member') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Member</a>
-                              </li>
-                              <li>
-                                <a href="<?php echo base_url('admin_system/member_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Member</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
                           <a href="#"><i class="fa fa-user fa-fw"></i> Data Admin<span class="fa arrow"></span></a></a>
                             <ul class="nav nav-second-level">
                               <li>
@@ -135,13 +127,35 @@
                             </ul>
                         </li>
                         <li>
-                          <a href="#"><i class="fa fa-user fa-fw"></i> Data Shorten URL<span class="fa arrow"></span></a></a>
+                          <a href="#"><i class="fa fa-users fa-fw"></i> Data Member<span class="fa arrow"></span></a></a>
+                            <ul class="nav nav-second-level">
+                              <li>
+                                <a href="<?php echo base_url('admin_system/member') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Member</a>
+                              </li>
+                              <li>
+                                <a href="<?php echo base_url('admin_system/member_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Member</a>
+                              </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa fa-link fa-fw"></i> Data Shorten URL<span class="fa arrow"></span></a></a>
                             <ul class="nav nav-second-level">
                               <li>
                                 <a href="<?php echo base_url('admin_system/shorten_url') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Shorten URL</a>
                               </li>
                               <li>
                                 <a href="<?php echo base_url('admin_system/shorten_url_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Shorten URL</a>
+                              </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa fa-pencil fa-fw"></i> Data Article<span class="fa arrow"></span></a></a>
+                            <ul class="nav nav-second-level">
+                              <li>
+                                <a href="<?php echo base_url('admin_system/article') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Article</a>
+                              </li>
+                              <li>
+                                <a href="<?php echo base_url('admin_system/article_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Article</a>
                               </li>
                             </ul>
                         </li>

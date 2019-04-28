@@ -8,6 +8,21 @@
 
   <div class="card shadow mb-2">
     <!-- Card Header - Accordion -->
+    <a href="#log7" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log7">
+      <h6 class="m-0 font-weight-bold text-primary">Version 2.1.0</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse show" id="log7">
+      <div class="card-body">
+        - Add Article Feature <br>
+        - Security Improvement: Edit data in member session can be hacked <br>
+        - Fix Bugs <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow mb-2">
+    <!-- Card Header - Accordion -->
     <a href="#log1" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log1">
       <h6 class="m-0 font-weight-bold text-primary">Version 2.0.1</h6>
     </a>

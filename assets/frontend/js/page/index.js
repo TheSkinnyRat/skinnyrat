@@ -12,3 +12,7 @@
       $(element).removeClass('is-invalid');
     }
   });
+  // <!-- WARNING TOOLTIP SCRIPT  -->
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })

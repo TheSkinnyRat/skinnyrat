@@ -10,7 +10,8 @@ class PX_Model extends CI_Model {
 		$this->tbl_prefix = 'px_';
     $this->tbl_shorten_url = $this->tbl_prefix.'shorten_url';
     $this->tbl_member = $this->tbl_prefix.'member';
-		$this->tbl_admin = $this->tbl_prefix.'admin';
+    $this->tbl_admin = $this->tbl_prefix.'admin';
+		$this->tbl_article = $this->tbl_prefix.'article';
 
     }
 }

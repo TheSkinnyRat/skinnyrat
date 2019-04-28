@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26 Apr 2019 pada 05.20
+-- Generation Time: 28 Apr 2019 pada 04.26
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -45,6 +45,30 @@ INSERT INTO `px_admin` (`id_admin`, `username`, `password`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `px_article`
+--
+
+CREATE TABLE `px_article` (
+  `id_article` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `judul` text NOT NULL,
+  `subjudul` text NOT NULL,
+  `konten` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `id_member` int(10) NOT NULL,
+  `click` bigint(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `px_article`
+--
+
+INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `date_created`, `id_member`, `click`) VALUES
+(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `px_member`
 --
 
@@ -60,7 +84,7 @@ CREATE TABLE `px_member` (
 --
 
 INSERT INTO `px_member` (`id_member`, `username`, `password`, `name`) VALUES
-(1, 'psr', 'BNz2XcSbj8RCis8fQDEBbFOiyNLTlLtKyimpvMIQSy5ZnJaB57Ef+hvsdDXUDnFwWtuuhdl/4n03KoVl3rlnhw==', 'Skinny Rat');
+(1, 'psr', '/JM5ZWoGFK5P1vM6sctfQWU1PS4BDGI50bPdi50XqmlccKkByg72FQ9SxUzKiIfAm3/3JELTzJiT82Or8L7zmQ==', 'Skinny Rat');
 
 -- --------------------------------------------------------
 
@@ -113,6 +137,12 @@ ALTER TABLE `px_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Indexes for table `px_article`
+--
+ALTER TABLE `px_article`
+  ADD PRIMARY KEY (`id_article`);
+
+--
 -- Indexes for table `px_member`
 --
 ALTER TABLE `px_member`
@@ -132,19 +162,25 @@ ALTER TABLE `px_shorten_url`
 -- AUTO_INCREMENT for table `px_admin`
 --
 ALTER TABLE `px_admin`
-  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `px_article`
+--
+ALTER TABLE `px_article`
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `px_member`
 --
 ALTER TABLE `px_member`
-  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `px_shorten_url`
 --
 ALTER TABLE `px_shorten_url`
-  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

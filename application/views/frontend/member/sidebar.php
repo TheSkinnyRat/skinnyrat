@@ -38,6 +38,16 @@
       <i class="fas fa-fw fa-eye"></i>
       <span>View Url</span></a>
   </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="<?php echo base_url('member_system/article_form') ?>">
+      <i class="fas fa-fw fa-pencil-alt"></i>
+      <span>Create Article</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<?php echo base_url('member_system/article') ?>">
+      <i class="fas fa-fw fa-eye"></i>
+      <span>View Article</span></a>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
       <i class="fas fa-fw fa-sign-out-alt"></i>

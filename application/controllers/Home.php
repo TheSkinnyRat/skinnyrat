@@ -166,4 +166,63 @@ class Home extends PX_Controller {
 		$this->load->view('frontend/index',$data);
 	}
 
+	function article(){
+		if($this->session->userdata('member') == TRUE){
+			redirect('member_system/article');
+		}else
+
+		$data['article'] = $this->model_basic->select_where($this->tbl_article,'id_member','0')->result();
+		$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/public/menu/article',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function article_form(){
+		if($this->session->userdata('member') == TRUE){
+			redirect('member_system/article_form');
+		}else
+
+		$id_article = $this->input->post('id_article');
+		if($id_article){
+		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		}else{
+		$data['data'] = null;
+		}
+		$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+		$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		$data['content'] = $this->load->view('frontend/public/menu/article_form',$data,true);
+		$this->load->view('frontend/index',$data);
+  }
+
+	function article_add(){
+		if($this->session->userdata('member') == TRUE){
+			redirect('member_system/article_add');
+		}else
+
+		$table_field = $this->db->list_fields($this->tbl_article);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = htmlspecialchars($this->input->post($field));
+		}
+		$insert['konten'] = $this->input->post('konten');
+		$insert['id_article'] = '0';
+		$insert['id_member'] = '0';
+		$insert['click'] = '0';
+
+		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+		if ($cek_name != null) {
+			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
+		}else{
+			if($insert){
+				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'article'));
+				redirect('home/shorten_url_form');
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
 }

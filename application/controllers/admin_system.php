@@ -252,4 +252,87 @@ class Admin_system extends PX_Controller {
 		}
   }
 
+	function article(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data'] = $this->model_basic->select_all_left_join_1($this->tbl_article,$this->tbl_article.'.*,'.$this->tbl_member.'.name as member_name',$this->tbl_member,$this->tbl_article.'.id_member',$this->tbl_member.'.id_member');
+		$data['content'] = $this->load->view('backend/admin_system/article',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function article_form(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id_article = $this->input->post('id_article');
+		if($id_article){
+		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		}else{
+		$data['data'] = null;
+		}
+		$data['data_member'] = $this->model_basic->select_all($this->tbl_member);
+		$data['content'] = $this->load->view('backend/admin_system/article_form',$data,true);
+		$this->load->view('backend/index',$data);
+  }
+
+	function article_add(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_article);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = htmlspecialchars($this->input->post($field));
+		}
+		$insert['konten'] = $this->input->post('konten');
+
+		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+		if ($cek_name != null) {
+			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
+		}else{
+			if($insert){
+				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'article'));
+				redirect('home/shorten_url_form');
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+	}
+
+	function article_update(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_article);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
+		if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {
+			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
+		}else{
+			if($update){
+				$do_update = $this->model_basic->update($this->tbl_article,$update,'id_article',$update['id_article']);
+
+				$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
+				redirect('home/article_form');
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
+	function article_delete(){
+    $this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id_article = $this->input->post('id_article');
+		$do_delete = $this->model_basic->delete($this->tbl_article,'id_article',$id_article);
+		if($do_delete){
+			redirect('admin_system/article');
+		}
+		else{
+
+		}
+  }
+
 }

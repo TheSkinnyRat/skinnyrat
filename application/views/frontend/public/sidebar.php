@@ -38,6 +38,16 @@
       <i class="fas fa-fw fa-eye"></i>
       <span>View Url</span></a>
   </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="<?php echo base_url('home/article_form') ?>">
+      <i class="fas fa-fw fa-pencil-alt"></i>
+      <span>Create Article</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<?php echo base_url('home/article') ?>">
+      <i class="fas fa-fw fa-eye"></i>
+      <span>View Article</span></a>
+  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider my-0">

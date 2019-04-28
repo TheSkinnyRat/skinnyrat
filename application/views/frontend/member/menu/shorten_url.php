@@ -65,13 +65,13 @@
               <td class="text-center">
                 <form action="<?php echo base_url('member_system/shorten_url_form') ?>" method="post">
                   <input type="hidden" name="id_shorten_url" value="<?php echo $d->id_shorten_url ?>">
-                  <button class="btn btn-info btn-xs btn-edit" type="submit" data-original-title="Ubah" data-placement="top" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
+                  <button class="btn btn-info btn-sm btn-edit" type="submit" data-original-title="Ubah" data-placement="left" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
                 </form>
               </td>
               <td class="text-center">
                 <form action="<?php echo base_url('member_system/shorten_url_delete') ?>" method="post">
                   <input type="hidden" name="id_shorten_url" value="<?php echo $d->id_shorten_url ?>">
-                  <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></button>
+                  <button class="btn btn-danger btn-sm btn-delete" type="submit" data-original-title="Hapus" data-placement="left" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></button>
                 </form>
               </td>
             </tr>

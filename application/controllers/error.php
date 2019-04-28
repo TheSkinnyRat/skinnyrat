@@ -14,4 +14,12 @@ class Error extends PX_Controller {
 		$this->load->view('error/404');
   }
 
+	function error_403(){
+		$this->load->view('error/403');
+  }
+
+	function error_unco(){
+		$this->load->view('error/unco');
+  }
+
 }

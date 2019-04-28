@@ -49,6 +49,9 @@
   <!-- Validation Plugin -->
   <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.js') ?>"></script>
 
+  <!-- Text Editor Plugin -->
+  <script src="<?php echo base_url('assets/frontend/vendor/ckeditor/ckeditor.js') ?>"></script>
+
   <!-- Custom scripts for Index pages-->
   <script src="<?php echo base_url('assets/frontend/js/page/index.js') ?>"></script>
 
@@ -77,7 +80,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v2.0.1</span>
+            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v2.1.0</span>
           </div>
         </div>
       </footer>
