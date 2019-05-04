@@ -160,6 +160,9 @@
                             </ul>
                         </li>
                         <li>
+                          <a href="<?php echo base_url('admin_system/log_user_agent') ?>"><i class="fa fa-history fa-fw"></i> Log User Agent</a>
+                        </li>
+                        <li>
                           <a href="<?php echo base_url('admin/do_logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
 

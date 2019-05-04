@@ -8,6 +8,19 @@
 
   <div class="card shadow mb-2">
     <!-- Card Header - Accordion -->
+    <a href="#log8" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log8">
+      <h6 class="m-0 font-weight-bold text-primary">Version 2.1.1</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse show" id="log8">
+      <div class="card-body">
+        - Add Log User Agent Feature <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow mb-2">
+    <!-- Card Header - Accordion -->
     <a href="#log7" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log7">
       <h6 class="m-0 font-weight-bold text-primary">Version 2.1.0</h6>
     </a>

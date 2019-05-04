@@ -11,7 +11,7 @@
       About This Website
     </div>
     <div class="card-body">
-      <div class="text-lg text-primary">Skinny Rat Website Version 2.0.x</div>
+      <div class="text-lg text-primary">Skinny Rat Website Version 2.x.x</div>
       <hr>
       <span>Visit My Social Media</span><br><br>
       <a href="http://sknr.tk/r_fb" class="btn btn-primary btn-circle" target="_blank">

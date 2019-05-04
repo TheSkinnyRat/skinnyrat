@@ -14,6 +14,7 @@ class PX_Controller extends CI_Controller {
 		$this->tbl_member = $this->tbl_prefix.'member';
 		$this->tbl_admin = $this->tbl_prefix.'admin';
 		$this->tbl_article = $this->tbl_prefix.'article';
+		$this->tbl_log_user_agent = $this->tbl_prefix.'log_user_agent';
 
 		// MODELS
 		$this->load->model('model_basic');

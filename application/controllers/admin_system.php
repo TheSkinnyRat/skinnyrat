@@ -335,4 +335,31 @@ class Admin_system extends PX_Controller {
 		}
   }
 
+	function log_user_agent(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data'] = $this->model_basic->select_all($this->tbl_log_user_agent);
+		$data['content'] = $this->load->view('backend/admin_system/log_user_agent',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function log_user_agent_delete(){
+    $this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id = $this->input->post('id');
+		$do_delete = $this->model_basic->delete($this->tbl_log_user_agent,'id_log_user_agent',$id);
+		if($do_delete){
+			redirect('admin_system/log_user_agent');
+		}
+  }
+
+	function log_user_agent_delete_all(){
+    $this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$do_delete = $this->model_basic->delete_all($this->tbl_log_user_agent);
+		if($do_delete){
+			redirect('admin_system/log_user_agent');
+		}
+  }
+
 }

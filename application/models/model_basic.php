@@ -153,6 +153,10 @@ class Model_basic extends CI_Model {
 		$this->db->where($column,$where);
 		return $this->db->delete($table);
 	}
+	function delete_all($table){
+		$this->load->database('default',TRUE);
+		return $this->db->empty_table($table);
+	}
     function select_all_limit($table, $limit){
 		$this->load->database('default',TRUE);
 		$this->db->select('*');
