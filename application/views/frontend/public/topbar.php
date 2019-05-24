@@ -27,3 +27,10 @@
 
 </nav>
 <!-- End of Topbar -->
+<?php if($app_alert){ ?>
+  <?php foreach ($app_alert as $alert) { ?>
+    <div class="alert <?php echo $alert->style ?> m-3" role="alert">
+      <?php echo $alert->konten ?>
+    </div>
+  <?php } ?>
+<?php } ?>

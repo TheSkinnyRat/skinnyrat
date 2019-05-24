@@ -12,6 +12,7 @@ class Blog extends PX_Controller {
 		$name = $this->uri->segment(2);
 
 		if($name){
+			$data = $this->get_app_settings();
 			$get_data = $this->model_basic->select_where($this->tbl_article,'name',$name)->row();
 			if($get_data != null){
 				if ($this->agent->is_browser()){
@@ -49,6 +50,7 @@ class Blog extends PX_Controller {
 					redirect('error/error_404');
 			}
 		}else{
+			$data = $this->get_app_settings();
 			$data['count_tbl_shorten_url'] = $this->model_basic->get_count($this->tbl_shorten_url);
 			if($this->session->userdata('member') == TRUE){
 				$data['userdata'] = $this->session_member;

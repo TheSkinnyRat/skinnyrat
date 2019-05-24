@@ -11,7 +11,7 @@
 		<h3 class="panel-title">Form Data Admin</h3>
 	</div>
 	<form class="form-horizontal" method="POST" id="admin_form" action="<?php if($data!=null) echo base_url('admin_system/admin_update'); else echo base_url('admin_system/admin_add'); ?>">
-		<input type="hidden" name="id_admin" value="<?php if($data!=null) echo $data->id_admin; ?>">
+		<input type="hidden" name="id_admin" value="<?php if($data!=null) echo $data->id_admin; else echo '0'; ?>">
 		<div class="panel-body">
 			<div class="alert alert-success hidden"><strong>Berhasil! </strong><span></span></div>
 			<div class="alert alert-warning hidden"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>

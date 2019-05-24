@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Backend</title>
+
+    <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/') ?>">
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>assets/backend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -56,6 +58,9 @@
 
     <!-- Text Editor Plugin -->
     <script src="<?php echo base_url('assets/backend/vendor/ckeditor/ckeditor.js') ?>"></script>
+
+    <!-- Upload Plugin -->
+    <script src="<?php echo base_url('assets/backend/vendor/fileupload/fileupload.min.js') ?>"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -161,6 +166,16 @@
                         </li>
                         <li>
                           <a href="<?php echo base_url('admin_system/log_user_agent') ?>"><i class="fa fa-history fa-fw"></i> Log User Agent</a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa fa-gears fa-fw"></i> Master Settings<span class="fa arrow"></span></a></a>
+                            <ul class="nav nav-second-level">
+                              <li>
+                                <a href="<?php echo base_url('admin_system/web_setting') ?>"><i class="fa fa-gear fa-fw"></i> Web Setting</a>
+                                <a href="<?php echo base_url('admin_system/web_alert') ?>"><i class="fa fa-exclamation-triangle fa-fw"></i> Web Alert</a>
+                                <a href="<?php echo base_url('admin_system/change_log') ?>"><i class="fa fa-history fa-fw"></i> Change Log</a>
+                              </li>
+                            </ul>
                         </li>
                         <li>
                           <a href="<?php echo base_url('admin/do_logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

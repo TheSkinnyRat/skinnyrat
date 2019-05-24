@@ -6,118 +6,24 @@
     <h1 class="h3 mb-0 text-gray-800">Change Log</h1>
   </div>
 
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log8" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log8">
-      <h6 class="m-0 font-weight-bold text-primary">Version 2.1.1</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="log8">
-      <div class="card-body">
-        - Add Log User Agent Feature <br>
-      </div>
-    </div>
-  </div>
+  <?php foreach ($data as $d1) { ?>
 
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log7" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log7">
-      <h6 class="m-0 font-weight-bold text-primary">Version 2.1.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="log7">
-      <div class="card-body">
-        - Add Article Feature <br>
-        - Security Improvement: Edit data in member session can be hacked <br>
-        - Fix Bugs <br>
+    <div class="card shadow mb-2">
+      <!-- Card Header - Accordion -->
+      <a href="#log<?php echo $d1->id; ?>" class="d-block card-header py-3 <?php if($d1->expand == '0') echo 'collapsed' ?>" data-toggle="collapse" role="button" aria-expanded="<?php if($d1->expand == '0') echo 'false'; else echo 'true'; ?>" aria-controls="log<?php echo $d1->id; ?>">
+        <h6 class="m-0 font-weight-bold text-primary"><?php echo $d1->judul ?></h6>
+      </a>
+      <!-- Card Content - Collapse -->
+      <div class="collapse <?php if($d1->expand == '1') echo 'show' ?>" id="log<?php echo $d1->id; ?>">
+        <div class="card-body">
+          <?php echo $d1->konten ?>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log1" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log1">
-      <h6 class="m-0 font-weight-bold text-primary">Version 2.0.1</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="log1">
-      <div class="card-body">
-        - Add Management Profile Feature <br>
-        - Fix Bugs <br>
-      </div>
-    </div>
-  </div>
-
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log6" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="log6">
-      <h6 class="m-0 font-weight-bold text-primary">Version 2.0.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="log6">
-      <div class="card-body">
-        - Add Login Feature <br>
-        - Add Register Feature <br>
-        - Add backend Feature <br>
-        - Fix Bugs <br>
-      </div>
-    </div>
-  </div>
-
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log2" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="log2">
-      <h6 class="m-0 font-weight-bold text-primary">Version 1.3.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse" id="log2">
-      <div class="card-body">
-        - No Change Log Because This Feature Not Activate Yet <br>
-      </div>
-    </div>
-  </div>
-
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log3" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="log3">
-      <h6 class="m-0 font-weight-bold text-primary">Version 1.2.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse" id="log3">
-      <div class="card-body">
-        - No Change Log Because This Feature Not Activate Yet <br>
-      </div>
-    </div>
-  </div>
-
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log4" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="log4">
-      <h6 class="m-0 font-weight-bold text-primary">Version 1.1.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse" id="log4">
-      <div class="card-body">
-        - No Change Log Because This Feature Not Activate Yet <br>
-      </div>
-    </div>
-  </div>
-
-  <div class="card shadow mb-2">
-    <!-- Card Header - Accordion -->
-    <a href="#log5" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="log5">
-      <h6 class="m-0 font-weight-bold text-primary">Version 1.0.0</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse" id="log5">
-      <div class="card-body">
-        - No Change Log Because This Feature Not Activate Yet <br>
-      </div>
-    </div>
-  </div>
+  <?php } ?>
 
 </div>
 <!-- /.container-fluid -->
 
 <!-- WARNING Custom scripts for Index pages-->
-<script src="<?php echo base_url('assets/frontend/js/page/shorten_url_form.js') ?>"></script>

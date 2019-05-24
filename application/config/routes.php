@@ -50,6 +50,9 @@ $route['member_system/(:any)'] = "member_system/$1";
 $route['error'] = "error";
 $route['error/(:any)'] = "error/$1";
 
+$route['upload'] = "upload";
+$route['upload/(:any)'] = "upload/$1";
+
 $route['blog/(:any)'] = "blog/index/$1";
 
 $route['(:any)'] = "home/index/$1";

@@ -59,8 +59,9 @@
       <h6 class="m-0 font-weight-bold text-primary">Welcome To Skinny Rat Website ^^</h6>
     </div>
     <div class="card-body">
-      URL yang anda buat dapat di akses di <code>www.sknr.tk/(custom URL anda)</code> <br>
-	  <a href="<?php echo base_url('home/shorten_url_form') ?>">&larr; Buat Custom URL Anda Sendiri</a>
+      Website ini dapat anda gunakan untuk membuat <a href="<?php echo base_url('home/shorten_url_form') ?>">SHORT LINK</a> atau membuat <a href="<?php echo base_url('home/article_form') ?>">ARTICLE</a> <hr>
+      SHORT LINK yang anda buat dapat di akses di <code>www.sknr.tk/(custom URL anda)</code> <br>
+      ARTICLE yang anda buat dapat di akses di <code>www.sknr.tk/blog/(URL article anda)</code> <br>
     </div>
   </div>
 

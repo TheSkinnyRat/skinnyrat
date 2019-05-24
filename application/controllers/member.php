@@ -15,6 +15,7 @@ class Member extends PX_Controller {
 	}
 
 	function login(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') != FALSE){
 			redirect(base_url() );
 		}
@@ -27,6 +28,7 @@ class Member extends PX_Controller {
   }
 
 	function register(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') != FALSE){
 			redirect(base_url() );
 		}

@@ -15,6 +15,7 @@ class Home extends PX_Controller {
 			$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 			if($get_data != null){
 					if ($get_data->password != '0') {
+						$data = $this->get_app_settings();
 						$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 						$data['content'] = $this->load->view('frontend/public/menu/pass',$data,true);
 						if($this->session->userdata('member') == TRUE){
@@ -53,6 +54,7 @@ class Home extends PX_Controller {
 					redirect('error/error_404');
 			}
 		}else{
+			$data = $this->get_app_settings();
 			$data['count_tbl_shorten_url'] = $this->model_basic->get_count($this->tbl_shorten_url);
 			if($this->session->userdata('member') == TRUE){
 				$data['userdata'] = $this->session_member;
@@ -103,6 +105,7 @@ class Home extends PX_Controller {
   }
 
 	function shorten_url(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') == TRUE){
 			redirect('member_system/shorten_url');
 		}else
@@ -115,6 +118,7 @@ class Home extends PX_Controller {
   }
 
 	function shorten_url_form(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') == TRUE){
 			redirect('member_system/shorten_url_form');
 		}else
@@ -163,6 +167,7 @@ class Home extends PX_Controller {
   }
 
 	function about(){
+		$data = $this->get_app_settings();
 		$data['data'] = null;
 		if($this->session->userdata('member') == TRUE){
 			$data['userdata'] = $this->session_member;
@@ -177,7 +182,8 @@ class Home extends PX_Controller {
 	}
 
 	function change_log(){
-		$data['data'] = null;
+		$data = $this->get_app_settings();
+		$data['data'] = $this->model_basic->select_where_order($this->tbl_change_log,'status','1','id','DESC')->result();
 		if($this->session->userdata('member') == TRUE){
 			$data['userdata'] = $this->session_member;
 			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
@@ -191,6 +197,7 @@ class Home extends PX_Controller {
 	}
 
 	function info(){
+		$data = $this->get_app_settings();
 		$data['data'] = null;
 		if($this->session->userdata('member') == TRUE){
 			$data['userdata'] = $this->session_member;
@@ -205,6 +212,7 @@ class Home extends PX_Controller {
 	}
 
 	function article(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') == TRUE){
 			redirect('member_system/article');
 		}else
@@ -217,6 +225,7 @@ class Home extends PX_Controller {
   }
 
 	function article_form(){
+		$data = $this->get_app_settings();
 		if($this->session->userdata('member') == TRUE){
 			redirect('member_system/article_form');
 		}else
@@ -264,6 +273,7 @@ class Home extends PX_Controller {
   }
 
 	function get_info(){
+		$data = $this->get_app_settings();
 		if ($this->agent->is_browser()){
 			$agent = $this->agent->browser().' '.$this->agent->version();
 		}elseif ($this->agent->is_mobile()){

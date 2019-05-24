@@ -4,9 +4,9 @@
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url() ?>">
     <div class="sidebar-brand-icon rotate-n-15">
-      <i class="fas fa-grin-beam"></i>
+      <i class="fas <?php echo $app_icon ?>"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Skinny Rat <sup>^^</sup></div>
+    <div class="sidebar-brand-text mx-3"><?php echo $app_name ?></div>
   </a>
 
   <!-- Divider -->

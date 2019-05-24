@@ -362,4 +362,219 @@ class Admin_system extends PX_Controller {
 		}
   }
 
+	function web_setting(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data'] = $this->model_basic->select_all($this->tbl_web_setting);
+		$data['content'] = $this->load->view('backend/admin_system/web_setting',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function web_setting_form(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data_icon'] = $this->model_basic->select_all($this->tbl_icons);
+		$id = $this->input->post('id');
+		if($id){
+		$data['data'] = $this->model_basic->select_where($this->tbl_web_setting,'id',$id)->row();
+		}else{
+		$data['data'] = null;
+		}
+		$data['content'] = $this->load->view('backend/admin_system/web_setting_form',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function web_setting_add(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_web_setting);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = $this->input->post($field);
+		}
+		if($insert['favicon']){
+			if(!@copy($insert['favicon'],'assets/frontend/img/favicon/'.basename($insert['favicon'])))
+				$insert['favicon'] = $this->input->post('old_favicon');
+			else
+				$insert['favicon'] = basename($insert['favicon']);
+		}
+		else
+			$insert['favicon'] = $this->input->post('old_favicon');
+
+		$check_data = $this->model_basic->select_all($this->tbl_web_setting);
+		if ($check_data != null) {
+			$this->returnJson(array('status' => 'error','msg' => 'Data Sudah Ada!'));
+		}else{
+			if($insert){
+				$do_insert = $this->model_basic->insert_all($this->tbl_web_setting,$insert);
+				$this->delete_temp('temp_folder');
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'web_setting'));
+			}else{
+				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			}
+		}
+  }
+
+	function web_setting_update(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_web_setting);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+		if($update['favicon']){
+			if(!@copy($update['favicon'],'assets/frontend/img/favicon/'.basename($update['favicon'])))
+				$update['favicon'] = $this->input->post('old_favicon');
+			else
+				$update['favicon'] = basename($update['favicon']);
+		}
+		else
+			$update['favicon'] = $this->input->post('old_favicon');
+
+		if($update){
+			$do_update = $this->model_basic->update($this->tbl_web_setting,$update,'id',$update['id']);
+			$this->delete_temp('temp_folder');
+			$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'web_setting'));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+		}
+  }
+
+	function web_alert(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data'] = $this->model_basic->select_all($this->tbl_web_alert);
+		$data['content'] = $this->load->view('backend/admin_system/web_alert',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function web_alert_form(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id = $this->input->post('id');
+		if($id){
+		$data['data'] = $this->model_basic->select_where($this->tbl_web_alert,'id',$id)->row();
+		}else{
+		$data['data'] = null;
+		}
+		$data['content'] = $this->load->view('backend/admin_system/web_alert_form',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function web_alert_add(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_web_alert);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = $this->input->post($field);
+		}
+
+		if($insert){
+			$do_insert = $this->model_basic->insert_all($this->tbl_web_alert,$insert);
+			$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'web_alert'));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+		}
+  }
+
+	function web_alert_update(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_web_alert);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+
+		if($update){
+			$do_update = $this->model_basic->update($this->tbl_web_alert,$update,'id',$update['id']);
+			$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'web_alert'));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+		}
+  }
+
+	function web_alert_delete(){
+    $this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id = $this->input->post('id');
+		$do_delete = $this->model_basic->delete($this->tbl_web_alert,'id',$id);
+		if($do_delete){
+			redirect('admin_system/web_alert');
+		}
+		else{
+
+		}
+  }
+
+	function change_log(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$data['data'] = $this->model_basic->select_all($this->tbl_change_log);
+		$data['content'] = $this->load->view('backend/admin_system/change_log',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function change_log_form(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id = $this->input->post('id');
+		if($id){
+		$data['data'] = $this->model_basic->select_where($this->tbl_change_log,'id',$id)->row();
+		}else{
+		$data['data'] = null;
+		}
+		$data['content'] = $this->load->view('backend/admin_system/change_log_form',$data,true);
+		$this->load->view('backend/index',$data);
+	}
+
+	function change_log_add(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_change_log);
+		$insert = array();
+		foreach ($table_field as $field) {
+			$insert[$field] = $this->input->post($field);
+		}
+
+		if($insert){
+			$do_insert = $this->model_basic->insert_all($this->tbl_change_log,$insert);
+			$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'change_log'));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+		}
+	}
+
+	function change_log_update(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$table_field = $this->db->list_fields($this->tbl_change_log);
+		$update = array();
+		foreach ($table_field as $field) {
+			$update[$field] = $this->input->post($field);
+		}
+
+		if($update){
+			$do_update = $this->model_basic->update($this->tbl_change_log,$update,'id',$update['id']);
+			$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'change_log'));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+		}
+	}
+
+	function change_log_delete(){
+		$this->check_login_admin();
+		$data['userdata'] = $this->session_admin;
+		$id = $this->input->post('id');
+		$do_delete = $this->model_basic->delete($this->tbl_change_log,'id',$id);
+		if($do_delete){
+			redirect('admin_system/change_log');
+		}
+		else{
+
+		}
+	}
+
 }

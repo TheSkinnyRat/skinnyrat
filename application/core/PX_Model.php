@@ -12,7 +12,11 @@ class PX_Model extends CI_Model {
     $this->tbl_member = $this->tbl_prefix.'member';
     $this->tbl_admin = $this->tbl_prefix.'admin';
     $this->tbl_article = $this->tbl_prefix.'article';
-		$this->tbl_log_user_agent = $this->tbl_prefix.'log_user_agent';
+    $this->tbl_log_user_agent = $this->tbl_prefix.'log_user_agent';
+    $this->tbl_icons = $this->tbl_prefix.'icons';
+    $this->tbl_web_setting = $this->tbl_prefix.'web_setting';
+    $this->tbl_web_alert = $this->tbl_prefix.'web_alert';
+		$this->tbl_change_log = $this->tbl_prefix.'change_log';
 
     }
 }

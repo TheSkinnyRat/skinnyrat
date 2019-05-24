@@ -1,14 +1,14 @@
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="m-2">
 
   <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <div class="d-sm-flex align-items-center justify-content-between mb-1">
     <h1 class="h3 mb-0 text-gray-800">
       <?php echo $data->judul ?>
     </h1>
   </div>
 
-  <div class="card shadow mb-4">
+  <div class="card">
     <div class="card-header py-3 text-right">
       <h6 class="m-0 font-weight-bold text-primary float-left"><?php echo $data->subjudul ?></h6>
       <?php if (isset($userdata) && $data->id_member == $userdata['id_member']) { ?>

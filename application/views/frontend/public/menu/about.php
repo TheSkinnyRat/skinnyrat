@@ -11,7 +11,7 @@
       About This Website
     </div>
     <div class="card-body">
-      <div class="text-lg text-primary">Skinny Rat Website Version 2.x.x</div>
+      <div class="text-lg text-primary">Skinny Rat Website Version <?php echo $app_version ?></div>
       <hr>
       <span>Visit My Social Media</span><br><br>
       <a href="http://sknr.tk/r_fb" class="btn btn-primary btn-circle" target="_blank">
@@ -33,4 +33,3 @@
 <!-- /.container-fluid -->
 
 <!-- WARNING Custom scripts for Index pages-->
-<script src="<?php echo base_url('assets/frontend/js/page/shorten_url_form.js') ?>"></script>

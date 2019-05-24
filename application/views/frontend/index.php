@@ -9,9 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Skinny Rat</title>
+  <title><?php echo $app_title ?></title>
 
-  <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/rat.png') ?>">
+  <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/'.$app_favicon) ?>">
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('assets/frontend/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
@@ -22,6 +22,7 @@
 
   <!-- Custom styles for data tables page -->
   <link href="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/frontend/vendor/datatables/responsive.bootstrap4.min.css') ?>" rel="stylesheet">
 
   <!-- WARNING ALL SCRIPT MOVE HERE FROM BOTTOM -->
 
@@ -42,6 +43,8 @@
   <!-- Page data tables level plugins -->
   <script src="<?php echo base_url('assets/frontend/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
   <script src="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.responsive.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/datatables/responsive.bootstrap4.min.js') ?>"></script>
 
   <!-- Page data tables level custom scripts -->
   <script src="<?php echo base_url('assets/frontend/js/demo/datatables-demo.js') ?>"></script>
@@ -80,7 +83,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - v2.1.1</span>
+            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - <?php echo $app_version ?></span>
           </div>
         </div>
       </footer>

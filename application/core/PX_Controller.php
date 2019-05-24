@@ -15,6 +15,10 @@ class PX_Controller extends CI_Controller {
 		$this->tbl_admin = $this->tbl_prefix.'admin';
 		$this->tbl_article = $this->tbl_prefix.'article';
 		$this->tbl_log_user_agent = $this->tbl_prefix.'log_user_agent';
+		$this->tbl_icons = $this->tbl_prefix.'icons';
+		$this->tbl_web_setting = $this->tbl_prefix.'web_setting';
+		$this->tbl_web_alert = $this->tbl_prefix.'web_alert';
+		$this->tbl_change_log = $this->tbl_prefix.'change_log';
 
 		// MODELS
 		$this->load->model('model_basic');
@@ -41,22 +45,13 @@ class PX_Controller extends CI_Controller {
 		}
 	}
 	function get_app_settings() {
-		$d_row = $this->model_basic->select_all_limit($this->tbl_adm_config,1)->row();
-		$c_row = $this->model_basic->select_all_limit($this->tbl_settings,1)->row();
-		$guest_book = $this->model_basic->select_where($this->tbl_guest_book,'status',0);
-		$data['app_id'] = $d_row->id;
-		$data['app_title'] = $d_row->title;
-		$data['app_desc'] = $d_row->desc;
-		$data['app_login_logo'] = $d_row->login_logo;
-		$data['app_mini_logo'] = $d_row->mini_logo;
-		$data['app_single_logo'] = $d_row->single_logo;
-		$data['app_mini_logo'] = $d_row->mini_logo;
-		$data['app_favicon_logo'] = $d_row->favicon_logo;
-		$data['app_guest_book_data'] = $guest_book->result();
-		$data['app_guest_book_count'] = $guest_book->num_rows();
-		$data['app_shortcut_icon'] = $c_row->icon;
-		$data['app_judul_web'] = $c_row->title;
-		$data['app_judul'] = $c_row->content;
+		$a_row = $this->model_basic->select_all_limit($this->tbl_web_setting,1)->row();
+		$data['app_alert'] = $this->model_basic->select_where($this->tbl_web_alert,'status','1')->result();
+		$data['app_title'] = $a_row->title;
+		$data['app_name'] = $a_row->name;
+		$data['app_icon'] = $a_row->icon;
+		$data['app_version'] = $a_row->version;
+		$data['app_favicon'] = $a_row->favicon;
 		return $data;
 	}
 	function get_function($name,$function){
