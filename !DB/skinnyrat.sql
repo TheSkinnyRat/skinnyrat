@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Mei 2019 pada 02.05
+-- Generation Time: 29 Mei 2019 pada 15.55
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -64,11 +64,12 @@ CREATE TABLE `px_article` (
 --
 
 INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `date_created`, `id_member`, `click`) VALUES
-(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 53),
-(26, 'rpl2', 'Rekayasa Perangkat Lunak 2 - XVII', 'Tentang RPL2', '<p style=\"text-align:center\"><span style=\"font-size:20px\">Foto - Foto</span></p>\n\n<hr />\n<ol>\n	<li>&nbsp;Foto Formal\n	<ul>\n		<li>Baju PDH - Foto Lama<br />\n		Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a><br />\n		Password : -<br />\n		&nbsp;</li>\n		<li>Baju Hitam - Foto Baru<br />\n		Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n		Password : -<br />\n		&nbsp;</li>\n	</ul>\n	</li>\n	<li>Foto Biasa\n	<ul>\n		<li>Semua Foto / Video<br />\n		Link : <a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a><br />\n		Password : -</li>\n	</ul>\n	</li>\n</ol>\n\n<hr />\n<p style=\"text-align:center\">Senang Bisa Bertemu Dengan Kalian<br />\nさようなら - Good Bye&nbsp;- Sampai Jumpa</p>\n\n<hr />\n<p><tt>Posted by <a href=\"http://instagram.com/the.skinny.rat\">R.</a>&nbsp;- 29 April 2019</tt></p>\n', '2019-04-29 19:54:35', 3, 18),
+(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 60),
+(26, 'rpl2', 'Rekayasa Perangkat Lunak 2 - XVII', 'Tentang RPL2', '<p style=\"text-align:center\"><span style=\"font-size:20px\">Foto - Foto</span></p>\n\n<hr />\n<ol>\n	<li>&nbsp;Foto Formal\n	<ul>\n		<li>Baju PDH - Foto Lama<br />\n		Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a><br />\n		Password : -<br />\n		&nbsp;</li>\n		<li>Baju Hitam - Foto Baru<br />\n		Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n		Password : -<br />\n		&nbsp;</li>\n	</ul>\n	</li>\n	<li>Foto Biasa\n	<ul>\n		<li>Semua Foto / Video<br />\n		Link : <a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a><br />\n		Password : -</li>\n	</ul>\n	</li>\n</ol>\n\n<hr />\n<p style=\"text-align:center\">Senang Bisa Bertemu Dengan Kalian<br />\nさようなら - Good Bye&nbsp;- Sampai Jumpa</p>\n\n<hr />\n<p><tt>Posted by <a href=\"http://instagram.com/the.skinny.rat\">R.</a>&nbsp;- 29 April 2019</tt></p>\n', '2019-04-29 19:54:35', 3, 23),
 (28, 'r_dnkg_abis', 'Maap', ':(', '<p style=\"text-align:center\"><strong>MAAP NI DANAKAGET NYA UDAH ABISS, WKWKWK..</strong></p>\n\n<hr />\n<p style=\"text-align:center\"><a href=\"https://data.whicdn.com/images/318273873/original.gif\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></p>\n', '2019-05-04 09:19:51', 1, 30),
-(29, 'r_dnkg', 'JUM\'AT BERKAH !', '^^', '<p style=\"text-align:center\"><strong><span style=\"font-size:16px\">JUM&#39;AT BERKAH&nbsp;<a href=\"https://link.dana.id/kaget?c=s93r5vaba&amp;r=dcCoFq\">KLIK DISINI</a></span></strong></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></span></strong></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 17&nbsp;Mei 2019</tt></code></p>\n', '2019-05-17 09:41:39', 1, 14),
-(30, 'r_get_user_agent', '!', '!', '<p style=\"text-align:center\"><span style=\"font-size:18px\">USER AGENT SENDED</span></p>\r\n', '2019-05-24 06:53:30', 1, 1);
+(29, 'r_dnkg', 'JUM\'AT BERKAH !', '^^', '<p style=\"text-align:center\"><strong><span style=\"font-size:16px\">JUM&#39;AT BERKAH&nbsp;<a href=\"https://link.dana.id/kaget?c=ssg43zqpv&amp;r=dcCoFq\">KLIK DISINI</a></span></strong></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/C5cDXxEgBGNjy/giphy.gif\" style=\"height:224px; width:300px\" /></a></span></strong></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 17&nbsp;Mei 2019</tt></code></p>\n', '2019-05-24 12:40:26', 1, 12),
+(30, 'r_get_user_agent', '!', '!', '<p style=\"text-align:center\"><span style=\"font-size:18px\">USER AGENT SENDED</span></p>\r\n', '2019-05-24 06:53:30', 1, 1),
+(31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_iwan\">https://sknr.tk/sg_foto_iwan</a></li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_psr\">https://sknr.tk/sg_foto_psr</a></li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : sharinggan<br />\nPassword : srgn</span></p>\n\n<hr />\n<p><code><tt>Posted By Sharing Gan - 28 Mei 2019</tt></code></p>\n', '2019-05-28 22:48:58', 4, 4);
 
 -- --------------------------------------------------------
 
@@ -96,8 +97,9 @@ INSERT INTO `px_change_log` (`id`, `judul`, `konten`, `expand`, `status`) VALUES
 (5, 'Version 2.0.0', '<p>- Add Login Feature (Frontend)<br />\r\n- Add Register Feature&nbsp;(Frontend)<br />\r\n- Add backend Feature&nbsp;(Backend)<br />\r\n- Fix Bugs</p>\r\n', 0, 1),
 (6, 'Version 2.0.1', '<p>- Add Management Profile Feature&nbsp;(Frontend)<br />\r\n- Fix Bugs</p>\r\n', 0, 1),
 (7, 'Version 2.1.0', '<p>- Add Article Feature&nbsp;(Frontend)<br />\r\n- Security Improvement: Edit data in member session can be hacked&nbsp;(Frontend)<br />\r\n- Fix Bugs</p>\r\n', 0, 1),
-(8, 'Version 2.1.1', '<p>- Add Log User Agent Feature&nbsp;(Backend)</p>\r\n', 1, 1),
-(9, 'Version 2.2.0', '<p>- Add Website Setting (Backend)<br />\r\n- Add Website Alert (Backend)<br />\r\n- Add Change Log (Backend)<br />\r\n- Improve Style In Blog/Acricle Page (Frontend)<br />\r\n- All Table In Frontend Page Now Responsive (Frontend)</p>\r\n', 1, 1);
+(8, 'Version 2.1.1', '<p>- Add Log User Agent Feature&nbsp;(Backend)</p>\r\n', 0, 1),
+(9, 'Version 2.2.0', '<p>- Add Website Setting (Backend)<br />\r\n- Add Website Alert (Backend)<br />\r\n- Add Change Log (Backend)<br />\r\n- Improve Style In Blog/Acricle Page (Frontend)<br />\r\n- All Table In Frontend Page Now Responsive (Frontend)</p>\r\n', 1, 1),
+(10, 'Version 2.2.1', '<p>- Improve blog page style (Frontend)</p>\r\n', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1501,12 +1503,8 @@ CREATE TABLE `px_log_user_agent` (
 --
 
 INSERT INTO `px_log_user_agent` (`id_log_user_agent`, `ket`, `date`, `agent`, `platform`, `ip_address`, `agent_string`) VALUES
-(1, 'Akses Article = test', '2019-05-24 05:49:02', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'),
-(2, 'Akses Article = test', '2019-05-24 05:49:04', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'),
-(3, 'Akses Short Link = r_dnkg', '2019-05-24 05:51:16', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'),
-(4, 'Akses Article = test', '2019-05-24 06:45:42', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'),
-(5, 'Akses Article = test', '2019-05-24 06:46:56', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'),
-(6, 'Akses Article = r_get_user_agent', '2019-05-24 06:54:07', 'Chrome 74.0.3729.157', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36');
+(77, 'Akses Article = test', '2019-05-29 20:53:54', 'Chrome 74.0.3729.169', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'),
+(78, 'Akses Article = test', '2019-05-29 20:53:58', 'Chrome 74.0.3729.169', 'Unknown Windows OS', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -1527,7 +1525,8 @@ CREATE TABLE `px_member` (
 
 INSERT INTO `px_member` (`id_member`, `username`, `password`, `name`) VALUES
 (1, 'psr', '/JM5ZWoGFK5P1vM6sctfQWU1PS4BDGI50bPdi50XqmlccKkByg72FQ9SxUzKiIfAm3/3JELTzJiT82Or8L7zmQ==', 'Skinny Rat'),
-(3, 'rpl2', 'C0VYy27BsPItjhmQGkyV49QmOWjH4405jWLUk8PbYZ2hRDlT991l5zMbXsEZwfBTFQm607RsKD09kBmbTg3Sjw==', 'RPL 2 - XVII');
+(3, 'rpl2', 'C0VYy27BsPItjhmQGkyV49QmOWjH4405jWLUk8PbYZ2hRDlT991l5zMbXsEZwfBTFQm607RsKD09kBmbTg3Sjw==', 'RPL 2 - XVII'),
+(4, 'sharinggan', 'wiyb0Prg6PTSN5Qsm/PFTeE9Jls5X3Np3vT2gxG9m0/NwVOXVnfwzMdsbDuKPtYFw7Ue0KOpt+61wqJ6P/HTDA==', 'Sharing Gan');
 
 -- --------------------------------------------------------
 
@@ -1570,9 +1569,19 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 7),
 (39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 10),
 (40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 7),
-(42, 'r_dnkg', 'https://sknr.tk/blog/r_dnkg', ' 0', '2019-05-20 14:57:12', 1, 1),
+(42, 'r_dnkg', 'https://sknr.tk/blog/r_dnkg', ' 0', '2019-05-20 14:57:12', 1, 11),
 (43, 'numpang', 'https://drive.google.com/file/d/1BHl8gy1z533Aznt1VDaR3KSz2GMX0rIO/view?usp=drivesdk', '0', '2019-05-18 13:30:07', 0, 2),
-(44, 'r_getuseragent', 'https://sknr.tk/blog/r_get_user_agent', ' 0', '2019-05-24 06:52:46', 1, 0);
+(44, 'r_getuseragent', 'https://sknr.tk/blog/r_get_user_agent', ' 0', '2019-05-24 06:52:46', 1, 0),
+(46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-28 22:35:57', 4, 3),
+(47, 'sg_foto', 'https://photos.app.goo.gl/DRDHX8eTrkFeXdSJ8', ' 0', '2019-05-28 22:31:28', 4, 1),
+(48, 'sg_foto_iwan', 'https://photos.app.goo.gl/HZfzsNxdxcwiAq1h6', ' 0', '2019-05-28 22:33:20', 4, 1),
+(49, 'sg_foto_maul', 'https://photos.app.goo.gl/S7RiZKAYtrRq84J47', ' 0', '2019-05-28 22:34:06', 4, 1),
+(50, 'sg_foto_aduy', 'https://photos.app.goo.gl/inJW9TQUjexayj1v5', ' 0', '2019-05-28 22:34:37', 4, 1),
+(51, 'sg_foto_rio', 'https://photos.app.goo.gl/JLwPU61TkctjmFyk8', ' 0', '2019-05-28 22:35:36', 4, 1),
+(52, 'sg_foto_yusuf', 'https://photos.app.goo.gl/aZ5U6fmtstcPwQwB9', ' 0', '2019-05-28 22:36:23', 4, 1),
+(53, 'sg_foto_pen', 'https://photos.app.goo.gl/yQxFWrXi6tWHmsH26', ' 0', '2019-05-28 22:36:49', 4, 1),
+(54, 'sg_foto_edo', 'https://photos.app.goo.gl/aa6ULN17nY3k9ax66', ' 0', '2019-05-28 22:37:13', 4, 1),
+(55, 'sg_foto_psr', 'https://photos.app.goo.gl/C57PYdawYV6LR3Ze6', ' 0', '2019-05-28 22:38:12', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -1594,7 +1603,8 @@ CREATE TABLE `px_web_alert` (
 INSERT INTO `px_web_alert` (`id`, `style`, `konten`, `status`) VALUES
 (3, 'alert-warning', 'Website Sedang Dalam Pengembangan - Harap Untuk Tidak Melakukan Proses Create / Update / Delete', 0),
 (4, 'alert-danger', 'WEB DOWN', 0),
-(5, 'alert-warning', 'Website Sedang Dalam Pengembangan ^^', 1);
+(5, 'alert-warning', 'Website Sedang Dalam Pengembangan ^^', 0),
+(6, 'alert-info', 'Ayo coba hack / temukan bug di web ini ! ^^', 0);
 
 -- --------------------------------------------------------
 
@@ -1616,7 +1626,7 @@ CREATE TABLE `px_web_setting` (
 --
 
 INSERT INTO `px_web_setting` (`id`, `title`, `name`, `version`, `icon`, `favicon`) VALUES
-(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.2.0', 'fa-grin-beam', 'rat.png');
+(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.2.1', 'fa-grin-beam', 'rat.png');
 
 --
 -- Indexes for dumped tables
@@ -1690,13 +1700,13 @@ ALTER TABLE `px_admin`
 -- AUTO_INCREMENT for table `px_article`
 --
 ALTER TABLE `px_article`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `px_change_log`
 --
 ALTER TABLE `px_change_log`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `px_icons`
@@ -1708,25 +1718,25 @@ ALTER TABLE `px_icons`
 -- AUTO_INCREMENT for table `px_log_user_agent`
 --
 ALTER TABLE `px_log_user_agent`
-  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `px_member`
 --
 ALTER TABLE `px_member`
-  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_member` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `px_shorten_url`
 --
 ALTER TABLE `px_shorten_url`
-  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `px_web_alert`
 --
 ALTER TABLE `px_web_alert`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `px_web_setting`

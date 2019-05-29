@@ -45,7 +45,7 @@ class Blog extends PX_Controller {
 					$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 				}
 				$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
-				$this->load->view('frontend/index',$data);
+				$this->load->view('frontend/index_blog',$data);
 			}else{
 					redirect('error/error_404');
 			}
