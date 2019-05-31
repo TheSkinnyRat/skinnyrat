@@ -33,21 +33,33 @@
       <i class="fas fa-fw fa-link"></i>
       <span>Shorten Url</span></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('member_system/shorten_url') ?>">
-      <i class="fas fa-fw fa-eye"></i>
-      <span>View Url</span></a>
-  </li>
   <li class="nav-item active">
     <a class="nav-link" href="<?php echo base_url('member_system/article_form') ?>">
       <i class="fas fa-fw fa-pencil-alt"></i>
       <span>Create Article</span></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('member_system/article') ?>">
-      <i class="fas fa-fw fa-eye"></i>
-      <span>View Article</span></a>
+  <li class="nav-item active">
+    <a class="nav-link" href="<?php echo base_url('home/wa_ctc') ?>">
+      <i class="fab fa-fw fa-whatsapp"></i>
+      <span>WA Clik To Chat</span></a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseView" aria-expanded="true" aria-controls="collapseView">
+      <i class="fas fa-fw fa-eye"></i>
+      <span>View</span>
+    </a>
+    <div id="collapseView" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">View Page</h6>
+        <a class="collapse-item" href="<?php echo base_url('member_system/shorten_url') ?>">View Short URL</a>
+        <a class="collapse-item" href="<?php echo base_url('member_system/article') ?>">View Article</a>
+      </div>
+    </div>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
   <li class="nav-item">
     <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
       <i class="fas fa-fw fa-sign-out-alt"></i>

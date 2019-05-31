@@ -59,7 +59,7 @@
       <h6 class="m-0 font-weight-bold text-primary">Welcome Back! - <?php echo $userdata['name'] ?></h6>
     </div>
     <div class="card-body">
-      Website ini dapat anda gunakan untuk membuat <a href="<?php echo base_url('home/shorten_url_form') ?>">SHORT LINK</a> atau membuat <a href="<?php echo base_url('home/article_form') ?>">ARTICLE</a> <hr>
+      Website ini dapat anda gunakan untuk membuat <a href="<?php echo base_url('home/shorten_url_form') ?>">SHORT LINK</a>, <a href="<?php echo base_url('home/article_form') ?>">ARTICLE</a> dan <a href="<?php echo base_url('home/wa_ctc') ?>">WA CLICK TO CHAT</a> <hr>
       SHORT LINK yang anda buat dapat di akses di <code>www.sknr.tk/(custom URL anda)</code> <br>
       ARTICLE yang anda buat dapat di akses di <code>www.sknr.tk/blog/(URL article anda)</code> <br>
     </div>

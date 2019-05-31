@@ -63,8 +63,10 @@ class Member_system extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'shorten_url'));
-				redirect('home/shorten_url_form');
+				$d = base_url($insert['name']);
+				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
@@ -291,8 +293,10 @@ class Member_system extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'article'));
-				redirect('home/shorten_url_form');
+				$d = base_url('blog/'.$insert['name']);
+				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
+				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}

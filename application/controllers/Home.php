@@ -158,8 +158,10 @@ class Home extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'shorten_url'));
-				redirect('home/shorten_url_form');
+				$d = base_url($insert['name']);
+				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
@@ -264,13 +266,102 @@ class Home extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => 'article'));
-				redirect('home/shorten_url_form');
+				$d = base_url('blog/'.$insert['name']);
+				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
+				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
 		}
   }
+
+	function success(){
+		$data = $this->get_app_settings();
+		$data['d'] = $this->input->get('d');
+		$data['m'] = $this->input->get('m');
+		if($this->session->userdata('member') == TRUE){
+			$data['userdata'] = $this->session_member;
+			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		}else{
+			$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		}
+		$data['content'] = $this->load->view('frontend/public/menu/success',$data,true);
+		$this->load->view('frontend/index',$data);
+	}
+
+	function wa_ctc(){
+		$data = $this->get_app_settings();
+		$data['data'] = null;
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_robot()){
+			$agent = $this->agent->robot();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Unidentified User Agent';
+		}
+		$data_agent = array(
+			'id_log_user_agent' => '0',
+			'ket' => 'Akses WA CTC',
+			'date' => date('Y-m-d H:i:s'),
+			'agent' => $agent,
+			'platform' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address(),
+			'agent_string' => $this->agent->agent_string()
+		);
+		$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
+		if($this->session->userdata('member') == TRUE){
+			$data['userdata'] = $this->session_member;
+			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		}else{
+			$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		}
+		$data['content'] = $this->load->view('frontend/public/menu/wa_ctc_form',$data,true);
+		$this->load->view('frontend/index',$data);
+	}
+
+	function wa_ctc_go(){
+		$no_wa = $this->input->post('no_wa');
+		$isi_pesan = urlencode($this->input->post('isi_pesan'));
+		if (!$no_wa && !$isi_pesan) {
+			$this->returnJson(array('status' => 'error','msg' => 'Ini Salah Satu Form'));
+		}else if (!$no_wa) {
+			$link = "https://wa.me?text=".$isi_pesan;
+		}else{
+			$link = "https://wa.me/".$no_wa."?text=".$isi_pesan;
+		}
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_robot()){
+			$agent = $this->agent->robot();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Unidentified User Agent';
+		}
+		$data_agent = array(
+			'id_log_user_agent' => '0',
+			'ket' => 'Create WA CTC = '.$link,
+			'date' => date('Y-m-d H:i:s'),
+			'agent' => $agent,
+			'platform' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address(),
+			'agent_string' => $this->agent->agent_string()
+		);
+		$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
+
+		$d = urlencode($link);
+		$m = urlencode('LINK WA CLICK TO CHAT ANDA SIAP DIBAGIKAN');
+		$redirect = base_url('home/success?d='.$d.'&m='.$m);
+		$this->returnJson(array('status' => 'ok','msg' => 'Redirecting...', 'redirect' => $redirect));
+	}
 
 	function get_info(){
 		$data = $this->get_app_settings();

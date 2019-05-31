@@ -6,7 +6,9 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas <?php echo $app_icon ?>"></i>
     </div>
-    <div class="sidebar-brand-text mx-3"><?php echo $app_name ?></div>
+    <div class="sidebar-brand-text mx-3">
+      <?php echo $app_name ?>
+    </div>
   </a>
 
   <!-- Divider -->
@@ -33,20 +35,28 @@
       <i class="fas fa-fw fa-link"></i>
       <span>Shorten Url</span></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('home/shorten_url') ?>">
-      <i class="fas fa-fw fa-eye"></i>
-      <span>View Url</span></a>
-  </li>
   <li class="nav-item active">
     <a class="nav-link" href="<?php echo base_url('home/article_form') ?>">
       <i class="fas fa-fw fa-pencil-alt"></i>
       <span>Create Article</span></a>
   </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="<?php echo base_url('home/wa_ctc') ?>">
+      <i class="fab fa-fw fa-whatsapp"></i>
+      <span>WA Clik To Chat</span></a>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('home/article') ?>">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseView" aria-expanded="true" aria-controls="collapseView">
       <i class="fas fa-fw fa-eye"></i>
-      <span>View Article</span></a>
+      <span>View</span>
+    </a>
+    <div id="collapseView" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">View Page</h6>
+        <a class="collapse-item" href="<?php echo base_url('home/shorten_url') ?>">View Short URL</a>
+        <a class="collapse-item" href="<?php echo base_url('home/article') ?>">View Article</a>
+      </div>
+    </div>
   </li>
 
   <!-- Divider -->
