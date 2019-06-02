@@ -21,6 +21,7 @@
               <!-- <th>Password</th> -->
               <th>Date Created</th>
               <th>Click</th>
+              <th>Action</th>
             </tr>
           </thead>
           <!-- <tfoot>
@@ -60,6 +61,21 @@
               <td>
                 <?php echo $d->click ?>
               </td>
+              <td>
+                <input type="text" class="d-none" id="url_<?php echo $d->name; ?>" value="<?php echo base_url($d->name); ?>">
+
+                <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Action
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item" onclick="copy('<?php echo $d->name; ?>')" id="cp_<?php echo $d->name; ?>" ><i class="far fa-copy"></i> Copy</button>
+                  <a href="https://wa.me?text=<?php echo base_url($d->name) ?>" class="dropdown-item" target="_blank"><i class="fab fa-whatsapp"></i> Share</a>
+                  <a href="<?php echo base_url($d->name) ?>" class="dropdown-item" target="_blank"><i class="fa fa-external-link-alt"></i> Open</a>
+                  <div class="dropdown-divider"></div>
+                  <button class="dropdown-item disabled" disabled><i class="fa fa-edit"></i> Edit</button>
+                  <button class="dropdown-item disabled" disabled><i class="fa fa-trash-alt"></i> Delete</button>
+                </div>
+              </td>
             </tr>
             <?php } ?>
           </tbody>
@@ -70,3 +86,6 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<!-- WARNING Custom scripts for Index pages-->
+<script src="<?php echo base_url('assets/frontend/js/page/shorten_url.js') ?>"></script>

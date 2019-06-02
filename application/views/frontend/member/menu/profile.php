@@ -37,13 +37,13 @@
           <hr>
         </div>
         <div class="panel-footer text-right">
-          <a class="btn btn-primary" href="<?php echo base_url('member_system/profile_form') ?>">
+          <a class="btn btn-primary mb-1" href="<?php echo base_url('member_system/profile_form') ?>">
             Ubah Profile
           </a>
-          <a class="btn btn-warning" href="<?php echo base_url('member_system/password_form') ?>">
+          <a class="btn btn-warning mb-1" href="<?php echo base_url('member_system/password_form') ?>">
             Ubah Password
           </a>
-          <a class="btn btn-danger" href="<?php echo base_url('member_system/member_delete') ?>">
+          <a class="btn btn-danger mb-1" href="<?php echo base_url('member_system/member_delete') ?>">
             <i class="fas fa-times"></i> Hapus Akun
           </a>
         </div>

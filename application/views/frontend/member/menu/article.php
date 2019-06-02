@@ -23,8 +23,7 @@
               <!-- <th>Password</th> -->
               <th>Date Created</th>
               <th>Click</th>
-              <th>Edit</th>
-              <th>Delete</th>
+              <th>Action</th>
             </tr>
           </thead>
           <!-- <tfoot>
@@ -59,17 +58,26 @@
               <td>
                 <?php echo $d->click ?>
               </td>
-              <td class="text-center">
-                <form action="<?php echo base_url('member_system/article_form') ?>" method="post">
-                  <input type="hidden" name="id_article" value="<?php echo $d->id_article ?>">
-                  <button class="btn btn-info btn-sm btn-edit" type="submit" data-original-title="Ubah" data-placement="left" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
-                </form>
-              </td>
-              <td class="text-center">
-                <form action="<?php echo base_url('member_system/article_delete') ?>" method="post">
-                  <input type="hidden" name="id_article" value="<?php echo $d->id_article ?>">
-                  <button class="btn btn-danger btn-sm btn-delete" type="submit" data-original-title="Hapus" data-placement="left" data-toggle="tooltip"><i class="fa fa-trash-alt"></i></button>
-                </form>
+              <td>
+                <input type="text" class="d-none" id="url_<?php echo $d->name; ?>" value="<?php echo base_url('blog/'.$d->name); ?>">
+
+                <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Action
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item" onclick="copy('<?php echo $d->name; ?>')" id="cp_<?php echo $d->name; ?>" ><i class="far fa-copy"></i> Copy</button>
+                  <a href="https://wa.me?text=<?php echo base_url('blog/'.$d->name) ?>" class="dropdown-item" target="_blank"><i class="fab fa-whatsapp"></i> Share</a>
+                  <a href="<?php echo base_url('blog/'.$d->name) ?>" class="dropdown-item" target="_blank"><i class="fa fa-external-link-alt"></i> Open</a>
+                  <div class="dropdown-divider"></div>
+                  <form action="<?php echo base_url('member_system/article_form') ?>" method="post">
+                    <input type="hidden" name="id_article" value="<?php echo $d->id_article ?>">
+                    <button class="dropdown-item" type="submit"><i class="fa fa-edit"></i> Edit</button>
+                  </form>
+                  <form action="<?php echo base_url('member_system/article_delete') ?>" method="post">
+                    <input type="hidden" name="id_article" value="<?php echo $d->id_article ?>">
+                    <button class="dropdown-item" type="submit"><i class="fa fa-trash-alt"></i> Delete</button>
+                  </form>
+                </div>
               </td>
             </tr>
             <?php } ?>
@@ -81,3 +89,6 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<!-- WARNING Custom scripts for Index pages-->
+<script src="<?php echo base_url('assets/frontend/js/page/article.js') ?>"></script>

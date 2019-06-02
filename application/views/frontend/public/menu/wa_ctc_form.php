@@ -21,7 +21,8 @@
         <div class="form-group">
           <label class="col-md-4 col-xs-12 control-label">No Whatsapp</label>
           <div class="col-md-5 col-xs-12">
-            <input type="number" name="no_wa" class="form-control" value="" placeholder="Masukkan Nomor Tanpa Tanda '+' / '-' ">
+            <input type="number" name="no_wa" class="form-control" value="" placeholder="">
+            Masukkan Nomor Dengan Kode Negara dan Tanpa Tanda '+' / '-'. Cth: 6281234567890
           </div>
         </div>
         <div class="form-group">

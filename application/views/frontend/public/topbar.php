@@ -29,7 +29,7 @@
 <!-- End of Topbar -->
 <?php if($app_alert){ ?>
   <?php foreach ($app_alert as $alert) { ?>
-    <div class="alert <?php echo $alert->style ?> m-3" role="alert">
+    <div class="alert <?php echo $alert->style ?> mr-3 ml-3 mb-1" role="alert">
       <?php echo $alert->konten ?>
     </div>
   <?php } ?>
