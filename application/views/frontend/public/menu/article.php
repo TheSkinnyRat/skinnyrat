@@ -58,9 +58,8 @@
               <td>
                 <?php echo $d->click ?>
               </td>
+              <input type="text" class="d-none" id="url_<?php echo $d->name; ?>" value="<?php echo base_url('blog/'.$d->name); ?>">
               <td>
-                <input type="text" class="d-none" id="url_<?php echo $d->name; ?>" value="<?php echo base_url('blog/'.$d->name); ?>">
-
                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Action
                 </button>

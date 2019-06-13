@@ -363,6 +363,69 @@ class Home extends PX_Controller {
 		$this->returnJson(array('status' => 'ok','msg' => 'Redirecting...', 'redirect' => $redirect));
 	}
 
+	function wa_cws(){
+		$data = $this->get_app_settings();
+		$data['data'] = null;
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_robot()){
+			$agent = $this->agent->robot();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Unidentified User Agent';
+		}
+		$data_agent = array(
+			'id_log_user_agent' => '0',
+			'ket' => 'Akses WA CWS',
+			'date' => date('Y-m-d H:i:s'),
+			'agent' => $agent,
+			'platform' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address(),
+			'agent_string' => $this->agent->agent_string()
+		);
+		$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
+
+		if($this->session->userdata('member') == TRUE){
+			$data['userdata'] = $this->session_member;
+			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		}else{
+			$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		}
+		$data['content'] = $this->load->view('frontend/public/menu/wa_cws_form',$data,true);
+		$this->load->view('frontend/index',$data);
+	}
+
+	function wa_cws_go(){
+		$no_wa = $this->input->post('no_wa');
+		$link = "https://wa.me/".$no_wa;
+
+		if ($this->agent->is_browser()){
+			$agent = $this->agent->browser().' '.$this->agent->version();
+		}elseif ($this->agent->is_robot()){
+			$agent = $this->agent->robot();
+		}elseif ($this->agent->is_mobile()){
+			$agent = $this->agent->mobile();
+		}else{
+			$agent = 'Unidentified User Agent';
+		}
+		$data_agent = array(
+			'id_log_user_agent' => '0',
+			'ket' => 'Create WA CWS = '.$link,
+			'date' => date('Y-m-d H:i:s'),
+			'agent' => $agent,
+			'platform' => $this->agent->platform(),
+			'ip_address' => $this->input->ip_address(),
+			'agent_string' => $this->agent->agent_string()
+		);
+		$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
+
+		$redirect = $link;
+		$this->returnJson(array('status' => 'ok','msg' => 'Opening Whatsapp...', 'redirect' => $redirect));
+	}
+
 	function get_info(){
 		$data = $this->get_app_settings();
 		if ($this->agent->is_browser()){

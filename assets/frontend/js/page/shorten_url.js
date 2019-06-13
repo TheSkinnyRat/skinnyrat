@@ -1,6 +1,7 @@
 // <!-- WARNING START SCRIPT  -->
 function copy(name) {
   var url = document.getElementById("url_"+name);
+
   url.classList.remove('d-none');
 
   url.select();

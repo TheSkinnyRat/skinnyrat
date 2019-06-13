@@ -41,16 +41,24 @@
       <span>Create Article</span></a>
   </li>
   <li class="nav-item active">
-    <a class="nav-link" href="<?php echo base_url('home/wa_ctc') ?>">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu_wafeature" aria-expanded="true" aria-controls="menu_wafeature">
       <i class="fab fa-fw fa-whatsapp"></i>
-      <span>WA Clik To Chat</span></a>
+      <span>WA Feature</span>
+    </a>
+    <div id="menu_wafeature" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">WA Feature</h6>
+        <a class="collapse-item" href="<?php echo base_url('home/wa_ctc') ?>">WA Click To Chat</a>
+        <a class="collapse-item" href="<?php echo base_url('home/wa_cws') ?>">WA Chat Without Save</a>
+      </div>
+    </div>
   </li>
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseView" aria-expanded="true" aria-controls="collapseView">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu_view" aria-expanded="true" aria-controls="menu_view">
       <i class="fas fa-fw fa-eye"></i>
       <span>View</span>
     </a>
-    <div id="collapseView" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+    <div id="menu_view" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">View Page</h6>
         <a class="collapse-item" href="<?php echo base_url('home/shorten_url') ?>">View Short URL</a>

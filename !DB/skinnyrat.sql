@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Jun 2019 pada 05.23
+-- Generation Time: 14 Jun 2019 pada 01.17
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -64,13 +64,13 @@ CREATE TABLE `px_article` (
 --
 
 INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `date_created`, `id_member`, `click`) VALUES
-(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 61),
+(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 63),
 (26, 'rpl2', 'Rekayasa Perangkat Lunak 2 - XVII', 'Tentang RPL2', '<p style=\"text-align:center\"><span style=\"font-size:20px\">Foto - Foto</span></p>\n\n<hr />\n<ol>\n	<li>&nbsp;Foto Formal\n	<ul>\n		<li>Baju PDH - Foto Lama<br />\n		Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a><br />\n		Password : -<br />\n		&nbsp;</li>\n		<li>Baju Hitam - Foto Baru<br />\n		Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n		Password : -<br />\n		&nbsp;</li>\n	</ul>\n	</li>\n	<li>Foto Biasa\n	<ul>\n		<li>Semua Foto / Video<br />\n		Link : <a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a><br />\n		Password : -</li>\n	</ul>\n	</li>\n</ol>\n\n<hr />\n<p style=\"text-align:center\">Senang Bisa Bertemu Dengan Kalian<br />\nさようなら - Good Bye&nbsp;- Sampai Jumpa</p>\n\n<hr />\n<p><tt>Posted by <a href=\"http://instagram.com/the.skinny.rat\">R.</a>&nbsp;- 29 April 2019</tt></p>\n', '2019-04-29 19:54:35', 3, 23),
-(28, 'r_dnkg_abis', 'Maap', ':(', '<p style=\"text-align:center\"><strong>MAAP NI DANAKAGET NYA UDAH ABISS, WKWKWK..</strong></p>\n\n<hr />\n<p style=\"text-align:center\"><a href=\"https://data.whicdn.com/images/318273873/original.gif\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></p>\n', '2019-05-04 09:19:51', 1, 30),
+(28, 'r_dnkg_abis', 'Maap', ':(', '<p style=\"text-align:center\"><strong>MAAP NI DANAKAGET NYA UDAH ABISS, WKWKWK..</strong></p>\n\n<hr />\n<p style=\"text-align:center\"><a href=\"https://data.whicdn.com/images/318273873/original.gif\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></p>\n', '2019-05-04 09:19:51', 1, 32),
 (29, 'r_dnkg', 'JUM\'AT BERKAH', 'Pundi pundi rupiah di Jum\'at berkah', '<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=sjlzy3enr&amp;r=dcCoFq\">KLIK DISINI</a></span></strong></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/G3dFISzqWT8is/giphy.gif\" style=\"height:211px; width:300px\" /></a></span></strong></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 31&nbsp;Mei 2019</tt></code></p>\n', '2019-05-31 11:07:26', 1, 20),
 (30, 'r_get_user_agent', '!', '!', '<p style=\"text-align:center\"><span style=\"font-size:18px\">USER AGENT SENDED</span></p>\r\n', '2019-05-24 06:53:30', 1, 1),
-(31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_iwan\">https://sknr.tk/sg_foto_iwan</a></li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_psr\">https://sknr.tk/sg_foto_psr</a></li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : sharinggan<br />\nPassword : srgn</span></p>\n\n<hr />\n<p><code><tt>Posted By Sharing Gan - 28 Mei 2019</tt></code></p>\n', '2019-05-31 11:19:36', 4, 0),
-(33, 'r_', 'HAPPY EID MUBARAK', 'Selamat hari raya Idul Fitri 1440 H', '<p style=\"text-align:center\"><span style=\"font-size:16px\">Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum...<br />\nSELAMAT IDUL FITRI 1440&nbsp;H~</span></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/TdfyKrN7HGTIY/giphy.gif\" style=\"height:172px; width:300px\" /></a></span></strong></p>\n\n<p style=\"text-align:center\"><a href=\"http://google.com\"><strong><span style=\"font-size:16px\">CARI APA?</span></strong></a></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 2&nbsp;Juni&nbsp;2019</tt></code></p>\n', '2019-06-02 06:02:49', 1, 0);
+(31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_iwan\">https://sknr.tk/sg_foto_iwan</a></li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_psr\">https://sknr.tk/sg_foto_psr</a></li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : sharinggan<br />\nPassword : srgn</span></p>\n\n<hr />\n<p><code><tt>Posted By Sharing Gan - 28 Mei 2019</tt></code></p>\n', '2019-05-31 11:19:36', 4, 5),
+(33, 'r_', 'HAPPY EID MUBARAK', 'Selamat hari raya Idul Fitri 1440 H', '<p style=\"text-align:center\"><span style=\"font-size:16px\">Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum...<br />\nSELAMAT IDUL FITRI 1440&nbsp;H~</span></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/TdfyKrN7HGTIY/giphy.gif\" style=\"height:172px; width:300px\" /></a></span></strong></p>\n\n<p style=\"text-align:center\"><a href=\"https://link.dana.id/kaget?c=spkczvp2g&amp;r=dcCoFq\"><strong><span style=\"font-size:16px\">CARI APA?</span></strong></a></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 2&nbsp;Juni&nbsp;2019</tt></code></p>\n', '2019-06-04 18:29:00', 1, 21);
 
 -- --------------------------------------------------------
 
@@ -1551,7 +1551,92 @@ INSERT INTO `px_log_user_agent` (`id_log_user_agent`, `ket`, `date`, `agent`, `p
 (192, 'Akses WA CTC', '2019-06-01 08:29:27', 'Chrome 74.0.3729.157', 'Linux', '114.124.202.98', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
 (193, 'Akses Article = r_dnkg', '2019-06-01 18:57:37', 'Chrome 74.0.3729.157', 'Linux', '114.124.202.98', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
 (194, 'Akses Article = r_dnkg', '2019-06-01 18:57:38', 'Chrome 74.0.3729.157', 'Linux', '114.124.202.98', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
-(195, 'Akses WA CTC', '2019-06-02 02:53:23', 'Googlebot', 'Unknown Platform', '66.249.75.23', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+(195, 'Akses WA CTC', '2019-06-02 02:53:23', 'Googlebot', 'Unknown Platform', '66.249.75.23', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'),
+(208, 'Akses Short Link = sg_foto_iwan', '2019-06-02 19:35:51', 'Chrome 38.0.2125.102', 'Linux', '106.11.222.106', 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G9250 Build/LRX22C) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/3.0 Chrome/38.0.2125.102 Mobile Safari/537.36'),
+(209, 'Akses Short Link = sg_foto_pen', '2019-06-02 19:36:01', 'Mozilla 5.0', 'Linux', '106.11.223.50', 'Mozilla/5.0 (Linux; Android 6.0.1; SM-N9100 Build/LRX22C) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/13G35 UCBrowser/11.5.4.970 Mobile  Tx(TUnionSDK/0.1.15)'),
+(210, 'Akses Short Link = sg_foto', '2019-06-02 19:36:07', 'Mozilla 5.0', 'Linux', '106.11.222.126', 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Tx(Tx/6.2.0) WindVane/8.1.0 1242x2208'),
+(211, 'Akses Short Link = sg_foto_yusuf', '2019-06-02 19:36:11', 'Mozilla 5.0', 'Linux', '106.11.222.219', 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 Tx(Tx/6.7.2) WindVane/8.2.0 1242x2208'),
+(212, 'Akses Short Link = sg_foto_maul', '2019-06-02 19:36:26', 'Chrome 53.0.2785.49', 'Linux', '106.11.223.49', 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00M Build/HonorChe2-TL00M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043128 Safari/537.36 MicroMessenger/6.3.31.940 NetType/WIFI Language/zh_CN'),
+(213, 'Akses Short Link = sg_foto_edo', '2019-06-02 19:36:27', 'Chrome 58.0.3029.83', 'Linux', '106.11.223.27', 'Mozilla/5.0 (Linux; Android 7.0; BLN-AL20 Build/HONORBLN-AL20; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/58.0.3029.83 Mobile Safari/537.36 Tx(LX/8.2.2) AliTrip/8.2.2'),
+(214, 'Akses Short Link = rpl2_fotoformallama', '2019-06-02 19:36:29', 'Safari 534.30', 'Linux', '106.11.222.198', 'Mozilla/5.0 (Linux; U; Android 7.0; zh-cn; HUAWEI NXT-CL00 Build/HUAWEINXT-CL00) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/1.0.0.100 U3/0.8.0 Mobile Safari/534.30 AliApp(TB/6.7.0) WindVane/8.0.0 1080X1812 GCanvas/1.4.2.21'),
+(215, 'Akses Short Link = r_', '2019-06-02 22:19:47', 'Chrome 74.0.3729.157', 'Linux', '114.124.236.1', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(216, 'Akses Article = r_', '2019-06-02 22:19:48', 'Chrome 74.0.3729.157', 'Linux', '114.124.236.1', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(217, 'Akses Short Link = rpl2_fotoformal', '2019-06-03 14:06:38', 'Mozilla 5.0', 'Linux', '106.11.223.21', 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Tx(Tx/6.2.0) WindVane/8.1.0 1242x2208'),
+(218, 'Akses Short Link = sg_foto_aduy', '2019-06-03 14:06:48', 'Mozilla 5.0', 'Linux', '106.11.223.6', 'Mozilla/5.0 (Linux; Android 6.0.1; SM-N9100 Build/LRX22C  ) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E238 Tx(CUNTAO/5.3.2) WindVane/8.1.0 1242x2208'),
+(219, 'Akses Article = r_', '2019-06-04 18:31:11', 'Chrome 74.0.3729.157', 'Linux', '182.0.238.194', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(220, 'Akses Short Link = r_', '2019-06-04 20:01:35', 'Chrome 66.0.3359.158', 'Linux', '114.124.236.255', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(221, 'Akses Article = r_', '2019-06-04 20:01:35', 'Chrome 66.0.3359.158', 'Linux', '114.124.236.255', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(222, 'Akses Short Link = r_', '2019-06-04 20:01:36', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(223, 'Akses Article = r_', '2019-06-04 20:01:37', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(224, 'Akses Short Link = r_', '2019-06-04 20:01:42', 'Chrome 51.0.2074.204', 'Linux', '114.124.244.71', 'Mozilla/5.0 (Linux; Android 6.0; MEIZU_M5 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2074.204 Mobile Safari/537.36'),
+(225, 'Akses Article = r_', '2019-06-04 20:01:43', 'Chrome 51.0.2074.204', 'Linux', '114.124.244.71', 'Mozilla/5.0 (Linux; Android 6.0; MEIZU_M5 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2074.204 Mobile Safari/537.36'),
+(226, 'Akses Short Link = r_', '2019-06-04 20:01:50', 'Unidentified User Agent', 'Unknown Platform', '115.178.223.60', ''),
+(227, 'Akses Article = r_', '2019-06-04 20:01:52', 'Chrome 57.0.2987.108', 'Linux', '115.178.223.60', 'Mozilla/5.0 (Linux; U; Android 7.0; en-US; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.0.1109 Mobile Safari/537.36'),
+(228, 'Akses Short Link = r_', '2019-06-04 20:02:46', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(229, 'Akses Article = r_', '2019-06-04 20:02:47', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(230, 'Akses Short Link = r_', '2019-06-04 20:13:09', 'Chrome 74.0.3729.157', 'Linux', '182.0.144.116', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(231, 'Akses Article = r_', '2019-06-04 20:13:10', 'Chrome 74.0.3729.157', 'Linux', '182.0.144.116', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(232, 'Akses Short Link = r_', '2019-06-04 20:23:29', 'Chrome 74.0.3729.157', 'Linux', '182.0.238.194', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(233, 'Akses Article = r_', '2019-06-04 20:23:30', 'Chrome 74.0.3729.157', 'Linux', '182.0.238.194', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(234, 'Akses Short Link = r_', '2019-06-04 20:35:18', 'Chrome 68.0.3440.91', 'Linux', '182.0.138.38', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(235, 'Akses Article = r_', '2019-06-04 20:35:19', 'Chrome 68.0.3440.91', 'Linux', '182.0.138.38', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(236, 'Akses Short Link = r_', '2019-06-04 20:35:45', 'Chrome 68.0.3440.91', 'Linux', '182.0.138.38', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(237, 'Akses Article = r_', '2019-06-04 20:35:46', 'Chrome 68.0.3440.91', 'Linux', '182.0.138.38', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(238, 'Akses Article = r_', '2019-06-04 20:50:28', 'Chrome 68.0.3440.91', 'Linux', '182.0.149.57', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(239, 'Akses Article = r_', '2019-06-04 20:52:52', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(240, 'Akses WA CTC', '2019-06-04 20:53:33', 'Chrome 74.0.3729.157', 'Linux', '114.124.167.161', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(241, 'Akses Short Link = r_', '2019-06-05 01:08:14', 'Chrome 67.0.3396.87', 'Linux', '115.178.207.73', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(242, 'Akses Article = r_', '2019-06-05 01:08:14', 'Chrome 67.0.3396.87', 'Linux', '115.178.207.73', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(243, 'Akses Article = r_', '2019-06-05 01:15:47', 'Chrome 67.0.3396.87', 'Linux', '115.178.207.73', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(244, 'Akses WA CTC', '2019-06-05 01:16:04', 'Chrome 67.0.3396.87', 'Linux', '115.178.207.73', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(245, 'Akses WA CTC', '2019-06-05 04:10:12', 'Chrome 67.0.3396.87', 'Linux', '114.124.170.188', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(246, 'Akses Short Link = r_', '2019-06-05 04:43:02', 'Chrome 61.0.3163.128', 'Linux', '103.119.50.20', 'Mozilla/5.0 (Linux; U; Android 7.1.2; en-gb; Redmi 4A Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.7.2-g'),
+(247, 'Akses Article = r_', '2019-06-05 04:43:04', 'Chrome 61.0.3163.128', 'Linux', '103.119.50.20', 'Mozilla/5.0 (Linux; U; Android 7.1.2; en-gb; Redmi 4A Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.7.2-g'),
+(248, 'Akses Article = r_', '2019-06-05 05:14:36', 'Chrome 66.0.3359.158', 'Linux', '114.124.237.95', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(249, 'Akses Short Link = r_', '2019-06-05 08:30:06', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(250, 'Akses Article = r_', '2019-06-05 08:30:07', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(251, 'Akses Short Link = r', '2019-06-05 08:30:10', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(252, 'Akses Article = r_', '2019-06-05 08:30:13', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(253, 'Akses Short Link = r__', '2019-06-05 08:34:33', 'Unidentified User Agent', 'Unknown Platform', '182.1.77.37', 'WhatsApp/2.19.150 A'),
+(254, 'Akses Short Link = r__', '2019-06-05 08:35:09', 'Chrome 61.0.3163.128', 'Linux', '116.206.8.16', 'Mozilla/5.0 (Linux; U; Android 7.1.2; id-id; Redmi 4A Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.7.2-g'),
+(255, 'Akses Short Link = r__', '2019-06-05 08:35:09', 'Chrome 67.0.3396.87', 'Linux', '114.124.239.166', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(256, 'Akses WA CTC', '2019-06-05 08:35:11', 'Chrome 67.0.3396.87', 'Linux', '114.124.239.166', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(257, 'Akses Short Link = r__', '2019-06-05 08:35:29', 'Chrome 51.0.2074.204', 'Linux', '114.124.139.61', 'Mozilla/5.0 (Linux; Android 6.0; MEIZU_M5 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2074.204 Mobile Safari/537.36'),
+(258, 'Akses Short Link = r', '2019-06-05 08:38:52', 'Unidentified User Agent', 'Unknown Platform', '182.1.77.37', 'WhatsApp/2.19.150 A'),
+(259, 'Akses Short Link = r', '2019-06-05 08:40:44', 'Chrome 51.0.2074.204', 'Linux', '114.124.150.28', 'Mozilla/5.0 (Linux; Android 6.0; MEIZU_M5 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2074.204 Mobile Safari/537.36'),
+(260, 'Akses Short Link = r__', '2019-06-05 08:41:30', 'Chrome 66.0.3359.158', 'Linux', '114.124.232.111', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(261, 'Akses Short Link = r', '2019-06-05 08:41:31', 'Chrome 51.0.2074.204', 'Linux', '114.124.150.28', 'Mozilla/5.0 (Linux; Android 6.0; MEIZU_M5 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2074.204 Mobile Safari/537.36'),
+(262, 'Akses Article = r_', '2019-06-05 08:41:31', 'Chrome 66.0.3359.158', 'Linux', '114.124.232.111', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(263, 'Akses Short Link = r', '2019-06-05 08:41:56', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(264, 'Akses Article = r_dnkg_abis', '2019-06-05 08:41:56', 'Chrome 74.0.3729.157', 'Linux', '182.1.77.37', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(265, 'Akses Article = r_dnkg_abis', '2019-06-05 08:42:53', 'Chrome 74.0.3729.157', 'Linux', '182.1.66.175', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(266, 'Akses Short Link = r__', '2019-06-05 08:43:53', 'Chrome 74.0.3729.157', 'Linux', '182.0.144.41', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(267, 'Akses Short Link = r__', '2019-06-05 08:43:56', 'Chrome 74.0.3729.157', 'Linux', '114.124.139.190', 'Mozilla/5.0 (Linux; Android 6.0.1; LG-K220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(268, 'Akses Short Link = r__', '2019-06-05 08:45:52', 'Chrome 61.0.3163.128', 'Linux', '140.213.24.60', 'Mozilla/5.0 (Linux; U; Android 8.1.0; id-id; Redmi 6A Build/O11019) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.7.2-g'),
+(269, 'Akses Short Link = r__', '2019-06-05 08:52:05', 'Chrome 68.0.3440.91', 'Linux', '114.124.149.47', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(270, 'Akses Short Link = r__', '2019-06-05 09:02:54', 'Chrome 74.0.3729.157', 'Linux', '116.206.8.49', 'Mozilla/5.0 (Linux; Android 8.1.0; ASUS_X00ID) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(271, 'Akses Short Link = r__', '2019-06-05 09:09:14', 'Chrome 66.0.3359.158', 'Linux', '114.124.201.78', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(272, 'Akses Article = r_', '2019-06-05 09:09:15', 'Chrome 66.0.3359.158', 'Linux', '114.124.201.78', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(273, 'Akses Short Link = r__', '2019-06-05 09:11:08', 'Chrome 57.0.2987.108', 'Linux', '115.178.222.116', 'Mozilla/5.0 (Linux; U; Android 7.0; en-US; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.0.1109 Mobile Safari/537.36'),
+(274, 'Akses Short Link = r__', '2019-06-05 09:17:42', 'Chrome 68.0.3440.91', 'Linux', '114.124.181.159', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(275, 'Akses Article = r_', '2019-06-05 17:36:26', 'Chrome 66.0.3359.158', 'Linux', '182.0.139.120', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.158 Mobile Safari/537.36'),
+(276, 'Akses Short Link = foto_rpl2', '2019-06-10 07:44:38', 'Chrome 75.0.3770.80', 'Unknown Windows OS', '182.0.165.59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36'),
+(277, 'Akses Short Link = rpl2_foto', '2019-06-10 07:44:39', 'Chrome 75.0.3770.80', 'Unknown Windows OS', '182.0.165.59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36'),
+(278, 'Akses Article = test', '2019-06-10 15:16:04', 'Unidentified User Agent', 'Unknown Platform', '182.0.143.160', 'WhatsApp/2.19.159 A'),
+(279, 'Akses Short Link = sg', '2019-06-11 05:53:02', 'Chrome 67.0.3396.87', 'Linux', '182.0.141.102', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(280, 'Akses Article = sharinggan', '2019-06-11 05:53:04', 'Chrome 67.0.3396.87', 'Linux', '182.0.150.247', 'Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-J610F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36'),
+(281, 'Akses Short Link = sg', '2019-06-11 05:54:37', 'Chrome 74.0.3729.157', 'Linux', '182.0.147.59', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(282, 'Akses Article = sharinggan', '2019-06-11 05:54:38', 'Chrome 74.0.3729.157', 'Linux', '182.0.147.59', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'),
+(283, 'Akses Short Link = sg', '2019-06-11 06:06:27', 'Chrome 68.0.3440.91', 'Linux', '182.0.210.217', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(284, 'Akses Article = sharinggan', '2019-06-11 06:06:28', 'Chrome 68.0.3440.91', 'Linux', '182.0.210.217', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(285, 'Akses Short Link = sg_foto_pen', '2019-06-11 06:06:43', 'Chrome 68.0.3440.91', 'Linux', '182.0.210.217', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(286, 'Akses Short Link = sg', '2019-06-11 07:12:17', 'Chrome 68.0.3440.91', 'Linux', '182.0.209.8', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(287, 'Akses Article = sharinggan', '2019-06-11 07:12:18', 'Chrome 68.0.3440.91', 'Linux', '182.0.209.8', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(288, 'Akses Short Link = rpl2_fotoformal', '2019-06-11 07:12:50', 'Chrome 68.0.3440.91', 'Linux', '182.0.209.8', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(289, 'Akses Article = sharinggan', '2019-06-11 13:00:06', 'Chrome 68.0.3440.91', 'Linux', '182.0.231.246', 'Mozilla/5.0 (Linux; Android 7.0; ASUS_X008DA Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.91 Mobile Safari/537.36'),
+(290, 'Akses WA CTC', '2019-06-13 07:33:08', 'Googlebot', 'Linux', '66.249.75.155', 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'),
+(291, 'Akses WA CTC', '2019-06-13 14:57:55', 'Chrome 75.0.3770.80', 'Unknown Windows OS', '182.0.247.153', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36'),
+(292, 'Akses WA CTC', '2019-06-14 06:04:33', 'Chrome 74.0.3729.157', 'Linux', '114.124.145.85', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -1596,7 +1681,7 @@ CREATE TABLE `px_shorten_url` (
 --
 
 INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `date_created`, `id_member`, `click`) VALUES
-(3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35', 0, 2),
+(3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35', 0, 3),
 (6, 'hngryrain', 'https://hngryrain.000webhostapp.com', '0', '2019-03-23 13:04:41', 0, 3),
 (11, 'villa_cuk', 'https://drive.google.com/open?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz', '0', '2019-04-04 08:20:57', 0, 0),
 (12, 'villa_cuk_azz', 'https://drive.google.com/uc?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz&amp;export=download', '0', '2019-04-04 08:34:41', 0, 4),
@@ -1613,23 +1698,25 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (34, 'r_tw', 'https://twitter.com/theskinnyrat', ' 0', '2019-04-22 17:47:20', 1, 2),
 (35, 'r_gh', 'https://github.com/theskinnyrat', ' 0', '2019-04-22 17:47:52', 1, 1),
 (37, 'article', 'https://sknr.tk/home/article_form', '0', '2019-04-28 09:52:30', 0, 5),
-(38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 9),
-(39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 12),
-(40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 13),
+(38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 10),
+(39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 14),
+(40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 14),
 (42, 'jb', 'https://sknr.tk/blog/r_dnkg', ' 0', '2019-05-31 11:06:10', 1, 14),
 (43, 'numpang', 'https://drive.google.com/file/d/1BHl8gy1z533Aznt1VDaR3KSz2GMX0rIO/view?usp=drivesdk', '0', '2019-05-18 13:30:07', 0, 2),
 (44, 'r_getuseragent', 'https://sknr.tk/blog/r_get_user_agent', ' 0', '2019-05-24 06:52:46', 1, 0),
-(46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-29 21:39:42', 4, 8),
-(47, 'sg_foto', 'https://photos.app.goo.gl/DRDHX8eTrkFeXdSJ8', ' 0', '2019-05-29 21:23:06', 4, 2),
-(48, 'sg_foto_iwan', 'https://photos.app.goo.gl/HZfzsNxdxcwiAq1h6', ' 0', '2019-05-29 21:23:16', 4, 1),
-(49, 'sg_foto_maul', 'https://photos.app.goo.gl/S7RiZKAYtrRq84J47', ' 0', '2019-05-29 21:23:24', 4, 1),
-(50, 'sg_foto_aduy', 'https://photos.app.goo.gl/inJW9TQUjexayj1v5', ' 0', '2019-05-29 21:23:31', 4, 1),
+(46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-29 21:39:42', 4, 12),
+(47, 'sg_foto', 'https://photos.app.goo.gl/DRDHX8eTrkFeXdSJ8', ' 0', '2019-05-29 21:23:06', 4, 3),
+(48, 'sg_foto_iwan', 'https://photos.app.goo.gl/HZfzsNxdxcwiAq1h6', ' 0', '2019-05-29 21:23:16', 4, 2),
+(49, 'sg_foto_maul', 'https://photos.app.goo.gl/S7RiZKAYtrRq84J47', ' 0', '2019-05-29 21:23:24', 4, 2),
+(50, 'sg_foto_aduy', 'https://photos.app.goo.gl/inJW9TQUjexayj1v5', ' 0', '2019-05-29 21:23:31', 4, 2),
 (51, 'sg_foto_rio', 'https://photos.app.goo.gl/JLwPU61TkctjmFyk8', ' 0', '2019-05-29 21:23:39', 4, 1),
-(52, 'sg_foto_yusuf', 'https://photos.app.goo.gl/aZ5U6fmtstcPwQwB9', ' 0', '2019-05-29 21:23:50', 4, 1),
-(53, 'sg_foto_pen', 'https://photos.app.goo.gl/yQxFWrXi6tWHmsH26', ' 0', '2019-05-29 21:23:57', 4, 1),
-(54, 'sg_foto_edo', 'https://photos.app.goo.gl/aa6ULN17nY3k9ax66', ' 0', '2019-05-29 21:24:05', 4, 2),
+(52, 'sg_foto_yusuf', 'https://photos.app.goo.gl/aZ5U6fmtstcPwQwB9', ' 0', '2019-05-29 21:23:50', 4, 2),
+(53, 'sg_foto_pen', 'https://photos.app.goo.gl/yQxFWrXi6tWHmsH26', ' 0', '2019-05-29 21:23:57', 4, 3),
+(54, 'sg_foto_edo', 'https://photos.app.goo.gl/aa6ULN17nY3k9ax66', ' 0', '2019-05-29 21:24:05', 4, 3),
 (55, 'sg_foto_psr', 'https://photos.app.goo.gl/6gYeuiqVcqMKr9e87', ' 0', '2019-05-29 21:39:27', 4, 1),
-(56, 'r_', 'https://sknr.tk/blog/r_', ' 0', '2019-06-02 06:18:39', 1, 0);
+(56, 'r_', 'https://sknr.tk/blog/r_', ' 0', '2019-06-02 06:18:39', 1, 13),
+(57, 'r', 'https://sknr.tk/blog/r_dnkg_abis', ' 0', '2019-06-05 08:41:13', 1, 1),
+(58, 'r__', 'https://link.dana.id/kaget?c=scv7e6z43&r=dcCoFq', ' 0', '2019-06-05 08:33:32', 1, 13);
 
 -- --------------------------------------------------------
 
@@ -1651,11 +1738,11 @@ CREATE TABLE `px_web_alert` (
 INSERT INTO `px_web_alert` (`id`, `style`, `konten`, `status`) VALUES
 (3, 'alert-danger', 'Website Sedang Dalam Pengembangan - Harap Untuk Tidak Melakukan Proses Create / Update / Delete', 0),
 (4, 'alert-danger', 'WEB DOWN', 0),
-(5, 'alert-warning', 'Website Sedang Dalam Pengembangan ^^', 0),
+(5, 'alert-warning', '<i class=\"fas fa-exclamation-circle\"></i> Website Sedang Dalam Pengembangan ^^ - Akan Terjadi Sinkronisasi Data', 1),
 (6, 'alert-info', 'Ayo coba hack / temukan bug di web ini ! ^^', 0),
 (7, 'alert-primary', '<i class=\"far fa-plus-square fa-spin\"></i> New Feature - <a href=\"https://sknr.tk/home/wa_ctc\" class=\"alert-link\">Whatsapp Click to Chat</a>', 0),
-(8, 'alert-info', '<i class=\"fas fa-sync-alt fa-spin\"></i> Ver 2.2.3 Released - <a href=\"https://sknr.tk/home/change_log\" class=\"alert-link\">Read Change Log</a>', 1),
-(9, 'alert-primary', '<i class=\"far fa-plus-square fa-spin\"></i> New Feature - <a href=\"https://sknr.tk/home/wa_ctc\" class=\"alert-link\">Whatsapp Click to Chat</a>', 1);
+(8, 'alert-info', '<i class=\"fas fa-sync-alt fa-spin\"></i> Ver 2.2.3 Released - <a href=\"https://sknr.tk/home/change_log\" class=\"alert-link\">Read Change Log</a>', 0),
+(9, 'alert-primary', '<i class=\"far fa-plus-square fa-spin\"></i> New Feature - <a href=\"https://sknr.tk/home/wa_ctc\" class=\"alert-link\">Whatsapp Click to Chat</a>', 0);
 
 -- --------------------------------------------------------
 
@@ -1769,7 +1856,7 @@ ALTER TABLE `px_icons`
 -- AUTO_INCREMENT for table `px_log_user_agent`
 --
 ALTER TABLE `px_log_user_agent`
-  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
+  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=293;
 
 --
 -- AUTO_INCREMENT for table `px_member`
@@ -1781,7 +1868,7 @@ ALTER TABLE `px_member`
 -- AUTO_INCREMENT for table `px_shorten_url`
 --
 ALTER TABLE `px_shorten_url`
-  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_shorten_url` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `px_web_alert`
