@@ -42,4 +42,5 @@
       <?php echo $alert->konten ?>
     </div>
   <?php } ?>
+  <hr>
 <?php } ?>

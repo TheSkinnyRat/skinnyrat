@@ -17,6 +17,9 @@ class PX_Model extends CI_Model {
     $this->tbl_web_setting = $this->tbl_prefix.'web_setting';
     $this->tbl_web_alert = $this->tbl_prefix.'web_alert';
 		$this->tbl_change_log = $this->tbl_prefix.'change_log';
+    $this->tbl_menu = $this->tbl_prefix.'menu';
+    $this->tbl_usergroup = $this->tbl_prefix.'usergroup';
+    $this->tbl_useraccess = $this->tbl_prefix.'useraccess';
 
     }
 }

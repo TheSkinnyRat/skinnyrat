@@ -19,9 +19,15 @@ class PX_Controller extends CI_Controller {
 		$this->tbl_web_setting = $this->tbl_prefix.'web_setting';
 		$this->tbl_web_alert = $this->tbl_prefix.'web_alert';
 		$this->tbl_change_log = $this->tbl_prefix.'change_log';
+		$this->tbl_menu = $this->tbl_prefix.'menu';
+		$this->tbl_usergroup = $this->tbl_prefix.'usergroup';
+		$this->tbl_useraccess = $this->tbl_prefix.'useraccess';
 
 		// MODELS
 		$this->load->model('model_basic');
+		$this->load->model('model_menu');
+		$this->load->model('model_useraccess');
+		$this->load->model('model_usergroup');
 
 		// sessions
 		if($this->session->userdata('admin') != FALSE)
@@ -125,28 +131,65 @@ class PX_Controller extends CI_Controller {
 				if($access->act_read == 1)
 					return TRUE;
 				else
-					redirect('admin');
+					redirect('admin/error_403');
 				break;
 			case 2:
 				if($access->act_create == 1)
 					return TRUE;
 				else
-					redirect('admin');
+					redirect('admin/error_403');
 				break;
 			case 3:
 				if($access->act_update == 1)
 					return TRUE;
 				else
-					redirect('admin');
+					redirect('admin/error_403');
 				break;
 			case 4:
 				if($access->act_delete == 1)
 					return TRUE;
 				else
-					redirect('admin');
+					redirect('admin/error_403');
 				break;
 		}
 	}
+
+	function check_userakses_return_json($menu_id, $function, $user = 'admin')
+	{
+		if($user == 'admin')
+			$group_id = $this->session_admin['id_usergroup'];
+		if($user == 'member')
+			$group_id = $this->session->userdata['member']['group_id'];
+		$access = $this->model_useraccess->get_useraccess($group_id, $menu_id);
+		switch ($function)
+		{
+			case 1:
+				if($access->act_read == 1)
+					return TRUE;
+				else
+					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
+				break;
+			case 2:
+				if($access->act_create == 1)
+					return TRUE;
+				else
+					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
+				break;
+			case 3:
+				if($access->act_update == 1)
+					return TRUE;
+				else
+					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
+				break;
+			case 4:
+				if($access->act_delete == 1)
+					return TRUE;
+				else
+					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
+				break;
+		}
+	}
+
 	function delete_temp($folder){
 		if($this->session->userdata($folder) != FALSE){
 			$temp_folder = $this->session->userdata($folder);

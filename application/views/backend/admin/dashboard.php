@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Dashboard</h1>
+    <h1 class="page-header"><?php echo $function_name ?></h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -98,4 +98,4 @@
 </div>
 
 <!-- WARNING CUSTOM SCRIPT FOR THIS PAGE -->
-<script src="<?php echo base_url('assets/backend/js/page/dashboard.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/js/page/'.$controller.'/'.$function.'.js') ?>"></script>

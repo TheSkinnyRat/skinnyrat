@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Form Data Admin</h1>
+		<h1 class="page-header"><?php echo $function_name; ?></h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -8,9 +8,9 @@
 <!-- START DEFAULT DATATABLE -->
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Form Data Admin</h3>
+		<h3 class="panel-title"><?php echo $function_name; ?></h3>
 	</div>
-	<form class="form-horizontal" method="POST" id="admin_form" action="<?php if($data!=null) echo base_url('admin_system/admin_update'); else echo base_url('admin_system/admin_add'); ?>">
+	<form class="form-horizontal" method="POST" id="<?php echo $function_form ?>" action="<?php if($data!=null) echo base_url($controller.'/'.$function_edit); else echo base_url($controller.'/'.$function_add); ?>">
 		<input type="hidden" name="id_admin" value="<?php if($data!=null) echo $data->id_admin; else echo '0'; ?>">
 		<div class="panel-body">
 			<div class="alert alert-success hidden"><strong>Berhasil! </strong><span></span></div>
@@ -42,6 +42,16 @@
 					<input type="text" name="name" class="form-control" value="<?php if($data!=null) echo $data->name; ?>">
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="col-md-4 col-xs-12 control-label">Hak Akses</label>
+				<div class="col-md-2 col-xs-12">
+					<select name="id_usergroup" class="form-control">
+						<?php foreach ($data_usergroup as $d_usergroup) { ?>
+							<option value="<?php echo $d_usergroup->id ?>" <?php if($data!=null && $data->id_usergroup == $d_usergroup->id) echo "selected"; ?>><?php echo $d_usergroup->usergroup_name ?></option>
+						<?php } ?>
+					</select>
+				</div>
+			</div>
 
 		</div>
 		<div class="panel-footer text-right">
@@ -52,4 +62,4 @@
 </div>
 
 <!-- WARNING CUSTOM SCRIPT FOR THIS PAGE -->
-<script src="<?php echo base_url('assets/backend/js/page/admin_form.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/js/page/'.$controller.'/'.$function_form.'.js') ?>"></script>

@@ -28,9 +28,13 @@
 </nav>
 <!-- End of Topbar -->
 <?php if($app_alert){ ?>
-  <?php foreach ($app_alert as $alert) { ?>
-    <div class="alert <?php echo $alert->style ?> mr-3 ml-3 mb-1" role="alert">
-      <?php echo $alert->konten ?>
-    </div>
-  <?php } ?>
+<?php foreach ($app_alert as $alert) { ?>
+<div class="alert <?php echo $alert->style ?> mr-3 ml-3 mb-1 alert-dismissible fade show" role="alert">
+  <?php echo $alert->konten ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<hr>
 <?php } ?>

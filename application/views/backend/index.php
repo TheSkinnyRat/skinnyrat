@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Selamat Datang di Backend <?php echo $app_title ?> Website ^^">
     <meta name="author" content="">
 
-    <title>Backend</title>
+    <title>Backend <?php echo $app_title ?></title>
 
-    <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/') ?>">
+    <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/'.$app_favicon) ?>">
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>assets/backend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,6 +36,9 @@
 
     <!-- jQuery -->
     <script src="<?php echo base_url() ?>assets/backend/vendor/jquery/jquery.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="<?php echo base_url() ?>assets/backend/vendor/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url() ?>assets/backend/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -117,69 +120,20 @@
                         <li>
                           <a href="<?php echo base_url() ?>"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
-                        <li>
-                          <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-user fa-fw"></i> Data Admin<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/admin') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Admin</a>
-                              </li>
-                              <li>
-                                <a href="<?php echo base_url('admin_system/admin_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Admin</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-users fa-fw"></i> Data Member<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/member') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Member</a>
-                              </li>
-                              <li>
-                                <a href="<?php echo base_url('admin_system/member_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Member</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-link fa-fw"></i> Data Shorten URL<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/shorten_url') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Shorten URL</a>
-                              </li>
-                              <li>
-                                <a href="<?php echo base_url('admin_system/shorten_url_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Shorten URL</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-pencil fa-fw"></i> Data Article<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/article') ?>"><i class="fa fa-eye fa-fw"></i> Lihat Data Article</a>
-                              </li>
-                              <li>
-                                <a href="<?php echo base_url('admin_system/article_form') ?>"><i class="fa fa-plus fa-fw"></i> Form Data Article</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="<?php echo base_url('admin_system/log_user_agent') ?>"><i class="fa fa-history fa-fw"></i> Log User Agent</a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-gears fa-fw"></i> Master Settings<span class="fa arrow"></span></a></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                <a href="<?php echo base_url('admin_system/web_setting') ?>"><i class="fa fa-gear fa-fw"></i> Web Setting</a>
-                                <a href="<?php echo base_url('admin_system/web_alert') ?>"><i class="fa fa-exclamation-triangle fa-fw"></i> Web Alert</a>
-                                <a href="<?php echo base_url('admin_system/change_log') ?>"><i class="fa fa-history fa-fw"></i> Change Log</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="<?php echo base_url('admin/do_logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                          <?php foreach ($menu as $m) { ?>
+                					<li>
+                            <a href="<?php echo base_url($m->target); ?>"><i class="fa <?php echo $m->icon; ?> fa-fw"></i> <?php echo $m->name; ?> <?php if(count($m->submenu)) { ?><span class="fa arrow"></span><?php } ?></a>
+                						<?php if(count($m->submenu)){ ?>
+                							<ul class="nav nav-second-level">
+                								<?php foreach ($m->submenu as $sm) { ?>
+                								<li>
+                                  <a href="<?php echo base_url($m->target.'/'.$sm->target); ?>"><i class="fa <?php echo $sm->icon; ?> fa-fw"></i> <?php echo $sm->name; ?></a>
+                								</li>
+                								<?php } ?>
+                							</ul>
+                						<?php } ?>
+                					</li>
+                					<?php } ?>
 
                     </ul>
                 </div>
@@ -189,6 +143,13 @@
         </nav>
 
         <div id="page-wrapper">
+          <!-- START BREADCRUMB -->
+          <!-- <ul class="breadcrumb clearfix">
+            <li><a href="admin">Home</a></li>
+            <li><a href="<?php echo $controller; ?>"><?php echo $controller_name; ?></a></li>
+            <li class="active"><?php echo $function_name; ?></li>
+          </ul> -->
+          <!-- END BREADCRUMB -->
             <?php echo $content ?>
         </div>
         <!-- /#page-wrapper -->

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Data Web Alert</h1>
+    <h1 class="page-header"><?php echo $function_name; ?></h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -10,8 +10,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="text-right">
-          <div class="pull-left panel-title">Data Web Alert</div>
-          <a class="btn btn-success btn-add" href="<?php echo base_url('admin_system/web_alert_form') ?>"><i class="fa fa-plus"></i> Tambah Data</a>
+          <div class="pull-left panel-title"><?php echo $function_name; ?></div>
+          <a class="btn btn-success btn-add" href="<?php echo base_url($controller.'/'.$function_form) ?>"><i class="fa fa-plus"></i> Tambah Data</a>
         </div>
       </div>
       <!-- /.panel-heading -->
@@ -43,13 +43,13 @@
                 <?php if($d1->status == '0' ) echo 'Sembunyikan'; else echo 'Tampilkan';?>
               </td>
               <td class="text-center">
-                <form action="<?php echo base_url('admin_system/web_alert_form') ?>" method="post">
+                <form action="<?php echo base_url($controller.'/'.$function_form) ?>" method="post">
                   <input type="hidden" name="id" value="<?php echo $d1->id ?>">
                   <button class="btn btn-info btn-xs btn-edit" type="submit" data-original-title="Ubah" data-placement="top" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
                 </form>
               </td>
               <td class="text-center">
-                <form action="<?php echo base_url('admin_system/web_alert_delete') ?>" method="post">
+                <form action="<?php echo base_url($controller.'/'.$function_delete) ?>" method="post">
                   <input type="hidden" name="id" value="<?php echo $d1->id ?>">
                   <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip"><i class="fa fa-trash-o"></i></button>
                 </form>
@@ -68,4 +68,4 @@
 </div>
 
 <!-- WARNING CUSTOM SCRIPT FOR THIS PAGE -->
-<script src="<?php echo base_url('assets/backend/js/page/web_alert.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/js/page/'.$controller.'/'.$function.'.js') ?>"></script>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">Data Log User Agent</h1>
+    <h1 class="page-header"><?php echo $function_name; ?></h1>
   </div>
   <!-- /.col-lg-12 -->
 </div>
@@ -10,8 +10,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <div class="text-right">
-          <div class="pull-left panel-title">Log User Agent</div>
-          <a class="btn btn-danger btn-add" href="<?php echo base_url('admin_system/log_user_agent_delete_all') ?>"><i class="fa fa-times"></i> Clear Data</a>
+          <div class="pull-left panel-title"><?php echo $function_name; ?></div>
+          <a class="btn btn-danger btn-add" href="<?php echo base_url($controller.'/log_user_agent_delete_all') ?>"><i class="fa fa-times"></i> Clear Data</a>
         </div>
       </div>
       <!-- /.panel-heading -->
@@ -54,7 +54,7 @@
                 <?php echo $d1->agent_string ?>
               </td>
               <td class="text-center">
-                <form action="<?php echo base_url('admin_system/log_user_agent_delete') ?>" method="post">
+                <form action="<?php echo base_url($controller.'/'.$function_delete) ?>" method="post">
                   <input type="hidden" name="id" value="<?php echo $d1->id_log_user_agent ?>">
                   <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip"><i class="fa fa-trash-o"></i></button>
                 </form>
@@ -73,4 +73,4 @@
 </div>
 
 <!-- WARNING CUSTOM SCRIPT FOR THIS PAGE -->
-<script src="<?php echo base_url('assets/backend/js/page/log_user_agent.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/js/page/'.$controller.'/'.$function.'.js') ?>"></script>

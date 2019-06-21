@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Member_system extends PX_Controller {
 	public function __construct() {
 			parent::__construct();
+			$this->check_login_member();
 		}
 
 	public function index(){
@@ -11,7 +12,6 @@ class Member_system extends PX_Controller {
 	}
 
 	function shorten_url(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 		$data['shorten_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_member',$data['userdata']['id_member'])->result();
@@ -23,7 +23,6 @@ class Member_system extends PX_Controller {
 	}
 
 	function shorten_url_form(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 		$id_shorten_url = $this->input->post('id_shorten_url');
@@ -43,7 +42,6 @@ class Member_system extends PX_Controller {
   }
 
 	function shorten_url_add(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$table_field = $this->db->list_fields($this->tbl_shorten_url);
 		$insert = array();
@@ -74,7 +72,6 @@ class Member_system extends PX_Controller {
   }
 
 	function shorten_url_update(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$table_field = $this->db->list_fields($this->tbl_shorten_url);
 		$update = array();
@@ -102,7 +99,6 @@ class Member_system extends PX_Controller {
   }
 
 	function shorten_url_delete(){
-    $this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$id_shorten_url = $this->input->post('id_shorten_url');
 		$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
@@ -117,7 +113,6 @@ class Member_system extends PX_Controller {
   }
 
 	function profile(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 
@@ -128,7 +123,6 @@ class Member_system extends PX_Controller {
 	}
 
 	function profile_form(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 		$id_member = $data['userdata']['id_member'];
@@ -141,7 +135,6 @@ class Member_system extends PX_Controller {
   }
 
 	function profile_update(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$check_password = $this->input->post('check_password');
 		$table_field = $this->db->list_fields($this->tbl_member);
@@ -173,7 +166,6 @@ class Member_system extends PX_Controller {
   }
 
 	function password_form(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 		$id_member = $data['userdata']['id_member'];
@@ -186,7 +178,6 @@ class Member_system extends PX_Controller {
   }
 
 	function password_update(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$id_member = $data['userdata']['id_member'];
 		$old_password = $this->input->post('old_password');
@@ -209,7 +200,6 @@ class Member_system extends PX_Controller {
   }
 
 	function member_delete(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 		$id_member = $data['userdata']['id_member'];
@@ -222,7 +212,6 @@ class Member_system extends PX_Controller {
   }
 
 	function member_delete_do(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$id_member = $data['userdata']['id_member'];
 		$password = $this->input->post('password');
@@ -242,7 +231,6 @@ class Member_system extends PX_Controller {
   }
 
 	function article(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 
@@ -254,7 +242,6 @@ class Member_system extends PX_Controller {
   }
 
 	function article_form(){
-		$this->check_login_member();
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 
@@ -274,7 +261,6 @@ class Member_system extends PX_Controller {
   }
 
 	function article_add(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 
 		$table_field = $this->db->list_fields($this->tbl_article);
@@ -304,7 +290,6 @@ class Member_system extends PX_Controller {
 	}
 
 	function article_update(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 
 		$table_field = $this->db->list_fields($this->tbl_article);
@@ -330,7 +315,6 @@ class Member_system extends PX_Controller {
   }
 
 	function article_delete(){
-		$this->check_login_member();
 		$data['userdata'] = $this->session_member;
 		$id_article = $this->input->post('id_article');
 		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
