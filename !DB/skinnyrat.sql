@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Jun 2019 pada 07.45
+-- Generation Time: 29 Jun 2019 pada 08.27
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `px_admin` (
   `id_admin` int(10) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_usergroup` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_admin`
@@ -52,14 +52,14 @@ INSERT INTO `px_admin` (`id_admin`, `username`, `password`, `name`, `id_usergrou
 
 CREATE TABLE `px_article` (
   `id_article` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `judul` text NOT NULL,
-  `subjudul` text NOT NULL,
-  `konten` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subjudul` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_created` datetime NOT NULL,
   `id_member` int(10) NOT NULL,
   `click` bigint(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_article`
@@ -84,12 +84,12 @@ INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `
 
 CREATE TABLE `px_article_comment` (
   `id` bigint(225) NOT NULL,
-  `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `comment` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
   `id_member` int(11) NOT NULL,
   `id_article` int(11) NOT NULL,
   `id_parent` bigint(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_article_comment`
@@ -109,7 +109,7 @@ CREATE TABLE `px_article_comment_dislike` (
   `id` bigint(225) NOT NULL,
   `id_article_comment` bigint(225) NOT NULL,
   `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -121,7 +121,7 @@ CREATE TABLE `px_article_comment_like` (
   `id` bigint(225) NOT NULL,
   `id_article_comment` bigint(225) NOT NULL,
   `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ CREATE TABLE `px_article_dislike` (
   `id` bigint(225) NOT NULL,
   `id_article` int(11) NOT NULL,
   `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -145,7 +145,7 @@ CREATE TABLE `px_article_like` (
   `id` bigint(225) NOT NULL,
   `id_article` int(11) NOT NULL,
   `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -155,11 +155,11 @@ CREATE TABLE `px_article_like` (
 
 CREATE TABLE `px_change_log` (
   `id` int(225) NOT NULL,
-  `judul` text NOT NULL,
-  `konten` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `judul` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `expand` int(1) NOT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_change_log`
@@ -190,8 +190,8 @@ INSERT INTO `px_change_log` (`id`, `judul`, `konten`, `expand`, `status`) VALUES
 
 CREATE TABLE `px_icons` (
   `id_icons` int(225) NOT NULL,
-  `icon` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `icon` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_icons`
@@ -1571,13 +1571,13 @@ INSERT INTO `px_icons` (`id_icons`, `icon`) VALUES
 
 CREATE TABLE `px_log_user_agent` (
   `id_log_user_agent` int(11) NOT NULL,
-  `ket` text NOT NULL,
+  `ket` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
-  `agent` text NOT NULL,
-  `platform` text NOT NULL,
-  `ip_address` text NOT NULL,
-  `agent_string` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `agent` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `platform` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `agent_string` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_log_user_agent`
@@ -1861,10 +1861,10 @@ INSERT INTO `px_log_user_agent` (`id_log_user_agent`, `ket`, `date`, `agent`, `p
 
 CREATE TABLE `px_member` (
   `id_member` int(10) NOT NULL,
-  `username` varchar(225) NOT NULL,
-  `password` varchar(225) NOT NULL,
-  `name` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `username` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_member`
@@ -1883,12 +1883,12 @@ INSERT INTO `px_member` (`id_member`, `username`, `password`, `name`) VALUES
 
 CREATE TABLE `px_menu` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(225) NOT NULL,
-  `target` varchar(225) NOT NULL,
+  `name` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `target` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_parent` int(11) NOT NULL,
-  `icon` varchar(225) NOT NULL,
+  `icon` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   `orders` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_menu`
@@ -1922,13 +1922,13 @@ INSERT INTO `px_menu` (`id`, `name`, `target`, `id_parent`, `icon`, `orders`) VA
 
 CREATE TABLE `px_shorten_url` (
   `id_shorten_url` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `link` text NOT NULL,
-  `password` text NOT NULL,
+  `name` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_created` datetime NOT NULL,
   `id_member` int(10) NOT NULL,
   `click` bigint(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_shorten_url`
@@ -1990,7 +1990,7 @@ CREATE TABLE `px_useraccess` (
   `act_read` int(11) NOT NULL,
   `act_update` int(11) NOT NULL,
   `act_delete` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_useraccess`
@@ -2043,8 +2043,8 @@ INSERT INTO `px_useraccess` (`id`, `id_usergroup`, `id_menu`, `act_create`, `act
 
 CREATE TABLE `px_usergroup` (
   `id` int(10) UNSIGNED NOT NULL,
-  `usergroup_name` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `usergroup_name` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_usergroup`
@@ -2062,10 +2062,10 @@ INSERT INTO `px_usergroup` (`id`, `usergroup_name`) VALUES
 
 CREATE TABLE `px_web_alert` (
   `id` int(225) NOT NULL,
-  `style` text NOT NULL,
-  `konten` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `style` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_web_alert`
@@ -2091,12 +2091,12 @@ INSERT INTO `px_web_alert` (`id`, `style`, `konten`, `status`) VALUES
 
 CREATE TABLE `px_web_setting` (
   `id` int(225) NOT NULL,
-  `title` text NOT NULL,
-  `name` text NOT NULL,
-  `version` text NOT NULL,
-  `icon` text NOT NULL,
-  `favicon` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `title` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `version` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `favicon` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_web_setting`
