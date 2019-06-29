@@ -22,6 +22,11 @@ class PX_Controller extends CI_Controller {
 		$this->tbl_menu = $this->tbl_prefix.'menu';
 		$this->tbl_usergroup = $this->tbl_prefix.'usergroup';
 		$this->tbl_useraccess = $this->tbl_prefix.'useraccess';
+		$this->tbl_article_like = $this->tbl_prefix.'article_like';
+		$this->tbl_article_dislike = $this->tbl_prefix.'article_dislike';
+		$this->tbl_article_comment = $this->tbl_prefix.'article_comment';
+		$this->tbl_article_comment_like = $this->tbl_prefix.'article_comment_like';
+		$this->tbl_article_comment_dislike = $this->tbl_prefix.'article_comment_dislike';
 
 		// MODELS
 		$this->load->model('model_basic');

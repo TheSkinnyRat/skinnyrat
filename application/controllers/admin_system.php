@@ -434,7 +434,15 @@ class Admin_system extends PX_Controller {
 		$this->check_userakses($data['function_id'], ACT_DELETE);
 
 		$id_article = $this->input->post('id_article');
+		$data_article_comment = $this->model_basic->select_where($this->tbl_article_comment,'id_article',$id_article)->result();
+		foreach ($data_article_comment as $d_article_comment) {
+			$do_delete_article_comment_like = $this->model_basic->delete($this->tbl_article_comment_like,'id_article_comment',$d_article_comment->id);
+			$do_delete_article_comment_dislike = $this->model_basic->delete($this->tbl_article_comment_dislike,'id_article_comment',$d_article_comment->id);
+		}
 		$do_delete = $this->model_basic->delete($this->tbl_article,'id_article',$id_article);
+		$do_delete_comment = $this->model_basic->delete($this->tbl_article_comment,'id_article',$id_article);
+		$do_delete_like = $this->model_basic->delete($this->tbl_article_like,'id_article',$id_article);
+		$do_delete_dislike = $this->model_basic->delete($this->tbl_article_dislike,'id_article',$id_article);
 		if($do_delete){
 			redirect('admin_system/article');
 		}

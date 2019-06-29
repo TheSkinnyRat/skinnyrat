@@ -78,6 +78,16 @@ class Model_basic extends CI_Model {
 		$data = $this->db->get();
 		return $data;
 	}
+	function select_where_join_1_order($table,$select,$column,$where,$table_join,$join1,$join2,$order_by, $order_type){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join, $join1.' = '.$join2);
+		$this->db->where($column,$where);
+		$this->db->order_by($order_by, $order_type);
+		$data = $this->db->get();
+		return $data;
+	}
 	function select_where_join_2($table,$select,$column,$where,$table_join1,$join1,$join2,$table_join2,$join3,$join4){
 		$this->load->database('default',TRUE);
 		$this->db->select($select);
@@ -102,6 +112,25 @@ class Model_basic extends CI_Model {
 		$this->db->select('*');
 		$this->db->from($table);
 		$this->db->where($where);
+		$data = $this->db->get();
+		return $data;
+	}
+	function select_where_array_join_1($table,$select,$where,$table_join,$join1,$join2){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join, $join1.' = '.$join2);
+		$this->db->where($where);
+		$data = $this->db->get();
+		return $data;
+	}
+	function select_where_array_join_1_order($table,$select,$where,$table_join,$join1,$join2,$order_by,$order_type){
+		$this->load->database('default',TRUE);
+		$this->db->select($select);
+		$this->db->from($table);
+		$this->db->join($table_join, $join1.' = '.$join2);
+		$this->db->where($where);
+		$this->db->order_by($order_by, $order_type);
 		$data = $this->db->get();
 		return $data;
 	}
@@ -151,6 +180,11 @@ class Model_basic extends CI_Model {
 	function delete($table,$column,$where){
 		$this->load->database('default',TRUE);
 		$this->db->where($column,$where);
+		return $this->db->delete($table);
+	}
+	function delete_array($table,$where){
+		$this->load->database('default',TRUE);
+		$this->db->where($where);
 		return $this->db->delete($table);
 	}
 	function delete_all($table){

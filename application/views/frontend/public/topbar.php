@@ -12,12 +12,12 @@
     <div class="topbar-divider d-none d-sm-block"></div>
 
     <!-- Nav Item - User Information -->
-    <a href="<?php echo base_url('member/register') ?>">
+    <a href="<?php if(isset($url_continue)) echo base_url('member/register?cn='.$url_continue); else echo base_url('member/register') ?>">
       <button class="btn btn-info mr-1" type="button">
         REGISTER
       </button>
     </a>
-    <a href="<?php echo base_url('member/login') ?>">
+    <a href="<?php if(isset($url_continue)) echo base_url('member/login?cn='.$url_continue); else echo base_url('member/login') ?>">
       <button class="btn btn-primary" type="button">
         LOGIN
       </button>

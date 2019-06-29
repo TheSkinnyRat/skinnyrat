@@ -317,9 +317,17 @@ class Member_system extends PX_Controller {
 	function article_delete(){
 		$data['userdata'] = $this->session_member;
 		$id_article = $this->input->post('id_article');
-		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
-		if ($data['data']->id_member == $data['userdata']['id_member']) {
+		$data_article = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		$data_article_comment = $this->model_basic->select_where($this->tbl_article_comment,'id_article',$id_article)->result();
+		if ($data_article->id_member == $data['userdata']['id_member']) {
+			foreach ($data_article_comment as $d_article_comment) {
+				$do_delete_article_comment_like = $this->model_basic->delete($this->tbl_article_comment_like,'id_article_comment',$d_article_comment->id);
+				$do_delete_article_comment_dislike = $this->model_basic->delete($this->tbl_article_comment_dislike,'id_article_comment',$d_article_comment->id);
+			}
 			$do_delete = $this->model_basic->delete($this->tbl_article,'id_article',$id_article);
+			$do_delete_comment = $this->model_basic->delete($this->tbl_article_comment,'id_article',$id_article);
+			$do_delete_like = $this->model_basic->delete($this->tbl_article_like,'id_article',$id_article);
+			$do_delete_dislike = $this->model_basic->delete($this->tbl_article_dislike,'id_article',$id_article);
 			if($do_delete){
 				redirect('member_system/article');
 			}
