@@ -67,6 +67,7 @@ class Blog_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = htmlspecialchars($this->input->post($field));
 		}
+		$insert['id'] = '0';
 		$insert['id_member'] = $data['userdata']['id_member'];
 
 		if($insert){
