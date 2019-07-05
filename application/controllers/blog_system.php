@@ -169,4 +169,100 @@ class Blog_system extends PX_Controller {
 		}
 	}
 
+	function article_like_show(){
+		$id = $this->input->get('id');
+		$id = $this->encrypt->decode($id);
+
+		if($id){
+			$data = $this->get_app_settings();
+			if($this->session->userdata('member') == TRUE){
+				$data['userdata'] = $this->session_member;
+				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+			}else{
+				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			}
+			$data['ref'] = $this->input->get('ref');
+			$data['header'] = 'Article Like';
+			$data['data'] = $this->model_basic->select_where_join($this->tbl_article_like,'*',$this->tbl_article_like.'.id_article',$id,$this->tbl_member,$this->tbl_article_like.'.id_member',$this->tbl_member.'.id_member')->result();
+			$data['content'] = $this->load->view('frontend/public/menu/like_dislike_show',$data,true);
+			$this->load->view('frontend/index',$data);
+		}else{
+			redirect(base_url('error/error_404'));
+		}
+  }
+
+	function article_dislike_show(){
+		$id = $this->input->get('id');
+		$id = $this->encrypt->decode($id);
+
+		if($id){
+			$data = $this->get_app_settings();
+			if($this->session->userdata('member') == TRUE){
+				$data['userdata'] = $this->session_member;
+				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+			}else{
+				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			}
+			$data['ref'] = $this->input->get('ref');
+			$data['header'] = 'Article Dislike';
+			$data['data'] = $this->model_basic->select_where_join($this->tbl_article_dislike,'*',$this->tbl_article_dislike.'.id_article',$id,$this->tbl_member,$this->tbl_article_dislike.'.id_member',$this->tbl_member.'.id_member')->result();
+			$data['content'] = $this->load->view('frontend/public/menu/like_dislike_show',$data,true);
+			$this->load->view('frontend/index',$data);
+		}else{
+			redirect(base_url('error/error_404'));
+		}
+  }
+
+	function comment_like_show(){
+		$id = $this->input->get('id');
+		$id = $this->encrypt->decode($id);
+
+		if($id){
+			$data = $this->get_app_settings();
+			if($this->session->userdata('member') == TRUE){
+				$data['userdata'] = $this->session_member;
+				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+			}else{
+				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			}
+			$data['ref'] = $this->input->get('ref');
+			$data['header'] = 'Comment Like';
+			$data['data'] = $this->model_basic->select_where_join($this->tbl_article_comment_like,'*',$this->tbl_article_comment_like.'.id_article_comment',$id,$this->tbl_member,$this->tbl_article_comment_like.'.id_member',$this->tbl_member.'.id_member')->result();
+			$data['content'] = $this->load->view('frontend/public/menu/like_dislike_show',$data,true);
+			$this->load->view('frontend/index',$data);
+		}else{
+			redirect(base_url('error/error_404'));
+		}
+  }
+
+	function comment_dislike_show(){
+		$id = $this->input->get('id');
+		$id = $this->encrypt->decode($id);
+
+		if($id){
+			$data = $this->get_app_settings();
+			if($this->session->userdata('member') == TRUE){
+				$data['userdata'] = $this->session_member;
+				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+			}else{
+				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			}
+			$data['ref'] = $this->input->get('ref');
+			$data['header'] = 'Comment Dislike';
+			$data['data'] = $this->model_basic->select_where_join($this->tbl_article_comment_dislike,'*',$this->tbl_article_comment_dislike.'.id_article_comment',$id,$this->tbl_member,$this->tbl_article_comment_dislike.'.id_member',$this->tbl_member.'.id_member')->result();
+			$data['content'] = $this->load->view('frontend/public/menu/like_dislike_show',$data,true);
+			$this->load->view('frontend/index',$data);
+		}else{
+			redirect(base_url('error/error_404'));
+		}
+  }
+
 }

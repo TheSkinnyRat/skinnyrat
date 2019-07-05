@@ -14,7 +14,7 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Login</h1>
                 </div>
-                <form class="user" id="login_form" method="post" action="<?php if($url_continue != NULL) echo base_url('member/do_login?cn='.urlencode($url_continue)); else echo base_url('member/do_login'); ?>">
+                <form class="user" id="login_form" method="post" action="<?php if($ref != NULL) echo base_url('member/do_login?ref='.urlencode($ref)); else echo base_url('member/do_login'); ?>">
                   <div class="alert alert-success d-none"><strong>Success! </strong><span></span></div>
                   <div class="alert alert-warning d-none"><strong>On Process! </strong><span>Authenticating...</span></div>
                   <div class="alert alert-danger d-none"><strong>Failed! </strong><span></span></div>

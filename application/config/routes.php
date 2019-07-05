@@ -47,6 +47,8 @@ $route['member'] = "member";
 $route['member/(:any)'] = "member/$1";
 $route['member_system/(:any)'] = "member_system/$1";
 
+$route['profile/(:any)'] = "profile/index/$1";
+
 $route['error'] = "error";
 $route['error/(:any)'] = "error/$1";
 

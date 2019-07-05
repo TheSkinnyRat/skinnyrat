@@ -39,9 +39,9 @@
       </div>
     </div>
 
-    <div class="card-body">
+    <div class="card-body pb-1">
       <?php echo $data->konten ?>
-      <hr>
+      <hr class="mb-0">
       <code>
         <tt>By:
           <?php if(isset($data_name)) echo $data_name->name; else echo 'Unknown'; ?> -
@@ -58,25 +58,39 @@
               <input type="hidden" name="id" value="<?php echo $data->id_article ?>">
               <button id="btn_article_like" class="btn btn-light px-1 py-0 <?php if($user_like == TRUE) echo 'text-primary'; ?>" target="<?php if($user_like == TRUE) echo 'unlike'; else echo 'like'; ?>" type="submit" name="submit"><i class="<?php if($user_like == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-up fa-sm"></i></button>
             </form>
-            <div id="text_article_like" class="float-left">
-              <?php echo $like; ?>
-            </div>
-            <div class="float-left">
+            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/article_like_show') ?>">
+              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article) ?>">
+              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
+              <button class="btn px-0 py-0" id="text_article_like" type="submit"><?php echo $like; ?></button>
+            </form>
+              <div class="float-left">
               &nbsp;·
             </div>
             <form class="form-inline float-left" method="post" id="article_dislike" action="<?php echo base_url('blog_system/article_dislike') ?>">
               <input type="hidden" name="id" value="<?php echo $data->id_article ?>">
               <button id="btn_article_dislike" class="btn btn-light px-1 py-0 <?php if($user_dislike == TRUE) echo 'text-primary'; ?>" target="<?php if($user_dislike == TRUE) echo 'undislike'; else echo 'dislike'; ?>" type="submit" name="submit"><i class="<?php if($user_dislike == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
             </form>
-            <div id="text_article_dislike" class="float-left">
-              <?php echo $dislike; ?>
-            </div>
+            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/article_dislike_show') ?>">
+              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article) ?>">
+              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
+              <button class="btn px-0 py-0" id="text_article_dislike" type="submit"><?php echo $dislike; ?></button>
+            </form>
           <?php }else{ ?>
-            <button class="btn btn-light px-1 py-0 disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Like"><i class="far fa-thumbs-up fa-sm"></i></button>
-              <?php echo $like; ?>
+            <button class="btn btn-light px-1 py-0 disabled float-left" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Like"><i class="far fa-thumbs-up fa-sm"></i></button>
+            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/article_like_show') ?>">
+              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article) ?>">
+              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
+              <button class="btn px-0 py-0" id="text_article_like" type="submit" name="button"><?php echo $like; ?></button>
+            </form>
+            <div class="float-left">
               &nbsp;·
-            <button class="btn btn-light px-1 py-0 disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Dislike"><i class="far fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
-              <?php echo $dislike; ?>
+            </div>
+            <button class="btn btn-light px-1 py-0 disabled float-left" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Dislike"><i class="far fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
+            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/article_dislike_show') ?>">
+              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article) ?>">
+              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
+              <button class="btn px-0 py-0" id="text_article_dislike" type="submit"><?php echo $dislike; ?></button>
+            </form>
           <?php } ?>
         </div>
         <div class="col text-right">
@@ -106,17 +120,23 @@
                 <i class="fas fa-user-circle fa-2x"></i>
               </div>
               <div class="col p-0 m-0">
-                <div class="text-primary m-0 d-inline"><?php echo $cm->name ?> <?php if(isset($userdata) && $cm->id_member == $data->id_member) { ?><i class="fas fa-check-circle fa-sm"></i><?php } ?></div> <?php echo $cm->comment ?>
+                <div class="text-primary m-0 d-inline">
+                  <a href="<?php echo base_url('profile/'.$cm->username) ?>"><?php echo $cm->name ?></a>
+                  <?php if($cm->id_member == $data->id_member) { ?><i class="fas fa-check-circle fa-sm"></i><?php } ?>
+                </div>
+                <?php echo $cm->comment ?>
                 <div class="col p-0">
                   <?php if (isset($userdata)) { ?>
                     <form class="form-inline float-left" method="post" id="comment_like_<?php echo $cm->id; ?>" action="<?php echo base_url('blog_system/comment_like') ?>">
                       <input type="hidden" name="id" value="<?php echo $cm->id; ?>">
                       <button id="btn_comment_like_<?php echo $cm->id; ?>" class="btn px-1 py-0 <?php if($$user_comment_like == TRUE) echo 'text-primary' ?>" target="<?php if($$user_comment_like == TRUE) echo 'unlike'; else echo 'like'; ?>" onclick="comment_like(<?php echo $cm->id; ?>)" type="submit" name="submit"><i class="<?php if($$user_comment_like == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-up fa-sm"></i></button>
                     </form>
-                    <div id="text_comment_like_<?php echo $cm->id; ?>" class="float-left">
+                    <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_like_show') ?>">
+                      <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cm->id) ?>">
+                      <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                       <?php $count_comment_like = 'comment_like_'.$cm->id ?>
-                      <?php echo $$count_comment_like ?>
-                    </div>
+                      <button class="btn px-0 py-0" id="text_comment_like_<?php echo $cm->id; ?>" type="submit"><?php echo $$count_comment_like ?></button>
+                    </form>
                     <div class="float-left">
                       &nbsp;·
                     </div>
@@ -124,10 +144,12 @@
                       <input type="hidden" name="id" value="<?php echo $cm->id; ?>">
                       <button id="btn_comment_dislike_<?php echo $cm->id; ?>" class="btn px-1 py-0 <?php if($$user_comment_dislike == TRUE) echo 'text-primary' ?>" target="<?php if($$user_comment_dislike == TRUE) echo 'undislike'; else echo 'dislike'; ?>" onclick="comment_dislike(<?php echo $cm->id; ?>)" type="submit" name="submit"><i class="<?php if($$user_comment_dislike == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
                     </form>
-                    <div id="text_comment_dislike_<?php echo $cm->id; ?>" class="float-left">
+                    <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_dislike_show') ?>">
+                      <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cm->id) ?>">
+                      <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                       <?php $count_comment_dislike = 'comment_dislike_'.$cm->id ?>
-                      <?php echo $$count_comment_dislike ?>
-                    </div>
+                      <button class="btn px-0 py-0" id="text_comment_dislike_<?php echo $cm->id; ?>" type="submit"><?php echo $$count_comment_dislike ?></button>
+                    </form>
                     <div class="float-left">
                       &nbsp;·&nbsp;
                     </div>
@@ -146,18 +168,22 @@
                     <?php } ?>
                   <?php }else{ ?>
                     <button class="btn px-1 py-0 float-left disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Like"><i class="far fa-thumbs-up fa-sm"></i></button>
-                    <div id="" class="float-left">
+                    <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_like_show') ?>">
+                      <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cm->id) ?>">
+                      <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                       <?php $count_comment_like = 'comment_like_'.$cm->id ?>
-                      <?php echo $$count_comment_like ?>
-                    </div>
+                      <button class="btn px-0 py-0" id="text_comment_like_<?php echo $cm->id; ?>" type="submit"><?php echo $$count_comment_like ?></button>
+                    </form>
                     <div class="float-left">
                       &nbsp;·
                     </div>
                     <button class="btn px-1 py-0 float-left disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Dislike"><i class="far fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
-                    <div id="" class="float-left">
+                    <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_dislike_show') ?>">
+                      <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cm->id) ?>">
+                      <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                       <?php $count_comment_dislike = 'comment_dislike_'.$cm->id ?>
-                      <?php echo $$count_comment_dislike ?>
-                    </div>
+                      <button class="btn px-0 py-0" id="text_comment_dislike_<?php echo $cm->id; ?>" type="submit"><?php echo $$count_comment_dislike ?></button>
+                    </form>
                     <div class="float-left">
                       &nbsp;·&nbsp;
                     </div>
@@ -177,17 +203,23 @@
                         <i class="fas fa-user-circle fa-2x"></i>
                       </div>
                       <div class="col p-0 m-0">
-                        <div class="text-primary m-0 d-inline"><?php echo $cmp->name ?> <?php if(isset($userdata) && $cmp->id_member == $data->id_member) { ?><i class="fas fa-check-circle fa-sm"></i><?php } ?></div> <?php echo $cmp->comment ?>
+                        <div class="text-primary m-0 d-inline">
+                          <a href="<?php echo base_url('profile/'.$cmp->username) ?>"><?php echo $cmp->name ?></a>
+                          <?php if($cmp->id_member == $data->id_member) { ?><i class="fas fa-check-circle fa-sm"></i><?php } ?>
+                        </div>
+                        <?php echo $cmp->comment ?>
                         <div class="col p-0">
                           <?php if (isset($userdata)) { ?>
                             <form class="form-inline float-left" method="post" id="comment_like_<?php echo $cmp->id; ?>" action="<?php echo base_url('blog_system/comment_like') ?>">
                               <input type="hidden" name="id" value="<?php echo $cmp->id; ?>">
                               <button id="btn_comment_like_<?php echo $cmp->id; ?>" class="btn px-1 py-0 <?php if($$user_comment_like == TRUE) echo 'text-primary' ?>" target="<?php if($$user_comment_like == TRUE) echo 'unlike'; else echo 'like'; ?>" onclick="comment_like(<?php echo $cmp->id; ?>)" type="submit" name="submit"><i class="<?php if($$user_comment_like == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-up fa-sm"></i></button>
                             </form>
-                            <div id="text_comment_like_<?php echo $cmp->id; ?>" class="float-left">
+                            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_like_show') ?>">
+                              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cmp->id) ?>">
+                              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                               <?php $count_comment_like = 'comment_like_'.$cmp->id ?>
-                              <?php echo $$count_comment_like ?>
-                            </div>
+                              <button class="btn px-0 py-0" id="text_comment_like_<?php echo $cmp->id; ?>" type="submit"><?php echo $$count_comment_like ?></button>
+                            </form>
                             <div class="float-left">
                               &nbsp;·
                             </div>
@@ -195,10 +227,12 @@
                               <input type="hidden" name="id" value="<?php echo $cmp->id; ?>">
                               <button id="btn_comment_dislike_<?php echo $cmp->id; ?>" class="btn px-1 py-0 <?php if($$user_comment_dislike == TRUE) echo 'text-primary' ?>" target="<?php if($$user_comment_dislike == TRUE) echo 'undislike'; else echo 'dislike'; ?>" onclick="comment_dislike(<?php echo $cmp->id; ?>)" type="submit" name="submit"><i class="<?php if($$user_comment_dislike == TRUE) echo 'fas'; else echo 'far'; ?> fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
                             </form>
-                            <div id="text_comment_dislike_<?php echo $cmp->id; ?>" class="<?php if(isset($userdata) && $cmp->id_member == $userdata['id_member']) echo 'float-left' ?>">
+                            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_dislike_show') ?>">
+                              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cmp->id) ?>">
+                              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                               <?php $count_comment_dislike = 'comment_dislike_'.$cmp->id ?>
-                              <?php echo $$count_comment_dislike ?>
-                            </div>
+                              <button class="btn px-0 py-0" id="text_comment_dislike_<?php echo $cmp->id; ?>" type="submit"><?php echo $$count_comment_dislike ?></button>
+                            </form>
                             <?php if(isset($userdata) && $cmp->id_member == $userdata['id_member']){ ?>
                               <div class="float-left">
                                 &nbsp;·
@@ -211,18 +245,22 @@
                             <?php } ?>
                           <?php }else{ ?>
                             <button id="" class="btn px-1 py-0 float-left disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Like"><i class="far fa-thumbs-up fa-sm"></i></button>
-                            <div id="" class="float-left">
+                            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_like_show') ?>">
+                              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cmp->id) ?>">
+                              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                               <?php $count_comment_like = 'comment_like_'.$cmp->id ?>
-                              <?php echo $$count_comment_like ?>
-                            </div>
+                              <button class="btn px-0 py-0" id="text_comment_like_<?php echo $cmp->id; ?>" type="submit"><?php echo $$count_comment_like ?></button>
+                            </form>
                             <div class="float-left">
                               &nbsp;·
                             </div>
                             <button id="" class="btn px-1 py-0 float-left disabled" data-toggle="tooltip" data-placement="top" title="Login untuk memberikan Dislike"><i class="far fa-thumbs-down fa-sm fa-flip-horizontal"></i></button>
-                            <div id="" class="">
+                            <form class="form-inline float-left" method="get" action="<?php echo base_url('blog_system/comment_dislike_show') ?>">
+                              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($cmp->id) ?>">
+                              <input type="hidden" name="ref" value="<?php echo base_url('blog/'.$data->name); ?>">
                               <?php $count_comment_dislike = 'comment_dislike_'.$cmp->id ?>
-                              <?php echo $$count_comment_dislike ?>
-                            </div>
+                              <button class="btn px-0 py-0" id="text_comment_dislike_<?php echo $cmp->id; ?>" type="submit"><?php echo $$count_comment_dislike ?></button>
+                            </form>
                           <?php } ?>
                         </div>
                       </div>

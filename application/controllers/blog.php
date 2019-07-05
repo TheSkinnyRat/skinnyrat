@@ -40,8 +40,8 @@ class Blog extends PX_Controller {
 				$data['like'] = $this->model_basic->count_where($this->tbl_article_like,'id_article',$data['data']->id_article);
 				$data['dislike'] = $this->model_basic->count_where($this->tbl_article_dislike,'id_article',$data['data']->id_article);
 				$data['comment_count'] = $this->model_basic->count_where($this->tbl_article_comment,'id_article',$data['data']->id_article);
-				$data['comment'] = $this->model_basic->select_where_array_join_1_order($this->tbl_article_comment,$this->tbl_article_comment.'.*,'.$this->tbl_member.'.name',array('id_article' => $data['data']->id_article, 'id_parent' => '0'),$this->tbl_member,$this->tbl_article_comment.'.id_member',$this->tbl_member.'.id_member','date','ASC')->result();
-				$data['comment_parent'] = $this->model_basic->select_where_join_1_order($this->tbl_article_comment,$this->tbl_article_comment.'.*,'.$this->tbl_member.'.name','id_parent >','0',$this->tbl_member,$this->tbl_article_comment.'.id_member',$this->tbl_member.'.id_member','date','ASC')->result();
+				$data['comment'] = $this->model_basic->select_where_array_join_1_order($this->tbl_article_comment,$this->tbl_article_comment.'.*,'.$this->tbl_member.'.name,'.$this->tbl_member.'.username',array('id_article' => $data['data']->id_article, 'id_parent' => '0'),$this->tbl_member,$this->tbl_article_comment.'.id_member',$this->tbl_member.'.id_member','date','ASC')->result();
+				$data['comment_parent'] = $this->model_basic->select_where_join_1_order($this->tbl_article_comment,$this->tbl_article_comment.'.*,'.$this->tbl_member.'.name,'.$this->tbl_member.'.username','id_parent >','0',$this->tbl_member,$this->tbl_article_comment.'.id_member',$this->tbl_member.'.id_member','date','ASC')->result();
 				foreach ($data['comment'] as $data_comment) {
 					$data['comment_like_'.$data_comment->id] = $this->model_basic->count_where($this->tbl_article_comment_like,'id_article_comment',$data_comment->id);
 					$data['comment_dislike_'.$data_comment->id] = $this->model_basic->count_where($this->tbl_article_comment_dislike,'id_article_comment',$data_comment->id);

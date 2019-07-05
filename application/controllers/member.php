@@ -21,7 +21,7 @@ class Member extends PX_Controller {
 		}
 		else
 		$data['data'] = null;
-		$data['url_continue'] = $this->input->get('cn');
+		$data['ref'] = $this->input->get('ref');
 		$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
 		$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 		$data['content'] = $this->load->view('frontend/public/menu/login',$data,true);
@@ -35,7 +35,7 @@ class Member extends PX_Controller {
 		}
 		else
 		$data['data'] = null;
-		$data['url_continue'] = $this->input->get('cn');
+		$data['ref'] = $this->input->get('ref');
 		$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
 		$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 		$data['content'] = $this->load->view('frontend/public/menu/register',$data,true);
@@ -43,7 +43,7 @@ class Member extends PX_Controller {
   }
 
 	function register_add(){
-		$url_continue = $this->input->get('cn');
+		$ref = $this->input->get('ref');
 		$table_field = $this->db->list_fields($this->tbl_member);
 		$insert = array();
 		foreach ($table_field as $field) {
@@ -77,8 +77,8 @@ class Member extends PX_Controller {
 				);
 				$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
 
-				if ($url_continue != NULL) {
-					$redirect = base_url('member/login?cn='.urlencode($url_continue));
+				if ($ref != NULL) {
+					$redirect = base_url('member/login?ref='.urlencode($ref));
 				}else{
 					$redirect = base_url('member/login');
 				}
@@ -90,7 +90,7 @@ class Member extends PX_Controller {
   }
 
 	function do_login() {
-		$url_continue = $this->input->get('cn');
+		$ref = $this->input->get('ref');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$user_data = $this->model_basic->select_where($this->tbl_member,'username',$username)->row();
@@ -124,8 +124,8 @@ class Member extends PX_Controller {
 					'name' => $user_data->name,
 					);
 				$this->session->set_userdata('member',$data_user);
-				if ($url_continue != NULL) {
-					$redirect = $url_continue;
+				if ($ref != NULL) {
+					$redirect = $ref;
 				}else{
 					$redirect = base_url();
 				}
@@ -141,9 +141,9 @@ class Member extends PX_Controller {
 	function do_logout() {
 		if($this->session->userdata('member') != FALSE){
 			$this->session->unset_userdata('member');
-			$url_continue = $this->input->get('cn');
-			if ($url_continue != NULL) {
-				redirect($url_continue);
+			$ref = $this->input->get('ref');
+			if ($ref != NULL) {
+				redirect($ref);
 			}else{
 				redirect(base_url());
 			}

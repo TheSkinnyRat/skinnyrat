@@ -113,7 +113,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php if(isset($url_continue) && $url_continue != NULL) echo base_url('member/do_logout?cn='.$url_continue); else echo base_url('member/do_logout') ?>">Logout</a>
+          <a class="btn btn-primary" href="<?php if(isset($url_continue) && $url_continue != NULL) echo base_url('member/do_logout?ref='.$url_continue); else echo base_url('member/do_logout') ?>">Logout</a>
         </div>
       </div>
     </div>
