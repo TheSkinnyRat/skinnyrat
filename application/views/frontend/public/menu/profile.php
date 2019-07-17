@@ -13,7 +13,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-auto">
-          <i class="fa fa-user-circle fa-10x"></i>
+          <i class="fa fa-user-circle fa-5x"></i>
         </div>
         <div class="col">
           <div class="h2 text-primary mb-0">

@@ -1,5 +1,5 @@
 <!-- Begin Page Content -->
-<div class="m-2">
+<div class="m-2 mx-lg-5 px-xl-5">
 
   <div class="card">
     <div class="card-header py-3">

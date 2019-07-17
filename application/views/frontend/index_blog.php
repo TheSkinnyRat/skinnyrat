@@ -11,7 +11,8 @@
 
   <title><?php echo $data->judul ?></title>
 
-  <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/'.$app_favicon) ?>">
+  <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/ratblog.png') ?>">
+  <link rel="manifest" href="<?php echo base_url('assets/manifest/manifest.json') ?>">
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url('assets/frontend/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
@@ -57,6 +58,9 @@
 
   <!-- Custom scripts for Index pages-->
   <script src="<?php echo base_url('assets/frontend/js/page/index.js') ?>"></script>
+
+  <!-- UP UP Service Worker -->
+  <script src="<?php echo base_url('assets/sw/upup.min.js') ?>"></script>
 
 </head>
 
@@ -123,6 +127,50 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.min.js') ?>"></script>
+
+  <!-- scripts for Service Worker -->
+  <script>
+    UpUp.start({
+      'cache-version': 'v1',
+      //'content-url': 'offline.html'
+      'content-url': '<?=site_url('offline.php')?>',
+      'content': 'Oops!. We Need An INTERNET Connection.',
+      'service-worker-url': '<?=site_url('upup.sw.min.js')?>'
+    });
+  </script>
+
+  <!-- scripts for Activate PWA -->
+  <script>
+    var btn_pwa = document.getElementById('btn_pwa');
+    var div_btn_pwa = document.getElementById('div_btn_pwa');
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Update UI notify the user they can add to home screen
+      btn_pwa.classList.remove('d-none');
+      div_btn_pwa.classList.remove('d-none');
+    });
+    btn_pwa.addEventListener('click', (e) => {
+      // hide our user interface that shows our A2HS button
+    btn_pwa.classList.add('d-none');
+    div_btn_pwa.classList.add('d-none');
+      // Show the prompt
+    deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice
+      .then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+  </script>
 
 </body>
 

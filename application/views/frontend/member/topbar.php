@@ -9,7 +9,7 @@
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
 
-    <div class="topbar-divider d-none d-sm-block"></div>
+    <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
 
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
@@ -33,6 +33,11 @@
     </li>
 
   </ul>
+
+  <div id="div_btn_pwa" class="topbar-divider mx-2 d-none"></div>
+  <button id="btn_pwa" class="btn btn-warning d-none" data-toggle="" data-placement="bottom" title="Download Aplikasi">
+    <i class="fa fa-download"></i>
+  </button>
 
 </nav>
 <!-- End of Topbar -->

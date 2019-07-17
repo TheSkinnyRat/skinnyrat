@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Jul 2019 pada 06.07
+-- Generation Time: 17 Jul 2019 pada 19.25
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -66,15 +66,16 @@ CREATE TABLE `px_article` (
 --
 
 INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `date_created`, `id_member`, `click`) VALUES
-(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 118),
+(17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 122),
 (26, 'rpl2', 'Rekayasa Perangkat Lunak 2 - XVII', 'Tentang RPL2', '<p style=\"text-align:center\"><span style=\"font-size:20px\">Foto - Foto</span></p>\n\n<hr />\n<ol>\n	<li>&nbsp;Foto Formal\n	<ul>\n		<li>Baju PDH - Foto Lama<br />\n		Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a><br />\n		Password : -<br />\n		&nbsp;</li>\n		<li>Baju Hitam - Foto Baru<br />\n		Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n		Password : -<br />\n		&nbsp;</li>\n	</ul>\n	</li>\n	<li>Foto Biasa\n	<ul>\n		<li>Semua Foto / Video<br />\n		Link : <a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a><br />\n		Password : -</li>\n	</ul>\n	</li>\n</ol>\n\n<hr />\n<p style=\"text-align:center\">Senang Bisa Bertemu Dengan Kalian<br />\nさようなら - Good Bye&nbsp;- Sampai Jumpa</p>\n\n<hr />\n<p><tt>Posted by <a href=\"http://instagram.com/the.skinny.rat\">R.</a>&nbsp;- 29 April 2019</tt></p>\n', '2019-04-29 19:54:35', 3, 23),
 (28, 'r_dnkg_abis', 'Maap', ':(', '<p style=\"text-align:center\"><strong>MAAP NI DANAKAGET NYA UDAH ABISS, WKWKWK..</strong></p>\n\n<hr />\n<p style=\"text-align:center\"><a href=\"https://data.whicdn.com/images/318273873/original.gif\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></p>\n', '2019-05-04 09:19:51', 1, 32),
-(29, 'r_dnkg', 'SABTU BERKAH', 'Pundi pundi rupiah di Sabtu berkah', '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong>PUBG <a href=\"https://link.dana.id/kaget?c=shm4lzyh2&amp;r=dcCoFq\">KUY</a></strong></span></p>\n', '2019-06-29 13:18:57', 1, 20),
+(29, '%F0%9F%93%A6', 'JUM\'AT BERKAH 📦', 'Pundi pundi rupiah di Jum\'at berkah', '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><a href=\"https://link.dana.id/kaget?c=sleeajscb&amp;r=dcCoFq\">KUY</a>&nbsp;LAH</strong></span></p>\n', '2019-07-05 11:32:02', 1, 29),
 (30, 'r_get_user_agent', '!', '!', '<p style=\"text-align:center\"><span style=\"font-size:18px\">USER AGENT SENDED</span></p>\r\n', '2019-05-24 06:53:30', 1, 1),
-(31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;-</li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;-</li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : -<br />\nPassword : -</span></p>\n', '2019-06-30 13:17:29', 4, 4),
+(31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;-</li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;-</li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : -<br />\nPassword : -</span></p>\n', '2019-06-30 13:17:29', 4, 7),
 (33, 'r_', 'HAPPY EID MUBARAK', 'Selamat hari raya Idul Fitri 1440 H', '<p style=\"text-align:center\"><span style=\"font-size:16px\">Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum...<br />\nSELAMAT IDUL FITRI 1440&nbsp;H~</span></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/TdfyKrN7HGTIY/giphy.gif\" style=\"height:172px; width:300px\" /></a></span></strong></p>\n\n<p style=\"text-align:center\"><a href=\"https://link.dana.id/kaget?c=spkczvp2g&amp;r=dcCoFq\"><strong><span style=\"font-size:16px\">CARI APA?</span></strong></a></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 2&nbsp;Juni&nbsp;2019</tt></code></p>\n', '2019-06-04 18:29:00', 1, 24),
 (34, 'sc_sknr', 'Source Code', 'Source Code Information', '<p style=\"text-align:center\">DOWNLOAD SOURCE CODE : <strong><a href=\"https://sknr.tk/sc_sknr\">KLIK DISINI</a></strong></p>\r\n\r\n<hr />\r\n<p>Lisensi&nbsp; &nbsp; &nbsp; : Open Source - Diizikan untuk melakukan &#39;pull request&#39;<br />\r\nVersion&nbsp; &nbsp; &nbsp;: (Akan terus berkembang tergantung mood developer)<br />\r\nLanguage : PHP OOP , JavaScript<br />\r\n<br />\r\nMetode Pembuatan :<br />\r\n-&nbsp;Dibuat dengan mengubah file &#39;routes.php&#39; di config CodeIgniter untuk membuat fitur ShortLink, Article.<br />\r\n- Dibuat dengan metode CRUD dasar untuk pembuatan BACKEND.</p>\r\n\r\n<hr />\r\n<p><code>Posted by R. - 14 Juni 2019</code></p>\r\n', '2019-06-21 08:01:10', 1, 4),
-(36, 'wa_sticker', 'Sknr Sticker For Whatsapp', 'Sticker sknr gratis untuk whatsapp', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"0\" style=\"width:50px\">\n	<tbody>\n		<tr>\n			<td><img alt=\"\" src=\"https://i.ibb.co/ChvGNf0/ic-launcher.png\" style=\"height:30px; width:30px\" /></td>\n			<td>sknr_sticker.apk</td>\n		</tr>\n	</tbody>\n</table>\n\n<hr />\n<p><strong>Description</strong></p>\n\n<p>Nama Aplikasi : Sknr Sticker<br />\nNama Apk : sknr_sticker.apk<br />\nCompany Name : com.sknr.sticker (Tidak terverifikasi oleh google play protect karena tidak di upload di play store - <s>Mahal Cuk</s>)<br />\nVersion : 1.0 - Final<br />\nKet : Aplikasi akan terus di update (tergantung mood dev)</p>\n\n<p><span style=\"font-size:20px\"><a href=\"http://sknr.tk/dl_wa_sticker\">DOWNLOAD DISINI</a> </span></p>\n\n<p><span style=\"font-size:14px\"><a href=\"https://www.google.com/search?q=cara+install+apk&amp;oq=cara+install+apk\">CARA INSTALL??</a></span></p>\n\n<hr />\n<p><strong>Screenshoot</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://i.ibb.co/GVPMWqW/Screenshot-2019-06-24-11-49-16-188-com-sknr-sticker.png\" style=\"height:388px; width:200px\" /></strong></p>\n', '2019-06-24 12:54:51', 1, 9);
+(36, 'wa_sticker', 'Sknr Sticker For Whatsapp', 'Sticker sknr gratis untuk whatsapp', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"0\" style=\"width:50px\">\n	<tbody>\n		<tr>\n			<td><img alt=\"\" src=\"https://i.ibb.co/ChvGNf0/ic-launcher.png\" style=\"height:30px; width:30px\" /></td>\n			<td>sknr_sticker.apk</td>\n		</tr>\n	</tbody>\n</table>\n\n<hr />\n<p><strong>Description</strong></p>\n\n<p>Nama Aplikasi : Sknr Sticker<br />\nNama Apk : sknr_sticker.apk<br />\nCompany Name : com.sknr.sticker (Tidak terverifikasi oleh google play protect karena tidak di upload di play store - <s>Mahal Cuk</s>)<br />\nVersion : 1.0 - Final<br />\nKet : Aplikasi akan terus di update (tergantung mood dev)</p>\n\n<p><span style=\"font-size:20px\"><a href=\"http://sknr.tk/dl_wa_sticker\">DOWNLOAD DISINI</a> </span></p>\n\n<p><span style=\"font-size:14px\"><a href=\"https://www.google.com/search?q=cara+install+apk&amp;oq=cara+install+apk\">CARA INSTALL??</a></span></p>\n\n<hr />\n<p><strong>Screenshoot</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://i.ibb.co/GVPMWqW/Screenshot-2019-06-24-11-49-16-188-com-sknr-sticker.png\" style=\"height:388px; width:200px\" /></strong></p>\n', '2019-06-24 12:54:51', 1, 9),
+(39, 'app', 'APP', '-', '<center><table>\r\n          <tr>\r\n            <td><img src=\"https://i.ibb.co/qCjnXSL/rat.png\" width=\"70\"></td>\r\n            <td>\r\n              <button id=\"app_cek\" class=\"btn btn-info btn-sm ml-2\" disabled><i class=\"fa fa-circle-notch fa-spin\"></i> checking</button>\r\n              <button id=\"app_install\" class=\"btn btn-success btn-sm ml-2 d-none\"><i class=\"fa fa-download\"></i> Install App</button>\r\n              <button id=\"app_noinstall\" class=\"btn btn-danger btn-sm ml-2 d-none\" disabled><i class=\"fa fa-times\"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>\r\n              <button id=\"app_ok\" class=\"btn btn-success btn-sm ml-2 d-none\" disabled><i class=\"fa fa-check\"></i> Installed</button>\r\n            </td>\r\n          </tr>\r\n        </table>\r\n</center>\r\n        <hr>\r\n      </center>\r\n      Compatible Browser:<br>\r\n      - Google Chrome (67+) (Tested)<br>\r\n      <br>\r\n      Compatible Device:<br>\r\n      - All device with compatible browser <br>\r\n        (Android, Windows, IOS, ETC)\r\n<br><br>\r\nLeave Comment for Bug Report..\r\n\r\n        <script>\r\n          var app_install = document.getElementById(\'app_install\');\r\n          var app_noinstall = document.getElementById(\'app_noinstall\');\r\n          var app_cek = document.getElementById(\'app_cek\');\r\n          var app_ok = document.getElementById(\'app_ok\');\r\n          var app_rto = 1;\r\n          let deferredPrompt;\r\n          window.addEventListener(\'beforeinstallprompt\', (e) => {\r\n            // Prevent Chrome 67 and earlier from automatically showing the prompt\r\n            e.preventDefault();\r\n            // Stash the event so it can be triggered later.\r\n            deferredPrompt = e;\r\n            // Update UI notify the user they can add to home screen\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.remove(\'d-none\');\r\n            app_noinstall.classList.add(\'d-none\');\r\n            app_rto = 0;\r\n          });\r\n          app_install.addEventListener(\'click\', (e) => {\r\n            // Show the prompt\r\n          deferredPrompt.prompt();\r\n            // Wait for the user to respond to the prompt\r\n          deferredPrompt.userChoice\r\n            .then((choiceResult) => {\r\n              if (choiceResult.outcome === \'accepted\') {\r\n                console.log(\'User accepted the A2HS prompt\');\r\n              } else {\r\n                console.log(\'User dismissed the A2HS prompt\');\r\n              }\r\n              deferredPrompt = null;\r\n            });\r\n          });\r\n          window.addEventListener(\'appinstalled\', (evt) => {\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.add(\'d-none\');\r\n            app_noinstall.classList.add(\'d-none\');\r\n            app_ok.classList.remove(\'d-none\');\r\n          });\r\n          setTimeout(function(){\r\n            if (app_rto == 1){\r\n              app_noinstall.classList.remove(\'d-none\');\r\n              app_cek.classList.add(\'d-none\');\r\n            }\r\n          }, 5000);\r\n        </script>', '2019-07-18 00:19:44', 0, 21);
 
 -- --------------------------------------------------------
 
@@ -194,8 +195,9 @@ INSERT INTO `px_change_log` (`id`, `judul`, `konten`, `expand`, `status`) VALUES
 (12, 'Version 2.2.3', '<p>- Improve style in page Whatsapp click to chat (Frontend)<br />\r\n- Improve row action in all table (Frontend)<br />\r\n- Improve alert style in all page (Frontend)<br />\r\n- Improve style in page profile (Frontend)</p>\r\n', 0, 1),
 (13, 'Version 2.2.4', '<p>- New Feature ! - WhatsApp Chat Without Save<br />\r\n-&nbsp;Fix copy button not working when datatables are responsive</p>\r\n', 0, 1),
 (15, 'Version 2.2.5', '<p>- Add Multi Login (Backend)<br />\r\n- Add Many Feature (Backend)<br />\r\n- Improve Alert Style (Frontend)</p>\r\n', 0, 1),
-(16, 'Version 2.2.6', '<p>- Add many feature in article (Frontend)<br />\r\n- Add log member register / login (Frontend)<br />\r\n- Other</p>\r\n', 1, 1),
-(17, 'Version 2.2.7', '<p>- Add Profile Page (Frontend)<br />\r\n- Other<br />\r\n- Bug Fixed</p>\r\n', 1, 1);
+(16, 'Version 2.2.6', '<p>- Add many feature in article (Frontend)<br />\r\n- Add log member register / login (Frontend)<br />\r\n- Other</p>\r\n', 0, 1),
+(17, 'Version 2.2.7', '<p>- Add Profile Page (Frontend)<br />\r\n- Other<br />\r\n- Bug Fixed</p>\r\n', 1, 1),
+(18, 'Version 2.2.8', '<p>- Add Installation APP (Frontend)<br />\r\n- Change style Article Form (Frontend)<br />\r\n- Blog Improve (Frontend)</p>\r\n', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1677,38 +1679,38 @@ CREATE TABLE `px_shorten_url` (
 --
 
 INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `date_created`, `id_member`, `click`) VALUES
-(3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35', 0, 3),
-(6, 'hngryrain', 'https://hngryrain.000webhostapp.com', '0', '2019-03-23 13:04:41', 0, 3),
-(11, 'villa_cuk', 'https://drive.google.com/open?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz', '0', '2019-04-04 08:20:57', 0, 0),
-(12, 'villa_cuk_azz', 'https://drive.google.com/uc?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz&amp;export=download', '0', '2019-04-04 08:34:41', 0, 4),
-(14, 'r_lsp', 'https://github.com/TheSkinnyRat/smkindonesia', '0', '2019-04-14 12:19:26', 0, 33),
-(15, 'ggl', 'https://www.google.com', '0', '2019-04-15 21:58:27', 0, 0),
-(16, 'yt', 'https://youtube.com', '0', '2019-04-15 21:59:53', 0, 0),
+(3, 'foto_rpl2', 'rpl2_foto', '0', '2019-03-20 23:19:35', 0, 4),
+(6, 'hngryrain', 'https://hngryrain.000webhostapp.com', '0', '2019-03-23 13:04:41', 0, 4),
+(11, 'villa_cuk', 'https://drive.google.com/open?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz', '0', '2019-04-04 08:20:57', 0, 1),
+(12, 'villa_cuk_azz', 'https://drive.google.com/uc?id=13ZWWTsh-9q1ducdiP1U0-WNe-GGsHZzz&amp;export=download', '0', '2019-04-04 08:34:41', 0, 5),
+(14, 'r_lsp', 'https://github.com/TheSkinnyRat/smkindonesia', '0', '2019-04-14 12:19:26', 0, 34),
+(15, 'ggl', 'https://www.google.com', '0', '2019-04-15 21:58:27', 0, 1),
+(16, 'yt', 'https://youtube.com', '0', '2019-04-15 21:59:53', 0, 1),
 (17, 'raskuy', 'https://drive.google.com/open?id=18GQABqFLBtVSeroDSwJKBnP480VnpxQ_', 'C5ldWtaZrgDsY6DhTxej8rx3TmN3j2MO/Q6QAQ1c6w7mVaZbL13aLrEAne/of+DvoEHpThjZAI5VSlzLKgViaw==', '2019-04-16 03:38:05', 0, 3),
-(18, 'r_weblsp', 'http://psr-smkindonesia.000webhostapp.com/', '0', '2019-04-16 11:57:20', 0, 8),
+(18, 'r_weblsp', 'http://psr-smkindonesia.000webhostapp.com/', '0', '2019-04-16 11:57:20', 0, 9),
 (19, 'r_sclsp', 'https://drive.google.com/drive/folders/10eVBy1QxFqmClDo7Q9_bajt8v8ePEmos?usp=sharing', 'BXk/liEzx7RhaMmakr1Is5IVuZOqibSLc8KpQIShd8xvily+bcZxBX1eRvx1vOOhbSryq9EcmWOx92ulSMA7bA==', '2019-04-16 11:57:46', 0, 6),
-(20, 'maullsp', 'https://drive.google.com/open?id=1m7aRw3cmSAhuT1Daks9110mUQtii5PCZ', '0', '2019-04-16 17:50:58', 0, 3),
-(21, 'wardun', 'https://drive.google.com/open?id=1_U3XX_LKp3HASKywau7OsXWA14JQ86Gz', '0', '2019-04-16 18:27:35', 0, 3),
-(32, 'r_fb', 'https://m.facebook.com/theskinnyratt', ' 0', '2019-04-22 17:45:10', 1, 2),
-(33, 'r_ig', 'https://instagram.com/theskinnyrat', ' 0', '2019-04-22 17:46:16', 1, 2),
-(34, 'r_tw', 'https://twitter.com/theskinnyrat', ' 0', '2019-04-22 17:47:20', 1, 2),
-(35, 'r_gh', 'https://github.com/theskinnyrat', ' 0', '2019-04-22 17:47:52', 1, 1),
-(37, 'article', 'https://sknr.tk/home/article_form', '0', '2019-04-28 09:52:30', 0, 5),
-(38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 12),
-(39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 18),
-(40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 16),
-(42, 'jb', 'https://sknr.tk/blog/r_dnkg', ' 0', '2019-05-31 11:06:10', 1, 55),
-(43, 'numpang', 'https://drive.google.com/file/d/1BHl8gy1z533Aznt1VDaR3KSz2GMX0rIO/view?usp=drivesdk', '0', '2019-05-18 13:30:07', 0, 2),
+(20, 'maullsp', 'https://drive.google.com/open?id=1m7aRw3cmSAhuT1Daks9110mUQtii5PCZ', '0', '2019-04-16 17:50:58', 0, 4),
+(21, 'wardun', 'https://drive.google.com/open?id=1_U3XX_LKp3HASKywau7OsXWA14JQ86Gz', '0', '2019-04-16 18:27:35', 0, 4),
+(32, 'r_fb', 'https://m.facebook.com/theskinnyratt', ' 0', '2019-04-22 17:45:10', 1, 3),
+(33, 'r_ig', 'https://instagram.com/theskinnyrat', ' 0', '2019-04-22 17:46:16', 1, 3),
+(34, 'r_tw', 'https://twitter.com/theskinnyrat', ' 0', '2019-04-22 17:47:20', 1, 3),
+(35, 'r_gh', 'https://github.com/theskinnyrat', ' 0', '2019-04-22 17:47:52', 1, 2),
+(37, 'article', 'https://sknr.tk/home/article_form', '0', '2019-04-28 09:52:30', 0, 6),
+(38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 13),
+(39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 21),
+(40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 18),
+(42, '%F0%9F%93%A6', 'https://sknr.tk/blog/📦', ' 0', '2019-07-05 11:29:24', 1, 14),
+(43, 'numpang', 'https://drive.google.com/file/d/1BHl8gy1z533Aznt1VDaR3KSz2GMX0rIO/view?usp=drivesdk', '0', '2019-05-18 13:30:07', 0, 4),
 (44, 'r_getuseragent', 'https://sknr.tk/blog/r_get_user_agent', ' 0', '2019-05-24 06:52:46', 1, 0),
-(46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-29 21:39:42', 4, 13),
-(47, 'sg_foto', 'https://photos.app.goo.gl/DRDHX8eTrkFeXdSJ8', ' 0', '2019-05-29 21:23:06', 4, 5),
+(46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-29 21:39:42', 4, 15),
+(47, 'sg_foto', 'https://photos.app.goo.gl/DRDHX8eTrkFeXdSJ8', ' 0', '2019-05-29 21:23:06', 4, 6),
 (48, 'sg_foto_iwan', 'https://photos.app.goo.gl/HZfzsNxdxcwiAq1h6', '+TwIFJaSky1+R78KauWlRvyHzG8K7Tvqdb2Vk93VYkEQgp/dRJ3FrxDard8vWklZ22QJWz6QEgYBsBT/AUazoA==', '2019-06-21 18:48:36', 4, 0),
-(49, 'sg_foto_maul', 'https://photos.app.goo.gl/S7RiZKAYtrRq84J47', ' 0', '2019-05-29 21:23:24', 4, 4),
-(50, 'sg_foto_aduy', 'https://photos.app.goo.gl/inJW9TQUjexayj1v5', ' 0', '2019-05-29 21:23:31', 4, 4),
-(51, 'sg_foto_rio', 'https://photos.app.goo.gl/JLwPU61TkctjmFyk8', ' 0', '2019-05-29 21:23:39', 4, 3),
-(52, 'sg_foto_yusuf', 'https://photos.app.goo.gl/aZ5U6fmtstcPwQwB9', ' 0', '2019-05-29 21:23:50', 4, 4),
-(53, 'sg_foto_pen', 'https://photos.app.goo.gl/yQxFWrXi6tWHmsH26', ' 0', '2019-05-29 21:23:57', 4, 5),
-(54, 'sg_foto_edo', 'https://photos.app.goo.gl/aa6ULN17nY3k9ax66', ' 0', '2019-05-29 21:24:05', 4, 5),
+(49, 'sg_foto_maul', 'https://photos.app.goo.gl/S7RiZKAYtrRq84J47', ' 0', '2019-05-29 21:23:24', 4, 5),
+(50, 'sg_foto_aduy', 'https://photos.app.goo.gl/inJW9TQUjexayj1v5', ' 0', '2019-05-29 21:23:31', 4, 5),
+(51, 'sg_foto_rio', 'https://photos.app.goo.gl/JLwPU61TkctjmFyk8', ' 0', '2019-05-29 21:23:39', 4, 4),
+(52, 'sg_foto_yusuf', 'https://photos.app.goo.gl/aZ5U6fmtstcPwQwB9', ' 0', '2019-05-29 21:23:50', 4, 5),
+(53, 'sg_foto_pen', 'https://photos.app.goo.gl/yQxFWrXi6tWHmsH26', ' 0', '2019-05-29 21:23:57', 4, 6),
+(54, 'sg_foto_edo', 'https://photos.app.goo.gl/aa6ULN17nY3k9ax66', ' 0', '2019-05-29 21:24:05', 4, 6),
 (55, 'sg_foto_psr', 'https://photos.app.goo.gl/6gYeuiqVcqMKr9e87', 'btzRrceiQ5deZGJTFJ7oFPOwttvG3u8HLvwyl+65fB6j0QHDvTXOP2pyasoP0RnmB28TSwivMB62aYA6QsZYJA==', '2019-06-21 18:48:13', 4, 0),
 (56, 'r_', 'https://sknr.tk/blog/r_', ' 0', '2019-06-02 06:18:39', 1, 13),
 (57, 'r', 'https://sknr.tk/blog/r_dnkg_abis', ' 0', '2019-06-05 08:41:13', 1, 1),
@@ -1716,8 +1718,7 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (59, 'sc_sknr', 'https://github.com/TheSkinnyRat/skinnyrat', ' 0', '2019-06-14 06:59:29', 1, 2),
 (60, 'reg_admin', 'https://wa.me/6281283854955?text=Halo%21+Saya+ingin+menjadi+admin+backend+di+sknr.tk%0AUsername+%3A+%28isi+sendiri%29%0APassword+%3A+%28isi+sendiri%29', ' 0', '2019-06-24 11:16:35', 1, 3),
 (62, 'wa_sticker', 'https://sknr.tk/blog/wa_sticker', ' 0', '2019-06-24 11:49:50', 1, 8),
-(64, 'dl_wa_sticker', 'https://drive.google.com/uc?id=1YZZMvCi79qu68yM0_X0yUM6DTxRJvdgf&export=download', ' 0', '2019-06-24 12:49:02', 1, 0),
-(66, '📦', 'Https://google.com', ' 0', '2019-07-02 19:43:10', 1, 0);
+(64, 'dl_wa_sticker', 'https://drive.google.com/uc?id=1YZZMvCi79qu68yM0_X0yUM6DTxRJvdgf&export=download', ' 0', '2019-06-24 12:49:02', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1845,7 +1846,7 @@ CREATE TABLE `px_web_setting` (
 --
 
 INSERT INTO `px_web_setting` (`id`, `title`, `name`, `version`, `icon`, `favicon`) VALUES
-(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.2.7', 'fa-grin-beam', 'rat.png');
+(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.2.8', 'fa-grin-beam', 'rat.png');
 
 --
 -- Indexes for dumped tables
@@ -1967,13 +1968,13 @@ ALTER TABLE `px_admin`
 -- AUTO_INCREMENT for table `px_article`
 --
 ALTER TABLE `px_article`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `px_article_comment`
 --
 ALTER TABLE `px_article_comment`
-  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `px_article_comment_dislike`
@@ -2003,7 +2004,7 @@ ALTER TABLE `px_article_like`
 -- AUTO_INCREMENT for table `px_change_log`
 --
 ALTER TABLE `px_change_log`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `px_icons`
@@ -2015,7 +2016,7 @@ ALTER TABLE `px_icons`
 -- AUTO_INCREMENT for table `px_log_user_agent`
 --
 ALTER TABLE `px_log_user_agent`
-  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=514;
+  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=646;
 
 --
 -- AUTO_INCREMENT for table `px_member`

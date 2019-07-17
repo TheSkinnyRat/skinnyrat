@@ -4,6 +4,8 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
+	config.skin = 'office2013';
+	config.extraPlugins = 'youtube';
 	config.toolbarGroups = [
 		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
@@ -24,5 +26,5 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about', groups: [ 'about' ] }
 	];
 
-	config.removeButtons = 'SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,About,Flash,PageBreak,Iframe,ShowBlocks,CreateDiv,Anchor,Language';
+	config.removeButtons = 'SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,About,Flash,PageBreak,ShowBlocks,CreateDiv,Anchor,Language,Iframe';
 };
