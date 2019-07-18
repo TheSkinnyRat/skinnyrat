@@ -3,6 +3,10 @@
 
 <head>
 
+  <!-- Progress bar loading -->
+  <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
+  <link rel="stylesheet" href="<?php echo base_url('assets/frontend/vendor/pace/pace.css') ?>">
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,6 +67,10 @@
 
   <!-- UP UP Service Worker -->
   <script src="<?php echo base_url('assets/sw/upup.min.js') ?>"></script>
+
+  <!-- Progress bar loading -->
+  <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
+  <link rel="stylesheet" href="<?php echo base_url('assets/frontend/vendor/pace/pace.css') ?>">
 
 </head>
 

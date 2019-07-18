@@ -62,12 +62,12 @@
       <center>
         <table>
           <tr>
-            <td><img src="https://i.ibb.co/qCjnXSL/rat.png" width="70"></td>
+            <td><img src="https://i.ibb.co/qCjnXSL/rat.png" width="70" class="mr-2"></td>
             <td>
-              <button id="app_cek" class="btn btn-info btn-sm ml-2" disabled><i class="fa fa-circle-notch fa-spin"></i> checking</button>
-              <button id="app_install" class="btn btn-success btn-sm ml-2 d-none"><i class="fa fa-download"></i> Install App</button>
-              <button id="app_noinstall" class="btn btn-danger btn-sm ml-2 d-none" disabled><i class="fa fa-times"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>
-              <button id="app_ok" class="btn btn-success btn-sm ml-2 d-none" disabled><i class="fa fa-check"></i> Installed</button>
+              <button id="app_cek" class="btn btn-info btn-sm" disabled><i class="fa fa-circle-notch fa-spin"></i> checking</button>
+              <button id="app_install" class="btn btn-success btn-sm d-none"><i class="fa fa-download"></i> Install App</button>
+              <button id="app_noinstall" class="btn btn-danger btn-sm d-none" disabled><i class="fa fa-times"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>
+              <button id="app_ok" class="btn btn-success btn-sm d-none" disabled><i class="fa fa-check"></i> Installed</button>
             </td>
           </tr>
         </table>
@@ -80,12 +80,10 @@
       - All device with compatible browser <br>
         (Android, Windows, IOS, ETC)
 
-        <script>
+        <script id="app_script">
           var app_install = document.getElementById('app_install');
-          var app_noinstall = document.getElementById('app_noinstall');
           var app_cek = document.getElementById('app_cek');
           var app_ok = document.getElementById('app_ok');
-          var app_rto = 1;
           let deferredPrompt;
           window.addEventListener('beforeinstallprompt', (e) => {
             // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -96,39 +94,42 @@
             app_cek.classList.add('d-none');
             app_install.classList.remove('d-none');
             app_noinstall.classList.add('d-none');
-            app_rto = 0;
           });
           app_install.addEventListener('click', (e) => {
-            // Show the prompt
-          deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-          deferredPrompt.userChoice
-            .then((choiceResult) => {
-              if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
-              } else {
-                console.log('User dismissed the A2HS prompt');
-              }
-              deferredPrompt = null;
-            });
+            if (deferredPrompt !== undefined) {
+              // Show the prompt
+            deferredPrompt.prompt();
+              // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice
+              .then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                  console.log('User accepted the A2HS prompt');
+                } else {
+                  console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+              });
+            }else{
+              app_install.classList.add('d-none');
+              app_noinstall.classList.remove('d-none');
+            }
           });
           window.addEventListener('appinstalled', (evt) => {
             app_cek.classList.add('d-none');
             app_install.classList.add('d-none');
-            app_noinstall.classList.add('d-none');
             app_ok.classList.remove('d-none');
           });
-          setTimeout(function(){
-            if (app_rto == 1){
-              app_noinstall.classList.remove('d-none');
-              app_cek.classList.add('d-none');
-            }
-          }, 5000);
+        </script>
+        <script>
+          $('#app_script').ready(function(){
+            $('#app_cek').addClass('d-none');
+            $('#app_install').removeClass('d-none');
+          });
         </script>
     </div>
-    
+
   </div>
-  
+
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Welcome To Skinny Rat Website ^^</h6>
