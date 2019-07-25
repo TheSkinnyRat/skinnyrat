@@ -18,7 +18,7 @@ class Admin_system extends PX_Controller {
     $data += $this->controller_attr;
 	  $data += $this->get_function('Member','member');
 	  $data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all($this->tbl_member);
@@ -35,10 +35,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_member,'id_member',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['content'] = $this->load->view('backend/admin_system/member_form',$data,true);
@@ -51,7 +51,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Member Add','member');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_member);
 		$insert = array();
@@ -78,7 +78,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Member Edit','member');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_member);
 		$update = array();
@@ -105,7 +105,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Member Delete','member');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_member,'id_member',$id);
@@ -122,7 +122,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Admin','admin');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all_left_join_1($this->tbl_admin,$this->tbl_admin.'.*,'.$this->tbl_usergroup.'.usergroup_name as hakakses',$this->tbl_usergroup,$this->tbl_admin.'.id_usergroup',$this->tbl_usergroup.'.id');
@@ -139,10 +139,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_admin,'id_admin',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['data_usergroup'] = $this->model_basic->select_all($this->tbl_usergroup);
@@ -156,7 +156,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Admin Add','admin');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_admin);
 		$insert = array();
@@ -183,7 +183,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Admin Edit','admin');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_admin);
 		$update = array();
@@ -210,7 +210,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Admin Delete','admin');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_admin,'id_admin',$id);
@@ -227,7 +227,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Shorten Url','shorten_url');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all_left_join_1($this->tbl_shorten_url,$this->tbl_shorten_url.'.*,'.$this->tbl_member.'.name as member_name',$this->tbl_member,$this->tbl_shorten_url.'.id_member',$this->tbl_member.'.id_member');
@@ -244,10 +244,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id_shorten_url = $this->input->post('id_shorten_url');
 		if($id_shorten_url){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['data_member'] = $this->model_basic->select_all($this->tbl_member);
@@ -261,7 +261,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Shorten Url Add','shorten_url');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_shorten_url);
 		$insert = array();
@@ -292,7 +292,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Shorten Url Edit','shorten_url');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_shorten_url);
 		$update = array();
@@ -322,7 +322,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Shorten Url Delete','shorten_url');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id_shorten_url = $this->input->post('id_shorten_url');
 		$do_delete = $this->model_basic->delete($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url);
@@ -339,7 +339,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Article','article');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all_left_join_1($this->tbl_article,$this->tbl_article.'.*,'.$this->tbl_member.'.name as member_name',$this->tbl_member,$this->tbl_article.'.id_member',$this->tbl_member.'.id_member');
@@ -356,10 +356,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id_article = $this->input->post('id_article');
 		if($id_article){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['data_member'] = $this->model_basic->select_all($this->tbl_member);
@@ -373,7 +373,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Article Add','article');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_article);
 		$insert = array();
@@ -403,7 +403,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Article Edit','article');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_article);
 		$update = array();
@@ -431,7 +431,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Article Delete','article');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id_article = $this->input->post('id_article');
 		$data_article_comment = $this->model_basic->select_where($this->tbl_article_comment,'id_article',$id_article)->result();
@@ -456,7 +456,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Log User Agent','log_user_agent');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all($this->tbl_log_user_agent);
@@ -469,7 +469,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Log User Agent Delete','log_user_agent');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_log_user_agent,'id_log_user_agent',$id);
@@ -483,7 +483,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Log User Agent Delete','log_user_agent');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$do_delete = $this->model_basic->delete_all($this->tbl_log_user_agent);
 		if($do_delete){
@@ -496,7 +496,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Web Setting','web_setting');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all($this->tbl_web_setting);
@@ -514,10 +514,10 @@ class Admin_system extends PX_Controller {
 		$data['data_icon'] = $this->model_basic->select_all($this->tbl_icons);
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_web_setting,'id',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['content'] = $this->load->view('backend/admin_system/web_setting_form',$data,true);
@@ -530,7 +530,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Web Setting Add','web_setting');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_web_setting);
 		$insert = array();
@@ -566,7 +566,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Web Setting Edit','web_setting');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_web_setting);
 		$update = array();
@@ -596,7 +596,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Web Alert','web_alert');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all($this->tbl_web_alert);
@@ -613,10 +613,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_web_alert,'id',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['content'] = $this->load->view('backend/admin_system/web_alert_form',$data,true);
@@ -629,7 +629,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Web Alert Add','web_alert');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_web_alert);
 		$insert = array();
@@ -651,7 +651,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Web Alert Edit','web_alert');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_web_alert);
 		$update = array();
@@ -673,7 +673,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Web Alert Delete','web_alert');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_web_alert,'id',$id);
@@ -690,7 +690,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Change Log','change_log');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_basic->select_all($this->tbl_change_log);
@@ -707,10 +707,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_change_log,'id',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['content'] = $this->load->view('backend/admin_system/change_log_form',$data,true);
@@ -723,7 +723,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Change Log Add','change_log');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_change_log);
 		$insert = array();
@@ -745,7 +745,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Change Log Edit','change_log');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_change_log);
 		$update = array();
@@ -767,7 +767,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Change Log Delete','change_log');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_change_log,'id',$id);
@@ -784,7 +784,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->controller_attr;
 		$data += $this->get_function('Menu','menu');
 		$data += $this->get_menu();
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['userdata'] = $this->session_admin;
 		$data['data'] = $this->model_menu->get_all();
@@ -801,11 +801,11 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_menu,'id',$id)->row();
 			$where_data_parent = array('id_parent' => 0, 'id !=' => $id);
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 			$where_data_parent = array('id_parent' => 0);
 		}
@@ -820,7 +820,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Menu Add','menu');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_menu);
 		$insert = array();
@@ -843,7 +843,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Menu Edit','menu');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_menu);
 		$update = array();
@@ -865,7 +865,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Menu Delete','menu');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_menu,'id',$id);
@@ -883,7 +883,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Menu Orders','menu_orders');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['data'] = $this->get_all_menu();
 		$data['content'] = $this->load->view('backend/admin_system/menu_orders',$data,true);
@@ -896,7 +896,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Menu Orders Edit','menu_orders');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
   	$item = $this->input->post('item');
 
@@ -924,7 +924,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Hak Akses','usergroup');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 	  $data['data'] = $this->model_usergroup->get_all();
 	  $data['content'] = $this->load->view('backend/admin_system/usergroup',$data,true);
@@ -940,10 +940,10 @@ class Admin_system extends PX_Controller {
 		$data['userdata'] = $this->session_admin;
 		$id = $this->input->post('id');
 		if($id){
-			$this->check_userakses($data['function_id'], ACT_UPDATE);
+			$this->check_userakses($data['function_id'], 'ACT_UPDATE');
 			$data['data'] = $this->model_basic->select_where($this->tbl_usergroup,'id',$id)->row();
 		}else{
-			$this->check_userakses($data['function_id'], ACT_CREATE);
+			$this->check_userakses($data['function_id'], 'ACT_CREATE');
 			$data['data'] = null;
 		}
 		$data['content'] = $this->load->view('backend/admin_system/usergroup_form',$data,true);
@@ -956,7 +956,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Usergroup Add','usergroup');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$table_field = $this->db->list_fields($this->tbl_usergroup);
 		$insert = array();
@@ -978,7 +978,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Usergroup Edit','usergroup');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 		$table_field = $this->db->list_fields($this->tbl_usergroup);
 		$update = array();
@@ -1000,7 +1000,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Usergroup Delete','usergroup');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_usergroup,'id',$id);
@@ -1018,7 +1018,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Perizinan','useraccess');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_READ);
+		$this->check_userakses($data['function_id'], 'ACT_READ');
 
 		$data['data'] = $this->model_useraccess->get_all();
 		$data['data_menu'] = $this->get_all_menu();
@@ -1033,7 +1033,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Useraccess Add','useraccess');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_CREATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_CREATE');
 
 		$id_menu = $this->input->post('id_menu');
 		$act_read = $this->input->post('act_read');
@@ -1081,7 +1081,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Useraccess Edit','useraccess');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses_return_json($data['function_id'], ACT_UPDATE);
+		$this->check_userakses_return_json($data['function_id'], 'ACT_UPDATE');
 
 	$id = $this->input->post('id');
 	$id_menu = $this->input->post('id_menu');
@@ -1134,7 +1134,7 @@ class Admin_system extends PX_Controller {
 		$data += $this->get_function('Useraccess Delete','useraccess');
 		$data += $this->get_menu();
 		$data['userdata'] = $this->session_admin;
-		$this->check_userakses($data['function_id'], ACT_DELETE);
+		$this->check_userakses($data['function_id'], 'ACT_DELETE');
 
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_useraccess,'id_usergroup',$id);

@@ -2,15 +2,20 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
   <!-- Sidebar Toggle (Topbar) -->
-  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
     <i class="fa fa-bars"></i>
   </button>
 
   <!-- Topbar Navbar -->
+  <div class="font-weight-bold text-primary text-uppercase m-0 d-md-none">
+    <span id="hour">00</span> <span class="blink-1s">:</span> <span id="minute">00</span>
+  </div>
+  <div class="font-weight-bold text-primary text-uppercase m-0 d-none d-md-block">
+    <span id="hour-1">00</span> : <span id="minute-1">00</span> : <span id="second-1">00</span>
+  </div>
   <ul class="navbar-nav ml-auto">
 
     <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
-
     <!-- Nav Item - User Information -->
     <a href="<?php if(isset($url_continue)) echo base_url('member/register?ref='.$url_continue); else echo base_url('member/register') ?>">
       <button class="btn btn-info mr-1" type="button">

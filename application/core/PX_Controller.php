@@ -1,5 +1,4 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PX_Controller extends CI_Controller {
@@ -132,25 +131,25 @@ class PX_Controller extends CI_Controller {
 		$access = $this->model_useraccess->get_useraccess($group_id, $menu_id);
 		switch ($function)
 		{
-			case 1:
+			case 'ACT_READ':
 				if($access->act_read == 1)
 					return TRUE;
 				else
 					redirect('admin/error_403');
 				break;
-			case 2:
+			case 'ACT_CREATE':
 				if($access->act_create == 1)
 					return TRUE;
 				else
 					redirect('admin/error_403');
 				break;
-			case 3:
+			case 'ACT_UPDATE':
 				if($access->act_update == 1)
 					return TRUE;
 				else
 					redirect('admin/error_403');
 				break;
-			case 4:
+			case 'ACT_DELETE':
 				if($access->act_delete == 1)
 					return TRUE;
 				else
@@ -168,25 +167,25 @@ class PX_Controller extends CI_Controller {
 		$access = $this->model_useraccess->get_useraccess($group_id, $menu_id);
 		switch ($function)
 		{
-			case 1:
+			case 'ACT_READ':
 				if($access->act_read == 1)
 					return TRUE;
 				else
 					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
 				break;
-			case 2:
+			case 'ACT_CREATE':
 				if($access->act_create == 1)
 					return TRUE;
 				else
 					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
 				break;
-			case 3:
+			case 'ACT_UPDATE':
 				if($access->act_update == 1)
 					return TRUE;
 				else
 					$this->returnJson(array('status' => 'error','msg' => 'ACCESS DENIED - You do not have permission to access this action'));
 				break;
-			case 4:
+			case 'ACT_DELETE':
 				if($access->act_delete == 1)
 					return TRUE;
 				else

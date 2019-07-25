@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Jul 2019 pada 06.32
+-- Generation Time: 25 Jul 2019 pada 13.49
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -69,13 +69,13 @@ INSERT INTO `px_article` (`id_article`, `name`, `judul`, `subjudul`, `konten`, `
 (17, 'test', 'Ini Article Saya', 'Hello World', '<p style=\"text-align:center\"><span style=\"font-size:22px\"><span style=\"font-family:Comic Sans MS,cursive\">Halo Ini Adalah Artikel Pertama Saya :)</span></span></p>\r\n\r\n<hr />', '2019-04-28 09:25:52', 0, 126),
 (26, 'rpl2', 'Rekayasa Perangkat Lunak 2 - XVII', 'Tentang RPL2', '<p style=\"text-align:center\"><span style=\"font-size:20px\">Foto - Foto</span></p>\n\n<hr />\n<ol>\n	<li>&nbsp;Foto Formal\n	<ul>\n		<li>Baju PDH - Foto Lama<br />\n		Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a><br />\n		Password : -<br />\n		&nbsp;</li>\n		<li>Baju Hitam - Foto Baru<br />\n		Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n		Password : -<br />\n		&nbsp;</li>\n	</ul>\n	</li>\n	<li>Foto Biasa\n	<ul>\n		<li>Semua Foto / Video<br />\n		Link : <a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a><br />\n		Password : -</li>\n	</ul>\n	</li>\n</ol>\n\n<hr />\n<p style=\"text-align:center\">Senang Bisa Bertemu Dengan Kalian<br />\nさようなら - Good Bye&nbsp;- Sampai Jumpa</p>\n\n<hr />\n<p><tt>Posted by <a href=\"http://instagram.com/the.skinny.rat\">R.</a>&nbsp;- 29 April 2019</tt></p>\n', '2019-04-29 19:54:35', 3, 23),
 (28, 'r_dnkg_abis', 'Maap', ':(', '<p style=\"text-align:center\"><strong>MAAP NI DANAKAGET NYA UDAH ABISS, WKWKWK..</strong></p>\n\n<hr />\n<p style=\"text-align:center\"><a href=\"https://data.whicdn.com/images/318273873/original.gif\"><img alt=\"\" src=\"https://data.whicdn.com/images/318273873/original.gif\" style=\"height:225px; width:300px\" /></a></p>\n', '2019-05-04 09:19:51', 1, 32),
-(29, '%F0%9F%93%A6', 'JUM\'AT BERKAH 📦', 'Pundi pundi rupiah di Jum\'at berkah', '<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><a href=\"https://link.dana.id/kaget?c=sleeajscb&amp;r=dcCoFq\">KUY</a>&nbsp;LAH</strong></span></p>\n', '2019-07-05 11:32:02', 1, 29),
+(29, 'jb', 'JUM\'AT BERKAH', '金曜日', '<center>\n        <table>\n          <tr>\n            <td><img src=\"https://i.ibb.co/qCjnXSL/rat.png\" width=\"70\" class=\"mr-2\"></td>\n            <td>\n              <button id=\"app_cek\" class=\"btn btn-info btn-sm\" disabled><i class=\"fa fa-circle-notch fa-spin\"></i> checking</button>\n              <button id=\"app_install\" class=\"btn btn-success btn-sm d-none\"><i class=\"fa fa-download\"></i> Install App</button>\n              <button id=\"app_noinstall\" class=\"btn btn-danger btn-sm d-none\" disabled><i class=\"fa fa-times\"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>\n              <button id=\"app_ok\" class=\"btn btn-success btn-sm d-none\" disabled><i class=\"fa fa-check\"></i> Installed</button>\n            </td>\n          </tr>\n        </table>\n        <hr>\n      </center>\n<center>\n<a href=\"https://sknr.tk/apps\">Selengkapnya...</a><br>\n<a href=\"https://sknr.tk/apps_how\">How it\'s works?</a>\n<br>-</br>\n<br>-</br>\n<br>-</br>\n</center>\n\n        <script id=\"app_script\">\n          var app_install = document.getElementById(\'app_install\');\n          var app_cek = document.getElementById(\'app_cek\');\n          var app_ok = document.getElementById(\'app_ok\');\n          let deferredPrompt;\n          window.addEventListener(\'beforeinstallprompt\', (e) => {\n            // Prevent Chrome 67 and earlier from automatically showing the prompt\n            e.preventDefault();\n            // Stash the event so it can be triggered later.\n            deferredPrompt = e;\n            // Update UI notify the user they can add to home screen\n            app_cek.classList.add(\'d-none\');\n            app_install.classList.remove(\'d-none\');\n            app_noinstall.classList.add(\'d-none\');\n          });\n          app_install.addEventListener(\'click\', (e) => {\n            if (deferredPrompt !== undefined) {\n              // Show the prompt\n            deferredPrompt.prompt();\n              // Wait for the user to respond to the prompt\n            deferredPrompt.userChoice\n              .then((choiceResult) => {\n                if (choiceResult.outcome === \'accepted\') {\n                  console.log(\'User accepted the A2HS prompt\');\n                } else {\n                  console.log(\'User dismissed the A2HS prompt\');\n                }\n                deferredPrompt = null;\n              });\n            }else{\n              app_install.classList.add(\'d-none\');\n              app_noinstall.classList.remove(\'d-none\');\n            }\n          });\n          window.addEventListener(\'appinstalled\', (evt) => {\n            app_cek.classList.add(\'d-none\');\n            app_install.classList.add(\'d-none\');\n            app_ok.classList.remove(\'d-none\');\n          });\n        </script>\n        <script>\n          $(\'#app_script\').ready(function(){\n            $(\'#app_cek\').addClass(\'d-none\');\n            $(\'#app_install\').removeClass(\'d-none\');\n          });\n        </script>\n\n<p style=\"text-align:center\"><span style=\"font-size:16px\"><strong><a href=\"https://link.dana.id/kaget?c=sbmnms5e3&r=dcCoFq\">KUY</a> LAH</strong></span></p>', '2019-07-19 12:54:58', 1, 19),
 (30, 'r_get_user_agent', '!', '!', '<p style=\"text-align:center\"><span style=\"font-size:18px\">USER AGENT SENDED</span></p>\r\n', '2019-05-24 06:53:30', 1, 1),
 (31, 'sharinggan', 'Sharing Gan', '-', '<p><strong>AKSES GOOGLE FOTO</strong></p>\n\n<hr />\n<ul>\n	<li>All Access<br />\n	Link : -</li>\n	<li>Sekelas<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_foto\">https://sknr.tk/rpl2_foto</a></li>\n	<li>Sharing Gan<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto\">https://sknr.tk/sg_foto</a><br />\n	&nbsp;</li>\n	<li>Foto Formal Lama - Baju PDH<br />\n	Link : <a href=\"https://sknr.tk/rpl2_fotoformallama\">https://sknr.tk/rpl2_fotoformallama</a></li>\n	<li>Foto Formal Baru - Baju Jas Hitam<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/rpl2_fotoformal\">https://sknr.tk/rpl2_fotoformal</a><br />\n	&nbsp;</li>\n	<li>Ridwan<br />\n	Link :&nbsp;-</li>\n	<li>Hadi Maulana<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_maul\">https://sknr.tk/sg_foto_maul</a></li>\n	<li>Fitrayuda<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_aduy\">https://sknr.tk/sg_foto_aduy</a></li>\n	<li>Rio Randitya<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_rio\">https://sknr.tk/sg_foto_rio</a></li>\n	<li>Yusuf Adi<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_yusuf\">https://sknr.tk/sg_foto_yusuf</a></li>\n	<li>Panca<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_pen\">https://sknr.tk/sg_foto_pen</a></li>\n	<li>Edoardo<br />\n	Link :&nbsp;<a href=\"https://sknr.tk/sg_foto_edo\">https://sknr.tk/sg_foto_edo</a></li>\n	<li>Faras<br />\n	Link : -</li>\n	<li>Psr<br />\n	Link :&nbsp;-</li>\n</ul>\n\n<hr />\n<p><span style=\"color:#3498db\">Artikel ini dapat di edit dengan login sebagai<br />\nUsername : -<br />\nPassword : -</span></p>\n', '2019-06-30 13:17:29', 4, 7),
 (33, 'r_', 'HAPPY EID MUBARAK', 'Selamat hari raya Idul Fitri 1440 H', '<p style=\"text-align:center\"><span style=\"font-size:16px\">Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum...<br />\nSELAMAT IDUL FITRI 1440&nbsp;H~</span></p>\n\n<hr />\n<p style=\"text-align:center\"><strong><span style=\"font-size:16px\"><a href=\"https://link.dana.id/kaget?c=s9fmv4mgl&amp;r=dcCoFq\"><img alt=\"\" src=\"https://media.giphy.com/media/TdfyKrN7HGTIY/giphy.gif\" style=\"height:172px; width:300px\" /></a></span></strong></p>\n\n<p style=\"text-align:center\"><a href=\"https://link.dana.id/kaget?c=spkczvp2g&amp;r=dcCoFq\"><strong><span style=\"font-size:16px\">CARI APA?</span></strong></a></p>\n\n<hr />\n<p><code><tt>Posted By <a href=\"http://instagram.com/the.skinny.rat\" target=\"_blank\">R.</a>&nbsp;- 2&nbsp;Juni&nbsp;2019</tt></code></p>\n', '2019-06-04 18:29:00', 1, 24),
 (34, 'sc_sknr', 'Source Code', 'Source Code Information', '<p style=\"text-align:center\">DOWNLOAD SOURCE CODE : <strong><a href=\"https://sknr.tk/sc_sknr\">KLIK DISINI</a></strong></p>\r\n\r\n<hr />\r\n<p>Lisensi&nbsp; &nbsp; &nbsp; : Open Source - Diizikan untuk melakukan &#39;pull request&#39;<br />\r\nVersion&nbsp; &nbsp; &nbsp;: (Akan terus berkembang tergantung mood developer)<br />\r\nLanguage : PHP OOP , JavaScript<br />\r\n<br />\r\nMetode Pembuatan :<br />\r\n-&nbsp;Dibuat dengan mengubah file &#39;routes.php&#39; di config CodeIgniter untuk membuat fitur ShortLink, Article.<br />\r\n- Dibuat dengan metode CRUD dasar untuk pembuatan BACKEND.</p>\r\n\r\n<hr />\r\n<p><code>Posted by R. - 14 Juni 2019</code></p>\r\n', '2019-06-21 08:01:10', 1, 4),
 (36, 'wa_sticker', 'Sknr Sticker For Whatsapp', 'Sticker sknr gratis untuk whatsapp', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"0\" style=\"width:50px\">\n	<tbody>\n		<tr>\n			<td><img alt=\"\" src=\"https://i.ibb.co/ChvGNf0/ic-launcher.png\" style=\"height:30px; width:30px\" /></td>\n			<td>sknr_sticker.apk</td>\n		</tr>\n	</tbody>\n</table>\n\n<hr />\n<p><strong>Description</strong></p>\n\n<p>Nama Aplikasi : Sknr Sticker<br />\nNama Apk : sknr_sticker.apk<br />\nCompany Name : com.sknr.sticker (Tidak terverifikasi oleh google play protect karena tidak di upload di play store - <s>Mahal Cuk</s>)<br />\nVersion : 1.0 - Final<br />\nKet : Aplikasi akan terus di update (tergantung mood dev)</p>\n\n<p><span style=\"font-size:20px\"><a href=\"http://sknr.tk/dl_wa_sticker\">DOWNLOAD DISINI</a> </span></p>\n\n<p><span style=\"font-size:14px\"><a href=\"https://www.google.com/search?q=cara+install+apk&amp;oq=cara+install+apk\">CARA INSTALL??</a></span></p>\n\n<hr />\n<p><strong>Screenshoot</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://i.ibb.co/GVPMWqW/Screenshot-2019-06-24-11-49-16-188-com-sknr-sticker.png\" style=\"height:388px; width:200px\" /></strong></p>\n', '2019-06-24 12:54:51', 1, 9),
-(39, 'app', 'APP', '-', '      <center>\r\n        <table>\r\n          <tr>\r\n            <td><img src=\"https://i.ibb.co/qCjnXSL/rat.png\" width=\"70\" class=\"mr-2\"></td>\r\n            <td>\r\n              <button id=\"app_cek\" class=\"btn btn-info btn-sm\" disabled><i class=\"fa fa-circle-notch fa-spin\"></i> checking</button>\r\n              <button id=\"app_install\" class=\"btn btn-success btn-sm d-none\"><i class=\"fa fa-download\"></i> Install App</button>\r\n              <button id=\"app_noinstall\" class=\"btn btn-danger btn-sm d-none\" disabled><i class=\"fa fa-times\"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>\r\n              <button id=\"app_ok\" class=\"btn btn-success btn-sm d-none\" disabled><i class=\"fa fa-check\"></i> Installed</button>\r\n            </td>\r\n          </tr>\r\n        </table>\r\n        <hr>\r\n      </center>\r\n      Compatible Browser:<br>\r\n      - Google Chrome (67+) (Tested)<br>\r\n      <br>\r\n      Compatible Device:<br>\r\n      - All device with compatible browser <br>\r\n        (Android, Windows, IOS, ETC)<br />\r\n<br />\r\nLeave Comment for Bug Report..<br />\r\n<br />\r\n<a href=\"https://sknr.tk/apps_how\">Bagaimana cara membuat ini? - How it&#39;s works?</a></p>\r\n\r\n        <script id=\"app_script\">\r\n          var app_install = document.getElementById(\'app_install\');\r\n          var app_cek = document.getElementById(\'app_cek\');\r\n          var app_ok = document.getElementById(\'app_ok\');\r\n          let deferredPrompt;\r\n          window.addEventListener(\'beforeinstallprompt\', (e) => {\r\n            // Prevent Chrome 67 and earlier from automatically showing the prompt\r\n            e.preventDefault();\r\n            // Stash the event so it can be triggered later.\r\n            deferredPrompt = e;\r\n            // Update UI notify the user they can add to home screen\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.remove(\'d-none\');\r\n            app_noinstall.classList.add(\'d-none\');\r\n          });\r\n          app_install.addEventListener(\'click\', (e) => {\r\n            if (deferredPrompt !== undefined) {\r\n              // Show the prompt\r\n            deferredPrompt.prompt();\r\n              // Wait for the user to respond to the prompt\r\n            deferredPrompt.userChoice\r\n              .then((choiceResult) => {\r\n                if (choiceResult.outcome === \'accepted\') {\r\n                  console.log(\'User accepted the A2HS prompt\');\r\n                } else {\r\n                  console.log(\'User dismissed the A2HS prompt\');\r\n                }\r\n                deferredPrompt = null;\r\n              });\r\n            }else{\r\n              app_install.classList.add(\'d-none\');\r\n              app_noinstall.classList.remove(\'d-none\');\r\n            }\r\n          });\r\n          window.addEventListener(\'appinstalled\', (evt) => {\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.add(\'d-none\');\r\n            app_ok.classList.remove(\'d-none\');\r\n          });\r\n        </script>\r\n        <script>\r\n          $(\'#app_script\').ready(function(){\r\n            $(\'#app_cek\').addClass(\'d-none\');\r\n            $(\'#app_install\').removeClass(\'d-none\');\r\n          });\r\n        </script>', '2019-07-18 11:22:27', 0, 6);
+(39, 'app', 'APP', '-', '      <center>\r\n        <table>\r\n          <tr>\r\n            <td><img src=\"https://i.ibb.co/qCjnXSL/rat.png\" width=\"70\" class=\"mr-2\"></td>\r\n            <td>\r\n              <button id=\"app_cek\" class=\"btn btn-info btn-sm\" disabled><i class=\"fa fa-circle-notch fa-spin\"></i> checking</button>\r\n              <button id=\"app_install\" class=\"btn btn-success btn-sm d-none\"><i class=\"fa fa-download\"></i> Install App</button>\r\n              <button id=\"app_noinstall\" class=\"btn btn-danger btn-sm d-none\" disabled><i class=\"fa fa-times\"></i> Tidak kompatibel dengan browser anda <br> / Aplikasi sudah diinstall</button>\r\n              <button id=\"app_ok\" class=\"btn btn-success btn-sm d-none\" disabled><i class=\"fa fa-check\"></i> Installed</button>\r\n            </td>\r\n          </tr>\r\n        </table>\r\n        <hr>\r\n      </center>\r\n      Compatible Browser:<br>\r\n      - Google Chrome (67+) (Tested)<br>\r\n      <br>\r\n      Compatible Device:<br>\r\n      - All device with compatible browser <br>\r\n        (Android, Windows, IOS, ETC)<br />\r\n<br />\r\nLeave Comment for Bug Report..<br />\r\n<br />\r\n<a href=\"https://sknr.tk/apps_how\">Bagaimana cara membuat ini? - How it&#39;s works?</a></p>\r\n\r\n        <script id=\"app_script\">\r\n          var app_install = document.getElementById(\'app_install\');\r\n          var app_cek = document.getElementById(\'app_cek\');\r\n          var app_ok = document.getElementById(\'app_ok\');\r\n          let deferredPrompt;\r\n          window.addEventListener(\'beforeinstallprompt\', (e) => {\r\n            // Prevent Chrome 67 and earlier from automatically showing the prompt\r\n            e.preventDefault();\r\n            // Stash the event so it can be triggered later.\r\n            deferredPrompt = e;\r\n            // Update UI notify the user they can add to home screen\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.remove(\'d-none\');\r\n            app_noinstall.classList.add(\'d-none\');\r\n          });\r\n          app_install.addEventListener(\'click\', (e) => {\r\n            if (deferredPrompt !== undefined) {\r\n              // Show the prompt\r\n            deferredPrompt.prompt();\r\n              // Wait for the user to respond to the prompt\r\n            deferredPrompt.userChoice\r\n              .then((choiceResult) => {\r\n                if (choiceResult.outcome === \'accepted\') {\r\n                  console.log(\'User accepted the A2HS prompt\');\r\n                } else {\r\n                  console.log(\'User dismissed the A2HS prompt\');\r\n                }\r\n                deferredPrompt = null;\r\n              });\r\n            }else{\r\n              app_install.classList.add(\'d-none\');\r\n              app_noinstall.classList.remove(\'d-none\');\r\n            }\r\n          });\r\n          window.addEventListener(\'appinstalled\', (evt) => {\r\n            app_cek.classList.add(\'d-none\');\r\n            app_install.classList.add(\'d-none\');\r\n            app_ok.classList.remove(\'d-none\');\r\n          });\r\n        </script>\r\n        <script>\r\n          $(\'#app_script\').ready(function(){\r\n            $(\'#app_cek\').addClass(\'d-none\');\r\n            $(\'#app_install\').removeClass(\'d-none\');\r\n          });\r\n        </script>', '2019-07-18 11:22:27', 0, 20);
 
 -- --------------------------------------------------------
 
@@ -91,14 +91,6 @@ CREATE TABLE `px_article_comment` (
   `id_article` int(11) NOT NULL,
   `id_parent` bigint(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `px_article_comment`
---
-
-INSERT INTO `px_article_comment` (`id`, `comment`, `date`, `id_member`, `id_article`, `id_parent`) VALUES
-(16, 'みんな こんにちは 👋🏻', '2019-06-29 13:08:54', 1, 29, 0),
-(18, 'WIBU GOBLOK', '2019-06-29 13:21:52', 14, 29, 16);
 
 -- --------------------------------------------------------
 
@@ -123,13 +115,6 @@ CREATE TABLE `px_article_comment_like` (
   `id_article_comment` bigint(225) NOT NULL,
   `id_member` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `px_article_comment_like`
---
-
-INSERT INTO `px_article_comment_like` (`id`, `id_article_comment`, `id_member`) VALUES
-(12, 16, 14);
 
 -- --------------------------------------------------------
 
@@ -160,7 +145,8 @@ CREATE TABLE `px_article_like` (
 --
 
 INSERT INTO `px_article_like` (`id`, `id_article`, `id_member`) VALUES
-(7, 29, 14);
+(7, 29, 14),
+(10, 29, 1);
 
 -- --------------------------------------------------------
 
@@ -197,8 +183,9 @@ INSERT INTO `px_change_log` (`id`, `judul`, `konten`, `expand`, `status`) VALUES
 (15, 'Version 2.2.5', '<p>- Add Multi Login (Backend)<br />\r\n- Add Many Feature (Backend)<br />\r\n- Improve Alert Style (Frontend)</p>\r\n', 0, 1),
 (16, 'Version 2.2.6', '<p>- Add many feature in article (Frontend)<br />\r\n- Add log member register / login (Frontend)<br />\r\n- Other</p>\r\n', 0, 1),
 (17, 'Version 2.2.7', '<p>- Add Profile Page (Frontend)<br />\r\n- Other<br />\r\n- Bug Fixed</p>\r\n', 0, 1),
-(18, 'Version 2.2.8', '<p>- Add Installation APP (Frontend)<br />\r\n- Change style Article Form (Frontend)<br />\r\n- Blog Improve (Frontend)</p>\r\n', 1, 1),
-(19, 'Version 2.2.9', '<p>- Improvement (Frontend)<br />\r\n- Fix Bugs</p>\r\n', 1, 1);
+(18, 'Version 2.2.8', '<p>- Add Installation APP (Frontend)<br />\r\n- Change style Article Form (Frontend)<br />\r\n- Blog Improve (Frontend)</p>\r\n', 0, 1),
+(19, 'Version 2.2.9', '<p>- Improvement (Frontend)<br />\r\n- Fix Bugs</p>\r\n', 1, 1),
+(20, 'Version 2.3.0', '<p>- Upgrade core system to CodeIgniter v3.1.0<br />\r\n- Create readme and license (github)<br />\r\n- Other</p>\r\n', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1688,7 +1675,7 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (15, 'ggl', 'https://www.google.com', '0', '2019-04-15 21:58:27', 0, 1),
 (16, 'yt', 'https://youtube.com', '0', '2019-04-15 21:59:53', 0, 1),
 (17, 'raskuy', 'https://drive.google.com/open?id=18GQABqFLBtVSeroDSwJKBnP480VnpxQ_', 'C5ldWtaZrgDsY6DhTxej8rx3TmN3j2MO/Q6QAQ1c6w7mVaZbL13aLrEAne/of+DvoEHpThjZAI5VSlzLKgViaw==', '2019-04-16 03:38:05', 0, 3),
-(18, 'r_weblsp', 'http://psr-smkindonesia.000webhostapp.com/', '0', '2019-04-16 11:57:20', 0, 9),
+(18, 'r_weblsp', 'http://psr-smkindonesia.000webhostapp.com/', '0', '2019-04-16 11:57:20', 0, 10),
 (19, 'r_sclsp', 'https://drive.google.com/drive/folders/10eVBy1QxFqmClDo7Q9_bajt8v8ePEmos?usp=sharing', 'BXk/liEzx7RhaMmakr1Is5IVuZOqibSLc8KpQIShd8xvily+bcZxBX1eRvx1vOOhbSryq9EcmWOx92ulSMA7bA==', '2019-04-16 11:57:46', 0, 6),
 (20, 'maullsp', 'https://drive.google.com/open?id=1m7aRw3cmSAhuT1Daks9110mUQtii5PCZ', '0', '2019-04-16 17:50:58', 0, 4),
 (21, 'wardun', 'https://drive.google.com/open?id=1_U3XX_LKp3HASKywau7OsXWA14JQ86Gz', '0', '2019-04-16 18:27:35', 0, 4),
@@ -1700,7 +1687,7 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (38, 'rpl2_fotoformallama', 'https://drive.google.com/open?id=1qBDZOpRVf4LgJVpu9iw2LJatxmNc8tjZ', '0', '2019-04-29 18:49:45', 3, 13),
 (39, 'rpl2_fotoformal', 'https://drive.google.com/open?id=1sGNnuMEOd9bNSQw-HXlB-ArkprmlwkS9', ' 0', '2019-04-29 18:50:43', 3, 21),
 (40, 'rpl2_foto', 'https://photos.app.goo.gl/Lt2GKZzfKy3NBmH37', ' 0', '2019-04-29 19:09:50', 3, 18),
-(42, '%F0%9F%93%A6', 'https://sknr.tk/blog/📦', ' 0', '2019-07-05 11:29:24', 1, 14),
+(42, 'jb', 'https://sknr.tk/blog/jb', ' 0', '2019-07-18 11:58:52', 1, 14),
 (43, 'numpang', 'https://drive.google.com/file/d/1BHl8gy1z533Aznt1VDaR3KSz2GMX0rIO/view?usp=drivesdk', '0', '2019-05-18 13:30:07', 0, 4),
 (44, 'r_getuseragent', 'https://sknr.tk/blog/r_get_user_agent', ' 0', '2019-05-24 06:52:46', 1, 0),
 (46, 'sg', 'https://sknr.tk/blog/sharinggan', ' 0', '2019-05-29 21:39:42', 4, 15),
@@ -1720,8 +1707,8 @@ INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `dat
 (60, 'reg_admin', 'https://wa.me/6281283854955?text=Halo%21+Saya+ingin+menjadi+admin+backend+di+sknr.tk%0AUsername+%3A+%28isi+sendiri%29%0APassword+%3A+%28isi+sendiri%29', ' 0', '2019-06-24 11:16:35', 1, 3),
 (62, 'wa_sticker', 'https://sknr.tk/blog/wa_sticker', ' 0', '2019-06-24 11:49:50', 1, 8),
 (64, 'dl_wa_sticker', 'https://drive.google.com/uc?id=1YZZMvCi79qu68yM0_X0yUM6DTxRJvdgf&export=download', ' 0', '2019-06-24 12:49:02', 1, 0),
-(67, 'apps', 'https://sknr.tk/blog/app', ' 0', '2019-07-18 11:26:05', 0, 0),
-(68, 'apps_how', 'https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=id', ' 0', '2019-07-18 11:26:00', 0, 0);
+(67, 'apps', 'https://sknr.tk/blog/app', ' 0', '2019-07-18 11:26:05', 0, 4),
+(68, 'apps_how', 'https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=id', ' 0', '2019-07-18 11:26:00', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -1823,11 +1810,12 @@ INSERT INTO `px_web_alert` (`id`, `style`, `konten`, `status`) VALUES
 (4, 'alert-danger', 'WEB DOWN', 0),
 (5, 'alert-warning', '<i class=\"fas fa-exclamation-circle\"></i> Website Sedang Dalam Pengembangan ^^ - Akan Terjadi Sinkronisasi Data', 0),
 (6, 'alert-info', 'Ayo coba hack / temukan bug di web ini ! ^^', 0),
-(8, 'alert-info', '<i class=\"fas fa-sync-alt fa-spin\"></i> Ver 2.2.3 Released - <a href=\"https://sknr.tk/home/change_log\" class=\"alert-link\">Read Change Log</a>', 0),
 (9, 'alert-primary', '<i class=\"far fa-plus-square fa-spin\"></i> New Feature - <a href=\"https://sknr.tk/home/wa_ctc\" class=\"alert-link\">Whatsapp Click to Chat</a>', 0),
 (10, 'alert-info', '<i class=\"fas fa-code\"></i> <i class=\"fab fa-github\"></i> Web ini dibuat dengan framework CodeIgniter dan berstatus <I><b>Open Source</b></i> - Download source code <a href=\"https://sknr.tk/blog/sc_sknr\" class=\"alert-link\">DISINI</a>', 0),
 (11, 'alert-primary', '<i class=\"far fa-plus-square fa-spin\"></i> New Feature - <a href=\"https://sknr.tk/home/wa_cws\" class=\"alert-link\">Whatsapp Chat Without Save</a>', 0),
-(13, 'alert-info', '<i class=\"far fa-plus-square fa-spin\"></i>\nIngin menjadi admin backend di web ini?\n<hr>\n<a href=\"https://sknr.tk/reg_admin\" class=\"alert-link\">Klik Disini</a> untuk mendaftar\n<br>\n<a href=\"https://sknr.tk/admin\" class=\"alert-link\">Klik Disini</a> untuk login ke backend', 0);
+(13, 'alert-info', '<i class=\"far fa-plus-square fa-spin\"></i>\nIngin menjadi admin backend di web ini?\n<hr>\n<a href=\"https://sknr.tk/reg_admin\" class=\"alert-link\">Klik Disini</a> untuk mendaftar\n<br>\n<a href=\"https://sknr.tk/admin\" class=\"alert-link\">Klik Disini</a> untuk login ke backend', 0),
+(15, 'alert-secondary', '<center>\n<form class=\"form\" method=\"get\" action=\"https://google.com/search\" target=\"_blank\">\n                <div class=\"input-group\">\n                  <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Google Search..\">\n                  <div class=\"input-group-append\">\n                    <button class=\"btn btn-primary\" type=\"submit\"><i class=\"fas fa-search\"></i></button>\n                  </div>\n                </div>\n              </form>\n</center>', 1),
+(16, 'alert-info', '<p class=\"p-0 m-0\"><strong>Change log v2.3.0</strong></p>\r\n\r\n<p>- Upgrade core system ke CodeIgniter v3.1.0<br />\r\n<hr>\r\n<i class=\"fas fa-balance-scale\"></i> Web ini di lisensi-kan oleh <a href=\"https://id.wikipedia.org/wiki/Lisensi_MIT\" target=\"_blank\">(MIT)</a> atas nama <a href=\"https://github.com/TheSkinnyRat/skinnyrat/blob/master/LICENSE\" target=\"_blank\">© Skinny Rat</a><br />\r\n<a href=\"https://sknr.tk/home/change_log\" target=\"_blank\">Read More</a></p>\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -1849,7 +1837,7 @@ CREATE TABLE `px_web_setting` (
 --
 
 INSERT INTO `px_web_setting` (`id`, `title`, `name`, `version`, `icon`, `favicon`) VALUES
-(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.2.9', 'fa-grin-beam', 'rat.png');
+(1, 'Skinny Rat', 'Skinny Rat <sup>^^</sup>', 'v2.3.0', 'fa-grin-wink', 'rat.png');
 
 --
 -- Indexes for dumped tables
@@ -1977,7 +1965,7 @@ ALTER TABLE `px_article`
 -- AUTO_INCREMENT for table `px_article_comment`
 --
 ALTER TABLE `px_article_comment`
-  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `px_article_comment_dislike`
@@ -1989,7 +1977,7 @@ ALTER TABLE `px_article_comment_dislike`
 -- AUTO_INCREMENT for table `px_article_comment_like`
 --
 ALTER TABLE `px_article_comment_like`
-  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `px_article_dislike`
@@ -2001,13 +1989,13 @@ ALTER TABLE `px_article_dislike`
 -- AUTO_INCREMENT for table `px_article_like`
 --
 ALTER TABLE `px_article_like`
-  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `px_change_log`
 --
 ALTER TABLE `px_change_log`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `px_icons`
@@ -2019,7 +2007,7 @@ ALTER TABLE `px_icons`
 -- AUTO_INCREMENT for table `px_log_user_agent`
 --
 ALTER TABLE `px_log_user_agent`
-  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=718;
+  MODIFY `id_log_user_agent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=807;
 
 --
 -- AUTO_INCREMENT for table `px_member`
@@ -2055,7 +2043,7 @@ ALTER TABLE `px_usergroup`
 -- AUTO_INCREMENT for table `px_web_alert`
 --
 ALTER TABLE `px_web_alert`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `px_web_setting`

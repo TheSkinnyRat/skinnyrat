@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Example extends PX_Controller {
+	public function index()
+	{
+		$this->load->view('example');
+	}
+
+	public function trigger_event()
+	{
+
+		$pusher = $this->ci_pusher->get_pusher();
+
+		// Set message
+		$data['message'] = 'This message was sent at ' . date('Y-m-d H:i:s');
+
+		// Send message
+		$event = $pusher->trigger('test_channel', 'my_event', $data);
+
+		if ($event === TRUE)
+		{
+			echo 'Event triggered successfully!';
+		}
+		else
+		{
+			echo 'Ouch, something happend. Could not trigger event.';
+		}
+	}
+}
