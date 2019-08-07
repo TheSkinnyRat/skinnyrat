@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1587350440311353",
+          enable_page_level_ads: true
+     });
+  </script>
 
   <!-- Progress bar loading -->
   <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>

@@ -70,6 +70,9 @@ $route['upload/(:any)'] = "upload/$1";
 $route['blog/(:any)'] = "blog/index/$1";
 $route['blog_system/(:any)'] = "blog_system/$1";
 
+$route['c'] = "c";
+$route['c/(:any)'] = "c/index/$1";
+
 $route['example'] = "example";
 $route['example/(:any)'] = "example/$1";
 

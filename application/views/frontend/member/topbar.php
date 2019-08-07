@@ -7,6 +7,12 @@
   </button>
 
   <!-- Topbar Navbar -->
+  <div class="font-weight-bold text-primary text-uppercase m-0 d-md-none">
+    <span id="hour">00</span> <span class="blink-1s">:</span> <span id="minute">00</span>
+  </div>
+  <div class="font-weight-bold text-primary text-uppercase m-0 d-none d-md-block">
+    <span id="hour-1">00</span> : <span id="minute-1">00</span> : <span id="second-1">00</span>
+  </div>
   <ul class="navbar-nav ml-auto">
 
     <!-- <div class="topbar-divider d-none d-sm-block"></div> -->

@@ -158,7 +158,7 @@ class Home extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
 
-				$d = base_url($insert['name']);
+				$d = urlencode(base_url($insert['name']));
 				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
 				$redirect = base_url('home/success?d='.$d.'&m='.$m);
 				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
@@ -266,7 +266,7 @@ class Home extends PX_Controller {
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
 
-				$d = base_url('blog/'.$insert['name']);
+				$d = urlencode(base_url('blog/'.$insert['name']));
 				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
 				$redirect = base_url('home/success?d='.$d.'&m='.$m);
 				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
