@@ -45,6 +45,16 @@ var jvalidate = $("#article_form").validate({
   }
 });
 
+function diseditor() {
+  if ( $('#disable_editor').is(':checked') ) {
+    $('#editor_cktext').addClass('d-none').children('textarea').prop('disabled', true);
+    $('#editor_default').removeClass('d-none').children('textarea').prop('disabled', false);
+  }else{
+    $('#editor_cktext').removeClass('d-none').children('textarea').prop('disabled', false);
+    $('#editor_default').addClass('d-none').children('textarea').prop('disabled', true);
+  }
+}
+
 // ClassicEditor
 //   .create(document.querySelector('#cktext'), {
 //     toolbar: ['heading','|','undo','redo','|','bold','italic','blockQuote',"link", "numberedList", "bulletedList", "mediaEmbed", "insertTable", "tableColumn", "tableRow", "mergeTableCells"],

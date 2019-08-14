@@ -79,6 +79,7 @@ class Member_system extends PX_Controller {
 			$update[$field] = $this->input->post($field);
 		}
 		$update['id_member'] = $data['userdata']['id_member'];
+		$update['click'] = '0';
 
 		if ($update['password'] != '0') {
 			$update['password'] = $this->encrypt->encode($update['password']);
@@ -90,8 +91,11 @@ class Member_system extends PX_Controller {
 			if($update){
 				$do_update = $this->model_basic->update($this->tbl_shorten_url,$update,'id_shorten_url',$update['id_shorten_url']);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'shorten_url'));
-				redirect('home/shorten_url_form');
+				if ($this->input->post('save_here') != NULL) {
+					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
+				}else{
+					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'shorten_url'));
+				}
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}
@@ -298,6 +302,7 @@ class Member_system extends PX_Controller {
 			$update[$field] = $this->input->post($field);
 		}
 		$update['id_member'] = $data['userdata']['id_member'];
+		$update['click'] = '0';
 
 		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
 		if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {
@@ -306,8 +311,11 @@ class Member_system extends PX_Controller {
 			if($update){
 				$do_update = $this->model_basic->update($this->tbl_article,$update,'id_article',$update['id_article']);
 
-				$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
-				redirect('home/article_form');
+				if ($this->input->post('save_here') != NULL) {
+					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
+				}else{
+					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
+				}
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
 			}

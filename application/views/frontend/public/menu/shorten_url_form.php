@@ -15,11 +15,6 @@
         <input type="hidden" name="id_shorten_url" value="0">
         <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
         <div class="panel-body">
-          <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
-          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
-          <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
-
-          <!--				-------------------------------------------------------------------------------------------------------->
           <div class="form-group">
             <label class="col-md-4 col-xs-12 control-label">Custom URL</label>
             <div class="input-group col-md-4 col-xs-12">
@@ -61,6 +56,12 @@
         <div class="panel-footer text-right">
           <button class="btn btn-default" type="reset">Reset</button>
           <button class="btn btn-primary" type="submit">Simpan</button>
+          <hr>
+          <div class="text-center">
+            <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
+            <div class="alert alert-warning d-none"><strong><i class="fas fa-circle-notch fa-spin"></i> Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
+            <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
+          </div>
         </div>
       </form>
 

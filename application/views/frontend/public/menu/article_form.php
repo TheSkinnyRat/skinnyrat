@@ -14,11 +14,6 @@
       <form class="form-horizontal" method="POST" id="article_form" action="<?php echo base_url('home/article_add') ?>">
         <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
         <div class="panel-body">
-          <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
-          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
-          <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
-
-          <!--				-------------------------------------------------------------------------------------------------------->
           <div class="form-group">
             <label class="col-md-4 col-xs-12 control-label">Article URL</label>
             <div class="input-group col-md-4 col-xs-12">
@@ -45,8 +40,12 @@
 
           <div class="form-group">
             <label class="col-md-4 col-xs-12 control-label">Konten</label>
-            <div class="col-md-10 col-xs-20">
+            <label class="col-md-4 col-xs-12 control-label"><input type="checkbox" id="disable_editor" onclick="diseditor()"> <label for="disable_editor">Disable Editor</label></label>
+            <div id="editor_cktext" class="col-md-10 col-xs-20">
               <textarea name="konten" id="cktext" class="form-control ckeditor"></textarea>
+            </div>
+            <div id="editor_default" class="col-md-10 col-xs-20 d-none">
+              <textarea name="konten" class="form-control" rows="10"></textarea>
             </div>
           </div>
 
@@ -57,6 +56,12 @@
         <div class="panel-footer text-right">
           <button class="btn btn-default" type="reset">Reset</button>
           <button class="btn btn-primary" type="submit">Simpan</button>
+          <hr>
+          <div class="text-center">
+            <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
+            <div class="alert alert-warning d-none"><strong><i class="fas fa-circle-notch fa-spin"></i> Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
+            <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
+          </div>
         </div>
       </form>
 

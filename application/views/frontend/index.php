@@ -14,6 +14,7 @@
   <!-- Progress bar loading -->
   <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
   <link rel="stylesheet" href="<?php echo base_url('assets/frontend/vendor/pace/pace.css') ?>">
+  <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,11 +30,12 @@
   <link rel="manifest" href="<?php echo base_url('assets/manifest/manifest.json') ?>">
 
   <!-- Custom fonts for this template-->
+  <!-- <script src="https://kit.fontawesome.com/3dcbc6b67b.js"></script> -->
   <link href="<?php echo base_url('assets/frontend/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.css') ?>" rel="stylesheet">
 
   <!-- Custom styles for data tables page -->
   <link href="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
@@ -97,7 +99,55 @@
 
         <?php echo $topbar ?>
 
-        <?php echo $content ?>
+        <div id="place_load" class="container-fluid">
+          <div class="ph-item">
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-2"></div>
+                <div class="ph-col-10 empty"></div>
+              </div>
+            </div>
+
+            <div class="ph-col-12">
+              <div class="ph-picture"></div>
+              <div class="ph-row">
+                <div class="ph-col-10 big"></div>
+                <div class="ph-col-2 empty big"></div>
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+
+            <div class="ph-col-4">
+              <div class="ph-picture"></div>
+            </div>
+
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-2"></div>
+                <div class="ph-col-10 empty"></div>
+                <div class="ph-col-8"></div>
+                <div class="ph-col-4 empty"></div>
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="main_content" style="visibility: hidden;">
+          <?php echo $content ?>
+        </div>
+
       </div>
       <!-- End of Main Content -->
 
@@ -145,7 +195,7 @@
   <!-- WARNING ALL SCRIPT FOR ALL PAGE -->
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.js') ?>"></script>
 
   <!-- scripts for Service Worker -->
   <script>

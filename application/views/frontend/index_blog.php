@@ -5,7 +5,7 @@
   <!-- Google Adsense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
-     (adsbygoogle = window.adsbygoogle || []).push({
+    (adsbygoogle = window.adsbygoogle || []).push({
           google_ad_client: "ca-pub-1587350440311353",
           enable_page_level_ads: true
      });
@@ -14,6 +14,7 @@
   <!-- Progress bar loading -->
   <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
   <link rel="stylesheet" href="<?php echo base_url('assets/frontend/vendor/pace/pace.css') ?>">
+  <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,17 +22,20 @@
   <meta name="description" content="<?php echo $data->subjudul ?>">
   <meta name="author" content="">
 
-  <title><?php echo $data->judul ?></title>
+  <title>
+    <?php echo $data->judul ?>
+  </title>
 
   <link rel="icon" href="<?php echo base_url('assets/frontend/img/favicon/ratblog.png') ?>">
   <link rel="manifest" href="<?php echo base_url('assets/manifest/manifest.json') ?>">
 
   <!-- Custom fonts for this template-->
+  <!-- <script src="https://kit.fontawesome.com/3dcbc6b67b.js"></script> -->
   <link href="<?php echo base_url('assets/frontend/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.css') ?>" rel="stylesheet">
 
   <!-- Custom styles for data tables page -->
   <link href="<?php echo base_url('assets/frontend/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
@@ -91,7 +95,55 @@
 
         <?php echo $topbar ?>
 
-        <?php echo $content ?>
+        <div id="place_load" class="m-2 mx-lg-5 px-xl-5">
+          <div class="ph-item">
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-2"></div>
+                <div class="ph-col-10 empty"></div>
+              </div>
+            </div>
+
+            <div class="ph-col-12">
+              <div class="ph-picture"></div>
+              <div class="ph-row">
+                <div class="ph-col-10 big"></div>
+                <div class="ph-col-2 empty big"></div>
+                <div class="ph-col-4"></div>
+                <div class="ph-col-8 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+
+            <div class="ph-col-4">
+              <div class="ph-picture"></div>
+            </div>
+
+            <div>
+              <div class="ph-row">
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-2"></div>
+                <div class="ph-col-10 empty"></div>
+                <div class="ph-col-8"></div>
+                <div class="ph-col-4 empty"></div>
+                <div class="ph-col-12"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="main_content" style="visibility: hidden;">
+          <?php echo $content ?>
+        </div>
+
       </div>
       <!-- End of Main Content -->
 
@@ -99,7 +151,8 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 - <?php echo $app_version ?></span>
+            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 -
+              <?php echo $app_version ?></span>
           </div>
         </div>
       </footer>
@@ -138,16 +191,18 @@
   <!-- WARNING ALL SCRIPT FOR ALL PAGE -->
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.js') ?>"></script>
 
   <!-- scripts for Service Worker -->
   <script>
     UpUp.start({
       'cache-version': 'v1',
       //'content-url': 'offline.html'
-      'content-url': '<?=site_url('offline.php')?>',
+      'content-url': '<?=site_url('
+      offline.php ')?>',
       'content': 'Oops!. We Need An INTERNET Connection.',
-      'service-worker-url': '<?=site_url('upup.sw.min.js')?>'
+      'service-worker-url': '<?=site_url('
+      upup.sw.min.js ')?>'
     });
   </script>
 
@@ -167,20 +222,20 @@
     });
     btn_pwa.addEventListener('click', (e) => {
       // hide our user interface that shows our A2HS button
-    btn_pwa.classList.add('d-none');
-    div_btn_pwa.classList.add('d-none');
+      btn_pwa.classList.add('d-none');
+      div_btn_pwa.classList.add('d-none');
       // Show the prompt
-    deferredPrompt.prompt();
+      deferredPrompt.prompt();
       // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice
-      .then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null;
-      });
+      deferredPrompt.userChoice
+        .then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
     });
   </script>
 

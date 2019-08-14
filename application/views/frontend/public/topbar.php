@@ -7,23 +7,25 @@
   </button>
 
   <!-- Topbar Navbar -->
-  <div class="font-weight-bold text-primary text-uppercase m-0 d-md-none">
-    <span id="hour">00</span> <span class="blink-1s">:</span> <span id="minute">00</span>
-  </div>
-  <div class="font-weight-bold text-primary text-uppercase m-0 d-none d-md-block">
-    <span id="hour-1">00</span> : <span id="minute-1">00</span> : <span id="second-1">00</span>
+  <div class="btn btn-light btn-sm d-none-toggle">
+    <div class="font-weight-bold text-primary text-uppercase m-0 d-md-none">
+      <span id="hour">00</span> <span class="blink-1s">:</span> <span id="minute">00</span>
+    </div>
+    <div class="font-weight-bold text-primary text-uppercase m-0 d-none d-md-block">
+      <span id="hour-1">00</span> : <span id="minute-1">00</span> : <span id="second-1">00</span>
+    </div>
   </div>
   <ul class="navbar-nav ml-auto">
 
     <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
     <!-- Nav Item - User Information -->
     <a href="<?php if(isset($url_continue)) echo base_url('member/register?ref='.$url_continue); else echo base_url('member/register') ?>">
-      <button class="btn btn-info mr-1" type="button">
+      <button class="btn btn-info mr-1 btn-sm" type="button">
         REGISTER
       </button>
     </a>
     <a href="<?php if(isset($url_continue)) echo base_url('member/login?ref='.$url_continue); else echo base_url('member/login') ?>">
-      <button class="btn btn-primary" type="button">
+      <button class="btn btn-primary btn-sm" type="button">
         LOGIN
       </button>
     </a>
@@ -31,7 +33,7 @@
   </ul>
 
   <div id="div_btn_pwa" class="topbar-divider mx-2 d-none"></div>
-  <button id="btn_pwa" class="btn btn-warning d-none" data-toggle="" data-placement="bottom" title="Download Aplikasi">
+  <button id="btn_pwa" class="btn btn-warning btn-sm d-none" data-toggle="" data-placement="bottom" title="Download Aplikasi">
     <i class="fa fa-download"></i>
   </button>
 

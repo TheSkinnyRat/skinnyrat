@@ -38,13 +38,14 @@ class C extends PX_Controller {
 					$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
 
 					$d = urlencode(base_url($insert['name']));
-					$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+					$durl = urlencode($url);
+					$m = urlencode('LINK IS READY');
 					$id = $get_id->id_shorten_url;
 					$login = 'true';
 					if($this->session->userdata('member') == TRUE){
-						$redirect = base_url('c?success=true'.'&d='.$d.'&m='.$m.'&id='.$id.'&login='.$login);
+						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m.'&id='.$id.'&login='.$login);
 					}else{
-						$redirect = base_url('c?success=true'.'&d='.$d.'&m='.$m);
+						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m);
 					}
 					redirect($redirect);
 				}else{
@@ -80,13 +81,14 @@ class C extends PX_Controller {
 					$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
 
 					$d = urlencode(base_url($insert['name']));
-					$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+					$durl = urlencode($url);
+					$m = urlencode('LINK IS READY');
 					$id = $get_id->id_shorten_url;
 					$login = 'true';
 					if($this->session->userdata('member') == TRUE){
-						$redirect = base_url('c?success=true'.'&d='.$d.'&m='.$m.'&id='.$id.'&login='.$login);
+						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m.'&id='.$id.'&login='.$login);
 					}else{
-						$redirect = base_url('c?success=true'.'&d='.$d.'&m='.$m);
+						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m);
 					}
 					redirect($redirect);
 				}else{
@@ -96,6 +98,7 @@ class C extends PX_Controller {
 		}else if($this->input->get('success')){
 			$data = $this->get_app_settings();
 			$data['d'] = $this->input->get('d');
+			$data['durl'] = $this->input->get('durl');
 			$data['m'] = $this->input->get('m');
 			$data['id'] = $this->input->get('id');
 			$data['login'] = $this->input->get('login');

@@ -23,6 +23,7 @@
               </div>
 
             </div>
+            <label class="col-md-8 col-xs-12 control-label"><small><code>Redirect : <?php echo $durl; ?></code></small></label>
           </div>
 
         </div>

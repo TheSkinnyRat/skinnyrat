@@ -13,11 +13,6 @@
     <div class="card-body">
       <form class="form-horizontal" method="POST" id="wa_ctc_form" action="<?php echo base_url('home/wa_ctc_go') ?>">
         <div class="panel-body">
-          <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
-          <div class="alert alert-warning d-none"><strong>Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
-          <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
-          <!--				-------------------------------------------------------------------------------------------------------->
-
         <div class="form-group">
           <label class="col-md-4 col-xs-12 control-label">No Whatsapp</label>
           <div class="col-md-5 col-xs-12">
@@ -36,6 +31,12 @@
         <div class="panel-footer text-right">
           <button class="btn btn-default" type="reset">Reset</button>
           <button class="btn btn-primary" type="submit">Create</button>
+          <hr>
+          <div class="text-center">
+            <div class="alert alert-success d-none"><strong>Berhasil! </strong><span></span></div>
+            <div class="alert alert-warning d-none"><strong><i class="fas fa-circle-notch fa-spin"></i> Memproses! </strong><span>Mohon tunggu, system sedang bekerja.</span></div>
+            <div class="alert alert-danger d-none"><strong>Gagal! </strong><span></span></div>
+          </div>
         </div>
       </form>
 
