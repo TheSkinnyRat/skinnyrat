@@ -36,7 +36,6 @@ class Blog extends PX_Controller {
 				$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
 				$up_click = $this->model_basic->update_one($this->tbl_article,'id_article',$get_data->id_article,'click','+1');
 				$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$get_data->id_article)->row();
-				$data['url_continue'] = urlencode(base_url('blog/'.$data['data']->name));
 				$data['like'] = $this->model_basic->count_where($this->tbl_article_like,'id_article',$data['data']->id_article);
 				$data['dislike'] = $this->model_basic->count_where($this->tbl_article_dislike,'id_article',$data['data']->id_article);
 				$data['comment_count'] = $this->model_basic->count_where($this->tbl_article_comment,'id_article',$data['data']->id_article);
@@ -103,7 +102,12 @@ class Blog extends PX_Controller {
 					$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
 					$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 				}
-				$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
+				$data['article_rand'] = $this->model_basic->select_rand_where_limit($this->tbl_article,'private','0','3')->result();
+				if ($data['data']->password != '0') {
+					$data['content'] = $this->load->view('frontend/public/menu/blog_pass',$data,true);
+				}else{
+					$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
+				}
 				$this->load->view('frontend/index_blog',$data);
 			}else{
 					redirect('error/error_404');

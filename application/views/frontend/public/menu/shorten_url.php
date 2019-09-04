@@ -15,7 +15,7 @@
         <table class="table table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Id</th>
+              <th>No</th>
               <th>Name</th>
               <th>Link</th>
               <!-- <th>Password</th> -->
@@ -33,10 +33,11 @@
                     </tr>
                   </tfoot> -->
           <tbody>
+            <?php $no = 1 ?>
             <?php foreach ($shorten_url as $d) { ?>
             <tr>
               <td>
-                <?php echo $d->id_shorten_url ?>
+                <?php echo $no++ ?>
               </td>
               <td>
                 <?php echo $d->name ?>

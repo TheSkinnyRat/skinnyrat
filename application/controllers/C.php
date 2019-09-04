@@ -9,50 +9,7 @@ class C extends PX_Controller {
 
 	public function index() {
 
-		$url = $this->uri->segment(2);
-
-		if($url){
-
-			$table_field = $this->db->list_fields($this->tbl_shorten_url);
-			$insert = array();
-			$lenght_random_string = 3;
-			$insert['name'] = random_string('alnum', $lenght_random_string);
-			while ($this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row() !== NULL) {
-				$lenght_random_string++;
-				$insert['name'] = random_string('alnum', $lenght_random_string);
-			}
-
-			$insert['link'] = urldecode($url);
-			$insert['password'] = '0';
-			$insert['date_created'] = date('Y-m-d H:i:s');
-			if($this->session->userdata('member') == TRUE){
-				$data['userdata'] = $this->session_member;
-				$insert['id_member'] = $data['userdata']['id_member'];
-			}else{
-				$insert['id_member'] = '0';
-			}
-			$insert['click'] = '0';
-
-			if($insert){
-					$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
-					$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
-
-					$d = urlencode(base_url($insert['name']));
-					$durl = urlencode($url);
-					$m = urlencode('LINK IS READY');
-					$id = $get_id->id_shorten_url;
-					$login = 'true';
-					if($this->session->userdata('member') == TRUE){
-						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m.'&id='.$id.'&login='.$login);
-					}else{
-						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m);
-					}
-					redirect($redirect);
-				}else{
-					redirect(base_url('err'));
-				}
-
-		}else if($this->input->get('url')){
+		if($this->input->get('url')){
 
 			$url = $this->input->get('url');
 
@@ -83,7 +40,7 @@ class C extends PX_Controller {
 					$d = urlencode(base_url($insert['name']));
 					$durl = urlencode($url);
 					$m = urlencode('LINK IS READY');
-					$id = $get_id->id_shorten_url;
+					$id = urlencode($this->encrypt->encode($get_id->id_shorten_url));
 					$login = 'true';
 					if($this->session->userdata('member') == TRUE){
 						$redirect = base_url('c?success=true'.'&d='.$d.'&durl='.$durl.'&m='.$m.'&id='.$id.'&login='.$login);

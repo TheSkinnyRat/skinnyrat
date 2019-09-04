@@ -61,9 +61,54 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label class="col-md-4 col-xs-12 control-label">Konten
+					<br>
+					<input class="" type="checkbox" id="disable_editor" onclick="diseditor()"> <label class="" for="disable_editor">Disable Editor</label>
+				</label>
+
+				<div id="editor_cktext" class="col-md-7 col-xs-14">
+					<textarea name="konten" id="cktext" class="form-control ckeditor"><?php if($data!=null) echo $data->konten; ?></textarea>
+				</div>
+				<div id="editor_default" class="col-md-7 col-xs-14 hidden">
+					<textarea name="konten" id="konten" rows="10" class="form-control" onchange="preview('konten_default')" disabled><?php if($data!=null) echo $data->konten; ?></textarea>
+				</div>
+			</div>
+			<!-- <div class="form-group">
 				<label class="col-md-4 col-xs-12 control-label">Konten</label>
 				<div class="col-md-7 col-xs-14">
 					<textarea name="konten" class="form-control ckeditor" id="cktext"><?php if($data!=null) echo $data->konten; ?></textarea>
+				</div>
+			</div> -->
+
+			<div class="container-fluid" id="more">
+				<div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="more_img" onclick="show_more_img()" <?php if($data!=null && $data->img!='0') echo "checked"; ?>>
+					<label class="custom-control-label" for="more_img">Thumbnail / Image</label>
+				</div>
+				<div class="<?php if($data!=null && $data->img!='0') echo ""; else echo "hidden" ?>" id="more_img_input">
+					<div class="form-group">
+						<label class="control-label">Thumbnail URL</label>
+						<input type="text" name="img" class="form-control" value="<?php if($data!=null && $data->img!='0') echo $data->img; else echo "0" ?>" placeholder="Input link dengan http:// atau https://" required>
+					</div>
+				</div>
+
+				<div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="more_pass" onclick="show_more_pass()" <?php if($data!=null && $data->password!='0') echo "checked"; ?>>
+					<label class="custom-control-label" for="more_pass">Gunakan Password</label>
+				</div>
+				<div class="<?php if($data!=null && $data->password!='0') echo ""; else echo "hidden" ?>" id="more_pass_input">
+					<div class="form-group">
+						<label class="control-label">Password</label>
+						<input type="password" name="password" class="form-control" value="<?php if($data!=null && $data->password!='0') echo $data->password; else echo "0" ?>" placeholder="Input Password" required>
+					</div>
+				</div>
+
+				<div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="more_private" onclick="show_more_private()" <?php if($data!=null && $data->private!='0') echo "checked"; ?>>
+					<label class="custom-control-label" for="more_private">Private</label>
+				</div>
+				<div class="hidden" id="more_private_input">
+					<div class="form-group">
+						<label class="control-label">Private</label>
+						<input type="number" name="private" class="form-control" value="0" placeholder="Input 1 or 0" required>
+					</div>
 				</div>
 			</div>
 

@@ -271,6 +271,16 @@ class Model_basic extends CI_Model {
 		$this->db->order_by($order,$type);
 		return $this->db->get()->result();
 	}
+	function select_rand_where_limit($table,$column,$where,$limit) {
+		$this->load->database('default',TRUE);
+		$this->db->select('*');
+		$this->db->from($table);
+		$this->db->where($column,$where);
+		$this->db->order_by('rand()');
+		$this->db->limit($limit);
+		$data = $this->db->get();
+		return $data;
+	}
 
 	function upload(){
     $config['upload_path'] = './images/';

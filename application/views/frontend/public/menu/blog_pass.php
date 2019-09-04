@@ -30,7 +30,7 @@
           <div class="float-right">
             <?php if (isset($userdata) && $data->id_member == $userdata['id_member']) { ?>
             <form action="<?php echo base_url('member_system/article_form') ?>" method="get">
-              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article); ?>">
+              <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($data->id_article) ?>">
               <button class="btn btn-info btn-sm" type="submit"><i class="fa fa-edit"></i></button>
             </form>
             <?php }else{ ?>
@@ -42,13 +42,26 @@
     </div>
 
     <div class="card-body">
-      <?php echo $data->konten ?>
-      <!-- <code>
-        <tt>By:
-          <?php if(isset($data_name)) echo $data_name->name; else echo 'Unknown'; ?> -
-          <?php echo date("d F Y H:i",strtotime($data->date_created)) ?>
-        </tt>
-      </code> -->
+      <div class="" id="konten">
+        <div class="d-flex justify-content-center text-center">
+          <div class="w-auto border p-5 bg-light">
+            <form class="form" method="post" id="pass_form" action="<?php echo base_url('blog_system/pass_go') ?>">
+              <input type="hidden" name="id_article" value="<?php echo $data->id_article ?>">
+              <label class="text-dark" for="password"><i class="fas fa-lock"></i> This Article is Secured</label>
+              <div class="input-group">
+                <input type="password" name="password" class="form-control form-control-sm" placeholder="Input Password" required>
+                <div class="input-group-append">
+                  <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-arrow-right"></i></button>
+                </div>
+              </div>
+              <hr>
+              <div class="alert alert-success d-none p-0 px-1 m-0"><strong>Granted! </strong><span></span></div>
+              <div class="alert alert-warning d-none p-0 px-1 m-0"><strong><i class="fas fa-circle-notch fa-spin"></i> Memproses! </strong><span>Authenticating...</span></div>
+              <div class="alert alert-danger d-none p-0 px-1 m-0"><strong>Denied! </strong><span></span></div>
+            </form>
+          </div>
+        </div>
+      </div>
       <fieldset class="border-top border-dark p-0">
         <legend class="w-auto p-2 m-0 text-center"><small>Other Posts</small></legend>
       </fieldset>
@@ -371,4 +384,4 @@
 <!-- /.container-fluid -->
 
 <!-- WARNING Custom scripts for Index pages-->
-<script src="<?php echo base_url('assets/frontend/js/page/blog.js') ?>"></script>
+<script src="<?php echo base_url('assets/frontend/js/page/blog_pass.js') ?>"></script>

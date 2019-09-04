@@ -15,37 +15,32 @@
         <input type="hidden" name="id_shorten_url" value="0">
         <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
         <div class="panel-body">
-          <div class="form-group">
-            <label class="col-md-4 col-xs-12 control-label">Custom URL</label>
-            <div class="input-group col-md-4 col-xs-12">
-              <div class="input-group-prepend">
-                <div class="input-group-text">sknr.tk/</div>
-              </div>
-              <input type="text" name="name" class="form-control" value="" placeholder="Input Custom URL" required>
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label class="col-md-4 col-xs-12 control-label">URL</label>
-            <div class="col-md-5 col-xs-12">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="control-label">Custom URL</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">sknr.tk/</div>
+                </div>
+                <input type="text" name="name" class="form-control" value="" placeholder="Input Custom URL" required>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label class=" control-label">URL</label>
               <input type="text" name="link" class="form-control" value="" placeholder="Input Link dengan http:// atau https://" required>
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-md-5 col-xs-12">
-              <input type="checkbox" class="" value="" id="use_pass" onclick="pass()">
-              <label class="control-label" for="use_pass">Gunakan Password</label>
-            </div>
+          <div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="use_pass" onclick="pass()">
+            <label class="custom-control-label" for="use_pass">Gunakan Password</label>
           </div>
 
           <div class="d-none" id="input_pass">
-            <hr>
             <div class="form-group">
-              <label class="col-md-4 col-xs-12 control-label">Password</label>
-              <div class="col-md-5 col-xs-12">
-                <input type="password" name="password" class="form-control" id="form_pass" value="0" placeholder="Input Password">
-              </div>
+              <label class=" control-label">Password</label>
+              <input type="password" name="password" class="form-control" id="form_pass" value="0" placeholder="Input Password">
             </div>
           </div>
 

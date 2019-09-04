@@ -15,7 +15,7 @@
         <table class="table table-bordered dt-responsive" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Id</th>
+              <th>No</th>
               <th>Name</th>
               <th>Link</th>
               <!-- <th>Password</th> -->
@@ -33,10 +33,11 @@
                     </tr>
                   </tfoot> -->
           <tbody>
+            <?php $no = 1 ?>
             <?php foreach ($shorten_url as $d) { ?>
             <tr>
               <td>
-                <?php echo $d->id_shorten_url ?>
+                <?php echo $no++ ?>
               </td>
               <td>
                 <?php echo $d->name ?>
@@ -71,12 +72,12 @@
                   <a href="https://wa.me?text=<?php echo base_url($d->name) ?>" class="dropdown-item" target="_blank"><i class="fab fa-whatsapp"></i> Share</a>
                   <a href="<?php echo base_url($d->name) ?>" class="dropdown-item" target="_blank"><i class="fa fa-external-link-alt"></i> Open</a>
                   <div class="dropdown-divider"></div>
-                  <form class="" action="<?php echo base_url('member_system/shorten_url_form') ?>" method="post">
-                    <input type="hidden" name="id_shorten_url" value="<?php echo $d->id_shorten_url ?>">
+                  <form class="" action="<?php echo base_url('member_system/shorten_url_form') ?>" method="get">
+                    <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($d->id_shorten_url) ?>">
                     <button class="dropdown-item " type="submit"><i class="fa fa-edit"></i> Edit</button>
                   </form>
-                  <form class="" action="<?php echo base_url('member_system/shorten_url_delete') ?>" method="post">
-                    <input type="hidden" name="id_shorten_url" value="<?php echo $d->id_shorten_url ?>">
+                  <form class="" action="<?php echo base_url('member_system/shorten_url_delete') ?>" method="get">
+                    <input type="hidden" name="id" value="<?php echo $this->encrypt->encode($d->id_shorten_url) ?>">
                     <button class="dropdown-item " type="submit"><i class="fa fa-trash-alt"></i> Delete</button>
                   </form>
                 </div>

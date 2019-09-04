@@ -25,7 +25,7 @@ class Member_system extends PX_Controller {
 	function shorten_url_form(){
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
-		$id_shorten_url = $this->input->post('id_shorten_url');
+		$id_shorten_url = $this->encrypt->decode($this->input->get('id'));
 		if($id_shorten_url){
 		$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
 		if ($data['data']->id_member != $data['userdata']['id_member']) {
@@ -60,10 +60,12 @@ class Member_system extends PX_Controller {
 		}else{
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
+				$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
 
 				$d = urlencode(base_url($insert['name']));
 				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
-				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$id = urlencode($this->encrypt->encode($get_id->id_shorten_url));
+				$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=shorten_url&login=true');
 				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
@@ -104,7 +106,7 @@ class Member_system extends PX_Controller {
 
 	function shorten_url_delete(){
 		$data['userdata'] = $this->session_member;
-		$id_shorten_url = $this->input->post('id_shorten_url');
+		$id_shorten_url = $this->encrypt->decode($this->input->get('id'));
 		$data['data'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
 		if ($data['data']->id_member == $data['userdata']['id_member']) {
 			$do_delete = $this->model_basic->delete($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url);
@@ -249,7 +251,7 @@ class Member_system extends PX_Controller {
 		$data = $this->get_app_settings();
 		$data['userdata'] = $this->session_member;
 
-		$id_article = $this->input->post('id_article');
+		$id_article = $this->encrypt->decode($this->input->get('id'));
 		if($id_article){
 		$data['data'] = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
 		if ($data['data']->id_member != $data['userdata']['id_member']) {
@@ -282,10 +284,12 @@ class Member_system extends PX_Controller {
 		}else{
 			if($insert){
 				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+				$get_id = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
 
 				$d = urlencode(base_url('blog/'.$insert['name']));
 				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
-				$redirect = base_url('home/success?d='.$d.'&m='.$m);
+				$id = urlencode($this->encrypt->encode($get_id->id_article));
+				$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=article&login=true');
 				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
 			}else{
 				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
@@ -324,7 +328,7 @@ class Member_system extends PX_Controller {
 
 	function article_delete(){
 		$data['userdata'] = $this->session_member;
-		$id_article = $this->input->post('id_article');
+		$id_article = $this->encrypt->decode($this->input->get('id'));
 		$data_article = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
 		$data_article_comment = $this->model_basic->select_where($this->tbl_article_comment,'id_article',$id_article)->result();
 		if ($data_article->id_member == $data['userdata']['id_member']) {

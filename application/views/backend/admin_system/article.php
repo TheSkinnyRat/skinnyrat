@@ -27,6 +27,9 @@
               <th>Date Created</th>
               <th>Pembuat</th>
               <th>Click</th>
+              <th>Img</th>
+              <th>Password</th>
+              <th>Private</th>
               <th>Edit</th>
               <th>Hapus</th>
             </tr>
@@ -57,6 +60,15 @@
               </td>
               <td>
                 <?php echo $d1->click ?>
+              </td>
+              <td>
+                <?php echo $d1->img ?>
+              </td>
+              <td>
+                <?php echo $d1->password ?>
+              </td>
+              <td>
+                <?php if($d1->private == '0') echo "NO"; else echo "YES" ?>
               </td>
               <td class="text-center">
                 <form action="<?php echo base_url($controller.'/'.$function_form) ?>" method="post">

@@ -10,6 +10,15 @@
           enable_page_level_ads: true
      });
   </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146827817-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146827817-1');
+  </script>
 
   <!-- Progress bar loading -->
   <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
@@ -152,11 +161,16 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-white py-3">
         <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 -
-              <?php echo $app_version ?></span>
+          <div class=" text-center my-auto">
+            <small>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 -
+              <?php echo $app_version ?>
+              ·
+              <a href="http://localhost/skinnyrat/blog/sys_pp">Privacy Policy</a>
+              ·
+              <a href="http://localhost/skinnyrat/blog/sys_tc">Terms and Conditions</a>
+            </small>
           </div>
         </div>
       </footer>
@@ -186,7 +200,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php if(isset($url_continue) && $url_continue != NULL) echo base_url('member/do_logout?ref='.$url_continue); else echo base_url('member/do_logout') ?>">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url('member/do_logout?ref='.urlencode(current_url())); ?>">Logout</a>
         </div>
       </div>
     </div>

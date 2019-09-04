@@ -37,7 +37,7 @@
                 <?php echo $d1->style ?>
               </td>
               <td>
-                <?php echo $d1->konten ?>
+                <?php echo htmlspecialchars($d1->konten) ?>
               </td>
               <td>
                 <?php if($d1->status == '0' ) echo 'Sembunyikan'; else echo 'Tampilkan';?>

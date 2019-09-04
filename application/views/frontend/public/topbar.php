@@ -19,12 +19,12 @@
 
     <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
     <!-- Nav Item - User Information -->
-    <a href="<?php if(isset($url_continue)) echo base_url('member/register?ref='.$url_continue); else echo base_url('member/register') ?>">
+    <a href="<?php if(isset($url_continue)) echo base_url('member/register?ref='.$url_continue); else echo base_url('member/register?ref='.urlencode(current_url())) ?>">
       <button class="btn btn-info mr-1 btn-sm" type="button">
         REGISTER
       </button>
     </a>
-    <a href="<?php if(isset($url_continue)) echo base_url('member/login?ref='.$url_continue); else echo base_url('member/login') ?>">
+    <a href="<?php if(isset($url_continue)) echo base_url('member/login?ref='.$url_continue); else echo base_url('member/login?ref='.urlencode(current_url())) ?>">
       <button class="btn btn-primary btn-sm" type="button">
         LOGIN
       </button>

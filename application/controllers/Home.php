@@ -280,6 +280,9 @@ class Home extends PX_Controller {
 		$data = $this->get_app_settings();
 		$data['d'] = $this->input->get('d');
 		$data['m'] = $this->input->get('m');
+		$data['id'] = $this->input->get('id');
+		$data['type'] = $this->input->get('type');
+		$data['login'] = $this->input->get('login');
 		if($this->session->userdata('member') == TRUE){
 			$data['userdata'] = $this->session_member;
 			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
@@ -359,7 +362,7 @@ class Home extends PX_Controller {
 
 		$d = urlencode($link);
 		$m = urlencode('LINK WA CLICK TO CHAT ANDA SIAP DIBAGIKAN');
-		$redirect = base_url('home/success?d='.$d.'&m='.$m);
+		$redirect = base_url('home/success?d='.$d.'&m='.$m.'&type=wa');
 		$this->returnJson(array('status' => 'ok','msg' => 'Redirecting...', 'redirect' => $redirect));
 	}
 

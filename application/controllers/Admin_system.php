@@ -474,7 +474,7 @@ class Admin_system extends PX_Controller {
 		$id = $this->input->post('id');
 		$do_delete = $this->model_basic->delete($this->tbl_log_user_agent,'id_log_user_agent',$id);
 		if($do_delete){
-			redirect('admin_system/log_user_agent');
+			$this->returnJson(array('status' => 'ok','msg' => 'Delete data berhasil', 'redirect' => '#delete_success'));
 		}
   }
 

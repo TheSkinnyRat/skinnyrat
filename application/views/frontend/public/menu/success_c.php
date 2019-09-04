@@ -4,7 +4,7 @@
   <div class="card shadow mb-4">
 
     <div class="card-body">
-      <form class="form-horizontal" action="<?php echo base_url('member_system/shorten_url_form') ?>" method="post">
+      <form class="form-horizontal" action="<?php echo base_url('member_system/shorten_url_form') ?>" method="get">
         <div class="panel-body">
 
           <div class="form-group">
@@ -14,7 +14,7 @@
                 <input type="text" id="d" class="form-control" value="<?php echo $d; ?>" readonly>
                 <div class="input-group-append">
                   <?php if($login == 'true'){ ?>
-                    <input type="hidden" name="id_shorten_url" value="<?php echo $id ?>">
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
                     <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Edit"><i class="fas fa-edit"></i></button>
                   <?php }else{ ?>
                     <div class="btn btn-primary disabled" data-toggle="tooltip" data-placement="left" title="Buat dalam keadaan login agar dapat mengedit"><i class="fas fa-edit"></i></div>

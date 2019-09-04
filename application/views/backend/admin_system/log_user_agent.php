@@ -54,9 +54,9 @@
                 <?php echo $d1->agent_string ?>
               </td>
               <td class="text-center">
-                <form action="<?php echo base_url($controller.'/'.$function_delete) ?>" method="post">
+                <form action="<?php echo base_url($controller.'/'.$function_delete) ?>" id="log_user_agent_delete_<?php echo $d1->id_log_user_agent ?>" method="post">
                   <input type="hidden" name="id" value="<?php echo $d1->id_log_user_agent ?>">
-                  <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip"><i class="fa fa-trash-o"></i></button>
+                  <button class="btn btn-danger btn-xs btn-delete" type="submit" data-original-title="delete" data-placement="top" data-toggle="tooltip" onclick="log_user_agent_delete(<?php echo $d1->id_log_user_agent ?>)"><i class="fa fa-trash-o"></i></button>
                 </form>
               </td>
             </tr>

@@ -102,7 +102,7 @@
       <span>Change Log</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url('home/about') ?>">
+    <a class="nav-link" href="<?php echo base_url('b/sys_about') ?>">
       <i class="fas fa-fw fa-info-circle"></i>
       <span>About</span></a>
   </li>

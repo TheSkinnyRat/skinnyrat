@@ -265,4 +265,18 @@ class Blog_system extends PX_Controller {
 		}
   }
 
+	function pass_go(){
+		$id_article = $this->input->post('id_article');
+		$password = $this->input->post('password');
+
+		$get_data = $this->model_basic->select_where($this->tbl_article,'id_article',$id_article)->row();
+		$real_pass = $get_data->password;
+		$konten = $get_data->konten;
+		if ($real_pass == $password ) {
+			$this->returnJson(array('status' => 'ok','msg' => '-', 'konten' => $konten));
+		}else{
+			$this->returnJson(array('status' => 'error','msg' => 'Invalid Password'));
+			}
+	}
+
 }
