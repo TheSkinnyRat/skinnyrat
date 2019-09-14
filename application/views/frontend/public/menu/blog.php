@@ -1,5 +1,5 @@
 <!-- Begin Page Content -->
-<div class="m-2 mx-lg-5 px-xl-5">
+<div class="container p-2">
 
   <div class="card">
     <div class="card-header py-3">
@@ -7,13 +7,20 @@
         <div class="col w-25">
           <div class="m-0">
             <div class="font-weight-bold text-primary">
-              By: <?php if(isset($data_name)) echo $data_name->name; else echo 'Unknown'; ?>
+              By: <?php if(isset($data_name)) { ?>
+                <a href="<?php echo base_url('profile/'.$data_name->username); ?>"><?php echo $data_name->name; ?></a>
+              <?php } else echo 'Unknown'; ?>
               <!-- <?php echo $data->judul ?> -->
             </div>
             <code class="text-muted text-primary">
               <?php echo date("d F Y H:i",strtotime($data->date_created)) ?>
               <!-- <?php echo $data->subjudul ?> -->
             </code>
+            <?php if ($data->private != '0') { ?>
+              <div class="">
+                <button class="btn btn-light btn-sm disabled m-0 p-0" data-toggle="tooltip" data-placement="left" title="Artikel tidak ditampilkan di rekomendasi / pencarian"><i class="fa fa-user-lock"></i> Private Article</button>
+              </div>
+            <?php } ?>
           </div>
         </div>
         <div class="col-auto">
@@ -63,6 +70,9 @@
               </div>
               <div class="col">
                 <?php echo $a_rand->judul ?>
+                <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
+                  <span class="badge badge-secondary">New</span>
+                <?php } ?>
               </div>
             </div>
           </a>

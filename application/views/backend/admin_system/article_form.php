@@ -107,7 +107,7 @@
 				<div class="hidden" id="more_private_input">
 					<div class="form-group">
 						<label class="control-label">Private</label>
-						<input type="number" name="private" class="form-control" value="0" placeholder="Input 1 or 0" required>
+						<input type="number" name="private" class="form-control" value="<?php if($data!=null && $data->private!='0') echo $data->private; else echo "0" ?>" placeholder="Input 1 or 0" required>
 					</div>
 				</div>
 			</div>

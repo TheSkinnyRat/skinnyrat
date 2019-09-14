@@ -108,7 +108,7 @@
 
         <?php echo $topbar ?>
 
-        <div id="place_load" class="container-fluid">
+        <div id="place_load" class="container p-2 pt-3">
           <div class="ph-item">
             <div>
               <div class="ph-row">
@@ -154,7 +154,9 @@
         </div>
 
         <div id="main_content" style="visibility: hidden;">
-          <?php echo $content ?>
+          <div class="container p-2 pt-3">
+            <?php echo $content ?>
+          </div>
         </div>
 
       </div>
@@ -167,9 +169,9 @@
             <small>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 -
               <?php echo $app_version ?>
               ·
-              <a href="http://localhost/skinnyrat/blog/sys_pp">Privacy Policy</a>
+              <a href="<?php echo base_url('b/sys_pp') ?>">Privacy Policy</a>
               ·
-              <a href="http://localhost/skinnyrat/blog/sys_tc">Terms and Conditions</a>
+              <a href="<?php echo base_url('b/sys_tc') ?>">Terms and Conditions</a>
             </small>
           </div>
         </div>

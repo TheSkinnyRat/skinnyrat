@@ -59,5 +59,5 @@
   </button>
 </div>
 <?php } ?>
-<hr>
+<hr class="mb-0">
 <?php } ?>

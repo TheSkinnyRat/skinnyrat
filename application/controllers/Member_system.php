@@ -80,8 +80,8 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$update[$field] = $this->input->post($field);
 		}
+		$update['id_shorten_url'] = $this->encrypt->decode($update['id_shorten_url']);
 		$update['id_member'] = $data['userdata']['id_member'];
-		$update['click'] = '0';
 
 		if ($update['password'] != '0') {
 			$update['password'] = $this->encrypt->encode($update['password']);
@@ -305,8 +305,8 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$update[$field] = $this->input->post($field);
 		}
+		$update['id_article'] = $this->encrypt->decode($update['id_article']);
 		$update['id_member'] = $data['userdata']['id_member'];
-		$update['click'] = '0';
 
 		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
 		if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {

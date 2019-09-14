@@ -16,6 +16,8 @@ class Profile extends PX_Controller {
 			if($get_data != null){
 				$data = $this->get_app_settings();
 				$data['data'] = $get_data;
+				$data['shorten_url'] = $this->model_basic->select_where_array($this->tbl_shorten_url,array('id_member' => $get_data->id_member))->result();
+				$data['article'] = $this->model_basic->select_where_array($this->tbl_article,array('id_member' => $get_data->id_member,'private' => '0'))->result();
 				if($this->session->userdata('member') == TRUE){
 					$data['userdata'] = $this->session_member;
 					$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
