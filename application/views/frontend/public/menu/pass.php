@@ -17,8 +17,9 @@
           </div>
           <hr>
           <div class="alert alert-success d-none p-0 px-1 m-0"><strong>Granted! </strong><span></span></div>
-          <div class="alert alert-warning d-none p-0 px-1 m-0"><strong><i class="fas fa-circle-notch fa-spin"></i>Authenticating...</strong><span></span></div>
+          <div class="alert alert-warning d-none p-0 px-1 m-0"><strong><i class="fas fa-circle-notch fa-spin"></i> Authenticating...</strong><span></span></div>
           <div class="alert alert-danger d-none p-0 px-1 m-0"><strong>Denied! </strong><span></span></div>
+          <div class="alert alert-info p-0 px-1 m-0"><strong>Input Password</strong><span></span></div>
         </form>
       </div>
     </div>

@@ -20,6 +20,7 @@
       $('#pass_form .alert-warning').removeClass('d-none');
       $('#pass_form .alert-success').addClass('d-none');
       $('#pass_form .alert-danger').addClass('d-none');
+      $('#pass_form .alert-info').addClass('d-none');
       $.ajax({
         url: target,
         type: 'POST',

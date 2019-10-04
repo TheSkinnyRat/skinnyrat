@@ -63,8 +63,8 @@
   <script src="<?php echo base_url('assets/frontend/vendor/chart.js/Chart.min.js') ?>"></script>
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
-  <script src="<?php echo base_url('assets/frontend/js/demo/chart-pie-demo.js') ?>"></script>
+  <!-- <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/js/demo/chart-pie-demo.js') ?>"></script> -->
 
   <!-- Page data tables level plugins -->
   <script src="<?php echo base_url('assets/frontend/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
@@ -94,10 +94,11 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php echo $sidebar ?>
+    <div style="min-height: 100vh;"></div>
+    <?php // echo $sidebar ?>
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" style="overflow: initial;">
 
       <!-- Main Content -->
       <div id="content">
@@ -202,54 +203,23 @@
     </div>
   </div>
 
+  <!-- SCRIPT FOR INDEX PAGE -->
+  <script src="<?php echo base_url('assets/frontend/js/page/index_bottom.js') ?>"></script>
+  <!-- Service worker -->
+  <script type="text/javascript">
+  UpUp.start({
+    'cache-version': 'v1',
+    //'content-url': 'offline.html'
+    'content-url': '<?=site_url('offline.php')?>',
+    'content': 'Oops!. We Need An INTERNET Connection.',
+    'service-worker-url': '<?=site_url('upup.sw.min.js')?>'
+  });
+  </script>
+
   <!-- WARNING ALL SCRIPT FOR ALL PAGE -->
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url('assets/frontend/js/sb-admin-2.js') ?>"></script>
-
-  <!-- scripts for Service Worker -->
-  <script>
-    UpUp.start({
-      'cache-version': 'v1',
-      //'content-url': 'offline.html'
-      'content-url': '<?=site_url('offline.php')?>',
-      'content': 'Oops!. We Need An INTERNET Connection.',
-      'service-worker-url': '<?=site_url('upup.sw.min.js')?>'
-    });
-  </script>
-
-  <!-- scripts for Activate PWA -->
-  <script>
-    var btn_pwa = document.getElementById('btn_pwa');
-    var div_btn_pwa = document.getElementById('div_btn_pwa');
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      deferredPrompt = e;
-      // Update UI notify the user they can add to home screen
-      btn_pwa.classList.remove('d-none');
-      div_btn_pwa.classList.remove('d-none');
-    });
-    btn_pwa.addEventListener('click', (e) => {
-      // hide our user interface that shows our A2HS button
-      btn_pwa.classList.add('d-none');
-      div_btn_pwa.classList.add('d-none');
-      // Show the prompt
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice
-        .then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-    });
-  </script>
 
 </body>
 

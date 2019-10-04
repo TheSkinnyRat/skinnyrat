@@ -105,7 +105,7 @@
   </div>
 </div>
 
-<div class="card shadow mb-4">
+<div class="card shadow mb-2 mb-lg-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-home"></i> Welcome Back! - <?php echo $userdata['name'] ?></h6>
   </div>
@@ -126,7 +126,7 @@
 
 <div class="row">
   <div class="col-sm">
-    <div class="card shadow mb-4 mw-200">
+    <div class="card shadow mb-2 mb-lg-4 mw-200">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary"><i class="far fa-newspaper"></i> Article</h6>
       </div>
@@ -153,7 +153,7 @@
     </div>
   </div>
   <div class="col-sm">
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-2 mb-lg-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary"><i class="fab fa-hotjar"></i> Popular Article</h6>
       </div>
@@ -180,7 +180,7 @@
     </div>
   </div>
 </div>
-<div class="card shadow mb-4">
+<div class="card shadow mb-2 mb-lg-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">SKNR APP</h6>
   </div>

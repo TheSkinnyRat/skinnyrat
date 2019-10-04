@@ -103,11 +103,7 @@ class Blog extends PX_Controller {
 					$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 				}
 				$data['article_rand'] = $this->model_basic->select_rand_where_limit($this->tbl_article,'private','0','3')->result();
-				if ($data['data']->password != '0') {
-					$data['content'] = $this->load->view('frontend/public/menu/blog_pass',$data,true);
-				}else{
-					$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
-				}
+				$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
 				$this->load->view('frontend/index_blog',$data);
 			}else{
 					redirect('error/error_404');

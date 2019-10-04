@@ -49,37 +49,57 @@
     </div>
 
     <div class="card-body">
-      <?php echo $data->konten ?>
-      <!-- <code>
-        <tt>By:
-          <?php if(isset($data_name)) echo $data_name->name; else echo 'Unknown'; ?> -
-          <?php echo date("d F Y H:i",strtotime($data->date_created)) ?>
-        </tt>
-      </code> -->
-      <fieldset class="border-top border-dark p-0">
-        <legend class="w-auto p-2 m-0 text-center"><small>Other Posts</small></legend>
-      </fieldset>
-
-      <div class="card">
-
-        <?php foreach ($article_rand as $a_rand) { ?>
-          <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
-            <div class="row p-1 m-1 align-items-center card-body">
-              <div class="col-auto pr-0">
-                <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 50px; height: 50px;" alt="" class="rounded" width="72" height="72">
-              </div>
-              <div class="col">
-                <?php echo $a_rand->judul ?>
-                <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
-                  <span class="badge badge-secondary">New</span>
-                <?php } ?>
-              </div>
+      <?php if($data->password != '0'){ ?>
+        <div class="" id="konten">
+          <div class="d-flex justify-content-center text-center">
+            <div class="w-auto border p-5 bg-light">
+              <form class="form" method="post" id="pass_form" action="<?php echo base_url('blog_system/pass_go') ?>">
+                <input type="hidden" name="id_article" value="<?php echo $data->id_article ?>">
+                <label class="text-dark" for="password"><i class="fas fa-lock"></i> This Article is Secured</label>
+                <div class="input-group">
+                  <input type="password" name="password" class="form-control form-control-sm" placeholder="Input Password" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-arrow-right"></i></button>
+                  </div>
+                </div>
+                <hr>
+                <div class="alert alert-success d-none p-0 px-1 m-0"><strong>Granted! </strong><span></span></div>
+                <div class="alert alert-warning d-none p-0 px-1 m-0"><strong><i class="fas fa-circle-notch fa-spin"></i> Authenticating...</strong><span></span></div>
+                <div class="alert alert-danger d-none p-0 px-1 m-0"><strong>Denied! </strong><span></span></div>
+                <div class="alert alert-info p-0 px-1 m-0"><strong>Input Password</strong><span></span></div>
+              </form>
             </div>
-          </a>
-          <hr class="m-0">
-        <?php } ?>
+          </div>
+        </div>
+      <?php }else{ ?>
+        <?php echo $data->konten ?>
+      <?php } ?>
+      <?php if ($data->private == '0') { ?>
+        <fieldset class="border-top border-dark p-0">
+          <legend class="w-auto p-2 m-0 text-center"><small>Other Posts</small></legend>
+        </fieldset>
 
-      </div>
+        <div class="card">
+
+          <?php foreach ($article_rand as $a_rand) { ?>
+            <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
+              <div class="row p-1 m-1 align-items-center card-body">
+                <div class="col-auto pr-0">
+                  <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 50px; height: 50px;" alt="" class="rounded" width="72" height="72">
+                </div>
+                <div class="col">
+                  <?php echo $a_rand->judul ?>
+                  <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
+                    <span class="badge badge-secondary">New</span>
+                  <?php } ?>
+                </div>
+              </div>
+            </a>
+            <hr class="m-0">
+          <?php } ?>
+
+        </div>
+      <?php } ?>
 
     </div>
 

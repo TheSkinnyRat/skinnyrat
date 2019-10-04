@@ -32,12 +32,12 @@ function time() {
   minute = ("0" + minute).slice(-2);
   second = time.getSeconds();
   second = ("0" + second).slice(-2);
-  document.getElementById("hour").innerHTML = hour;
-  document.getElementById("hour-1").innerHTML = hour;
-  document.getElementById("minute").innerHTML = minute;
-  document.getElementById("minute-1").innerHTML = minute;
+  // document.getElementById("hour").innerHTML = hour;
+  // document.getElementById("hour-1").innerHTML = hour;
+  // document.getElementById("minute").innerHTML = minute;
+  // document.getElementById("minute-1").innerHTML = minute;
   // document.getElementById("second").innerHTML = second;
-  document.getElementById("second-1").innerHTML = second;
+  // document.getElementById("second-1").innerHTML = second;
   // document.getElementById("milisecond").innerHTML = time.getMilliseconds();
 }
 
