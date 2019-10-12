@@ -50,7 +50,7 @@
         </div>
 
         <small class="text-muted">
-          URL yang anda masukkan dapat di akses di <code>www.sknr.tk/(custom url anda)</code>
+          URL yang anda masukkan dapat di akses di <code>www.nyrat.id/(custom url anda)</code>
         </small>
       </div>
       <div class="panel-footer text-right">

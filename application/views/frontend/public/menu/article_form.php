@@ -86,7 +86,7 @@
         </div>
 
         <small class="text-muted">
-          Artikel yang anda buat dapat di akses di <code>www.sknr.tk/blog/(url artikel anda)</code>
+          Artikel yang anda buat dapat di akses di <code>www.nyrat.id/blog/(url artikel anda)</code>
         </small>
       </div>
       <div class="panel-footer text-right">

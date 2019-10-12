@@ -1,5 +1,5 @@
 <!-- Begin Page Content -->
-<div class="container p-2">
+<div class="container p-2 pt-3">
 
   <div class="card">
     <div class="card-header py-3">
@@ -12,13 +12,13 @@
               <?php } else echo 'Unknown'; ?>
               <!-- <?php echo $data->judul ?> -->
             </div>
-            <code class="text-muted text-primary">
+            <code class="text-muted text-primary text-xs">
               <?php echo date("d F Y H:i",strtotime($data->date_created)) ?>
               <!-- <?php echo $data->subjudul ?> -->
             </code>
             <?php if ($data->private != '0') { ?>
               <div class="">
-                <button class="btn btn-light btn-sm disabled m-0 p-0" data-toggle="tooltip" data-placement="left" title="Artikel tidak ditampilkan di rekomendasi / pencarian"><i class="fa fa-user-lock"></i> Private Article</button>
+                <button class="btn btn-light btn-sm text-xs disabled m-0 p-0" data-toggle="tooltip" data-placement="left" title="Artikel tidak ditampilkan di rekomendasi / pencarian"><i class="fa fa-user-lock"></i> Private Article</button>
               </div>
             <?php } ?>
           </div>
@@ -85,7 +85,7 @@
             <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
               <div class="row p-1 m-1 align-items-center card-body">
                 <div class="col-auto pr-0">
-                  <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 50px; height: 50px;" alt="" class="rounded" width="72" height="72">
+                  <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
                 </div>
                 <div class="col">
                   <?php echo $a_rand->judul ?>

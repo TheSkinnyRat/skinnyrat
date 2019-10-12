@@ -12,7 +12,7 @@
 <?php } ?>
 
 <!-- START TOPBAR -->
-<div class="bg-secondary p-1">
+<div class="bg-primary p-1">
   <div class="container">
     <div class="text-center text-light">
       <a href="<?php echo base_url('home/shorten_url_form') ?>" class="btn btn-link btn-sm text-light text-xs" data-toggle="" data-placement="right" title="Shorten Url">
@@ -141,6 +141,15 @@
         </div>
       </li>
       <li class="nav-item p-1 p-lg-0 dropdown">
+        <a class="btn btn-link text-decoration-none mr-1 btn-sm dropdown-toggle" href="#" id="menu_dev" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-fw fa-code"></i> DEV
+        </a>
+        <div class="dropdown-menu keep-open dropdown-menu-right animated--grow-in shadow-sm ml-2 ml-lg-0" aria-labelledby="menu_dev">
+          <a class="dropdown-item" href="<?php echo base_url('admin/index') ?>"><i class="fas fa-fw fa-user-cog"></i> Login Backend</a>
+          <a class="dropdown-item" href="<?php echo base_url('home/change_log') ?>"><i class="fas fa-fw fa-clipboard-list"></i> Change Log</a>
+        </div>
+      </li>
+      <li class="nav-item p-1 p-lg-0 dropdown">
         <a class="btn btn-link text-decoration-none mr-1 btn-sm dropdown-toggle" href="#" id="menu_about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-info-circle"></i> ABOUT
         </a>
@@ -149,15 +158,6 @@
           <a class="dropdown-item" href="<?php echo base_url('b/sys_tc') ?>"><i class="fas fa-fw fa-handshake"></i> Terms and Conditions</a>
           <a class="dropdown-item" href="<?php echo base_url('b/sys_dc') ?>"><i class="fas fa-fw fa-hand-paper"></i> Disclaimer</a>
           <a class="dropdown-item" href="<?php echo base_url('b/sys_about') ?>"><i class="fas fa-fw fa-info-circle"></i> About</a>
-        </div>
-      </li>
-      <li class="nav-item p-1 p-lg-0 dropdown">
-        <a class="btn btn-link text-decoration-none mr-1 btn-sm dropdown-toggle" href="#" id="menu_dev" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-fw fa-code"></i> DEV
-        </a>
-        <div class="dropdown-menu keep-open dropdown-menu-right animated--grow-in shadow-sm ml-2 ml-lg-0" aria-labelledby="menu_dev">
-          <a class="dropdown-item" href="<?php echo base_url('admin/index') ?>"><i class="fas fa-fw fa-user-cog"></i> Login Backend</a>
-          <a class="dropdown-item" href="<?php echo base_url('home/change_log') ?>"><i class="fas fa-fw fa-clipboard-list"></i> Change Log</a>
         </div>
       </li>
     </ul>

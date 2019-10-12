@@ -118,9 +118,9 @@
               <a href="<?php echo base_url('home/wa_cws') ?>" class="btn btn-sm btn-secondary my-1">WA CHAT WITHOUT SAVE</a>
             </div>
             <hr>
-            SHORT LINK yang anda buat dapat di akses di <code>www.sknr.tk/(custom URL anda)</code> <br>
+            SHORT LINK yang anda buat dapat di akses di <code>www.nyrat.id/(custom URL anda)</code> <br>
             <hr>
-            ARTICLE yang anda buat dapat di akses di <code>www.sknr.tk/blog/(URL article anda)</code> <br>
+            ARTICLE yang anda buat dapat di akses di <code>www.nyrat.id/blog/(URL article anda)</code> <br>
           </div>
         </div>
 
@@ -136,7 +136,7 @@
                     <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
                       <div class="row p-1 m-1 align-items-center card-body">
                         <div class="col-auto pr-0">
-                          <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 50px; height: 50px;" alt="" class="rounded" width="72" height="72">
+                          <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
                         </div>
                         <div class="col">
                           <?php echo $a_rand->judul ?>
@@ -163,7 +163,7 @@
                     <a href="<?php echo base_url('b/'.$a_popular->name) ?>" class="text-secondary  mb-1 ">
                       <div class="row p-1 m-1 align-items-center card-body">
                         <div class="col-auto pr-0">
-                          <img src="<?php if($a_popular->img != '0') echo $a_popular->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 50px; height: 50px;" alt="" class="rounded" width="72" height="72">
+                          <img src="<?php if($a_popular->img != '0') echo $a_popular->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
                         </div>
                         <div class="col">
                           <?php echo $a_popular->judul ?>
