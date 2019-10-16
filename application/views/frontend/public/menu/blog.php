@@ -29,7 +29,7 @@
             <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-share-alt"></i>
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-menu-right">
               <button class="dropdown-item" onclick="copy('<?php echo $data->name; ?>')" id="cp_<?php echo $data->name; ?>"><i class="far fa-copy"></i> Copy Link</button>
               <a href="https://wa.me?text=<?php echo base_url('blog/'.$data->name) ?>" class="dropdown-item" target="_blank"><i class="fab fa-whatsapp"></i> Share to Whatsapp</a>
             </div>
