@@ -30,7 +30,7 @@
   <url>
      <loc><?php echo base_url('blog/'.$d->name); ?></loc>
      <priority>0.5</priority>
-     <lastmod><?php echo $d->date_created; ?></lastmod>
+     <lastmod><?php echo date("Y-m-dTH:i:sP",strtotime($d->date_created)) ?></lastmod>
   </url>
   <?php } ?>
 
