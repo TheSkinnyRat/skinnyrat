@@ -1,6 +1,26 @@
 <!-- Begin Page Content -->
 <div class="container p-2 pt-3">
 
+  <div class="card h-100">
+    <div class="card-body p-1">
+      <div class="row no-gutters align-items-center">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- blog -->
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1587350440311353"
+          data-ad-slot="1263661778"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
   <div class="card">
     <div class="card-header py-3">
       <div class="row">

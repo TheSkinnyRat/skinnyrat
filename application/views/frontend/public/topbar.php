@@ -1,16 +1,3 @@
-<!-- ALERT SECTION -->
-<?php if($app_alert){ ?>
-<?php foreach ($app_alert as $alert) { ?>
-<div class="<?php echo $alert->style ?> m-0" role="alert">
-  <div class="container">
-    <div class="text-center p-1">
-      <?php echo $alert->konten ?>
-    </div>
-  </div>
-</div>
-<?php } ?>
-<?php } ?>
-
 <!-- START TOPBAR -->
 <!-- Topbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white topbar shadow-sm h-auto">
@@ -134,6 +121,19 @@
   </div>
 
 </nav>
+
+<!-- ALERT SECTION -->
+<?php if($app_alert){ ?>
+<?php foreach ($app_alert as $alert) { ?>
+<div class="<?php echo $alert->style ?> m-0" role="alert">
+  <div class="container">
+    <div class="text-center">
+      <?php echo $alert->konten ?>
+    </div>
+  </div>
+</div>
+<?php } ?>
+<?php } ?>
 
 <div class="bg-primary">
   <div class="container">
