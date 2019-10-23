@@ -5,10 +5,6 @@ Disallow: /admin/
 # Group 2
 User-agent: *
 Disallow: /admin/
-Disallow: ?*
-Disallow: /search
-Disallow: ads.txt
-Disallow: assets/manifest/manifest.json
 
 Sitemap: https://www.nyrat.id/sitemap.xml
 
