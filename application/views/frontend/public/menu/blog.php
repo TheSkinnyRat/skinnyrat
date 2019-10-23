@@ -3,12 +3,13 @@
 
   <div class="card">
     <div class="card-body p-1">
-      <div class="align-items-center">
+      <div class="d-flex justify-content-center">
         <!-- start blog Ads-->
         <ins class="adsbygoogle"
-          style="display:inline-block; width:100%; height:90px"
+          style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
           data-ad-client="ca-pub-1587350440311353"
-          data-ad-slot="1263661778"></ins>
+          data-ad-slot="1263661778"
+          data-full-width-responsive="false"></ins>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
         <!-- end blog Ads-->
