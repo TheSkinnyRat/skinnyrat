@@ -6,6 +6,9 @@
       <div class="row no-gutters align-items-center">
         <!-- start blog Ads-->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1587350440311353" data-ad-slot="1263661778" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({}); 
+        </script>
         <!-- end blog Ads-->
       </div>
     </div>
