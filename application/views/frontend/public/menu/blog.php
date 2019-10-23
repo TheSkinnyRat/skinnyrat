@@ -3,10 +3,10 @@
 
   <div class="card">
     <div class="card-body p-1">
-      <div class="align-items-center" style="height: 90px">
+      <div class="align-items-center">
         <!-- start blog Ads-->
         <ins class="adsbygoogle"
-          style="display:inline-block; width:auto; height:auto"
+          style="display:inline-block; width:100%; height:90px"
           data-ad-client="ca-pub-1587350440311353"
           data-ad-slot="1263661778"></ins>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
