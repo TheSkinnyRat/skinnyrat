@@ -32,6 +32,7 @@ class PX_Controller extends CI_Controller {
 		$this->load->model('model_menu');
 		$this->load->model('model_useraccess');
 		$this->load->model('model_usergroup');
+		$this->load->model('model_api');
 
 		// sessions
 		if($this->session->userdata('admin') != FALSE)

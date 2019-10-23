@@ -102,7 +102,8 @@ class Blog extends PX_Controller {
 					$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
 					$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
 				}
-				$data['article_rand'] = $this->model_basic->select_rand_where_limit($this->tbl_article,'private','0','3')->result();
+				$data['random_id'] = rand();
+				$data['article_rand'] = $this->model_basic->select_rand_where_array_limit($this->tbl_article,$data['random_id'],array('private' => '0'),'3')->result();
 				$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
 				$this->load->view('frontend/index_blog',$data);
 			}else{
@@ -110,17 +111,18 @@ class Blog extends PX_Controller {
 			}
 		}else{
 			$data = $this->get_app_settings();
-			$data['count_tbl_shorten_url'] = $this->model_basic->get_count($this->tbl_shorten_url);
+			$data['random_id'] = rand();
+			$data['article_rand'] = $this->model_basic->select_rand_where_array_limit($this->tbl_article,$data['random_id'],array('private' => '0'),'5')->result();
+			$data['article_popular'] = $this->model_basic->select_where_array_order_limit($this->tbl_article,array('private' => '0'),'click','DESC','5')->result();
 			if($this->session->userdata('member') == TRUE){
 				$data['userdata'] = $this->session_member;
 				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
 				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
-				$data['content'] = $this->load->view('frontend/member/menu/main_page',$data,true);
 			}else{
 				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
 				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
-				$data['content'] = $this->load->view('frontend/public/menu/main_page',$data,true);
 			}
+			$data['content'] = $this->load->view('frontend/public/menu/blog_page',$data,true);
 			$this->load->view('frontend/index',$data);
 		}
 

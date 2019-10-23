@@ -54,3 +54,50 @@ $(window).on('load',function() {
     $('#main_content').css('visibility','visible').hide().fadeIn();
   });
 });
+
+// SHOW MORE FUNCTION
+function show_more(target_show){
+  var jvalidate = $("#"+target_show+"_form").validate({
+    submitHandler: function(form) {
+      var target = $(form).attr('action');
+      var last = $("input[name='last']").val();
+      var limit = $("input[name='limit']").val();
+      $('#'+target_show+'_form .btn').html('<i class="fa fa-circle-notch fa-spin"></i> Loading...').prop('disabled', true);
+      $.ajax({
+        url: target,
+        type: 'GET',
+        dataType: 'json',
+        data: $(form).serialize(),
+        success: function(response) {
+          var data = "";
+          data += "<div style='display: none'>";
+          for (i = 0; i < response.row; i++) {
+            data
+            += "<a href='" + response.data[i].a_href + "' class='text-secondary  mb-1'>"
+            + "<div class='row p-1 m-1 align-items-center card-body'>"
+            + "<div class='col-auto pr-0' style='min-height: 72px'>"
+            + "<img src='" + response.data[i].img_src + "' alt='' class='rounded' width='72' height='72'>"
+            + "</div>"
+            + "<div class='col'>"
+            + response.data[i].judul
+            + (response.data[i].new == 'yes' ? "<span class='badge badge-secondary'>New</span>" : "")
+            + "</div>"
+            + "</div>"
+            + "</a>"
+            + "<hr class='m-0'>";
+          }
+          data += "</div>";
+          $(data).appendTo('#'+target_show).slideDown();
+          $("#"+target_show+"_form input[name='last']").val(parseInt(last) + parseInt(limit));
+          $('#'+target_show+'_form .btn').html('<i class="fa fa-angle-down"></i> Lainnya').prop('disabled', false);
+          if (response.data == '') {
+            $('#'+target_show+'_form .btn').html("-- You're at the end --").prop('disabled', true);
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          alert(textStatus, errorThrown);
+        }
+      });
+    }
+  });
+}

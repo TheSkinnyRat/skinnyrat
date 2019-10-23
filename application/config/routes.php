@@ -67,6 +67,7 @@ $route['error/(:any)'] = "error/$1";
 $route['upload'] = "upload";
 $route['upload/(:any)'] = "upload/$1";
 
+$route['blog'] = "blog";
 $route['blog/(:any)'] = "blog/index/$1";
 $route['blog_system/(:any)'] = "blog_system/$1";
 
@@ -75,8 +76,13 @@ $route['b/(:any)'] = "blog/index/$1";
 $route['c'] = "c";
 $route['c/(:any)'] = "c/index/$1";
 
+$route['api/(:any)'] = "api/$1";
+
 $route['example'] = "example";
 $route['example/(:any)'] = "example/$1";
+
+$route['sitemap'] = "sitemap";
+$route['sitemap\.xml'] = "sitemap";
 
 $route['(:any)'] = "home/index/$1";
 

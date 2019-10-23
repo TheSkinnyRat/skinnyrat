@@ -35,7 +35,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Selamat Datang di <?php echo $app_title ?> Website ^^">
+  <meta name="description" content="Selamat Datang di <?php echo $app_title ?> Website, di website ini terdapat fitur shorten url, article / blog, whatsapp click to chat, dan whatapp chat without save ">
   <meta name="author" content="">
 
   <title>
@@ -103,7 +103,7 @@
 
 </head>
 
-<body id="page-top">
+<body class="p-0" id="page-top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMCBLP8"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

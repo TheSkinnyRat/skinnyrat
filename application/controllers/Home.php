@@ -58,7 +58,8 @@ class Home extends PX_Controller {
 			$data['count_tbl_shorten_url'] = $this->model_basic->get_count($this->tbl_shorten_url);
 			$data['count_tbl_article'] = $this->model_basic->get_count($this->tbl_article);
 			$data['count_tbl_member'] = $this->model_basic->get_count($this->tbl_member);
-			$data['article_rand'] = $this->model_basic->select_rand_where_limit($this->tbl_article,'private','0','5')->result();
+			$data['random_id'] = rand();
+			$data['article_rand'] = $this->model_basic->select_rand_where_array_limit($this->tbl_article,$data['random_id'],array('private' => '0'),'5')->result();
 			$data['article_popular'] = $this->model_basic->select_where_array_order_limit($this->tbl_article,array('private' => '0'),'click','DESC','5')->result();
 			if($this->session->userdata('member') == TRUE){
 				$data['userdata'] = $this->session_member;

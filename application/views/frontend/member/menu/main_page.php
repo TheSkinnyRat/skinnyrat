@@ -126,28 +126,37 @@
 
 <div class="row">
   <div class="col-sm">
-    <div class="card shadow mb-2 mb-lg-4 mw-200">
+    <div class="card shadow mb-2 mb-lg-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary"><i class="far fa-newspaper"></i> Article</h6>
       </div>
       <div class="card-body">
         <div class="card">
-          <?php foreach ($article_rand as $a_rand) { ?>
-            <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
-              <div class="row p-1 m-1 align-items-center card-body">
-                <div class="col-auto pr-0">
-                  <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
+          <div id="article_rand">
+            <?php foreach ($article_rand as $a_rand) { ?>
+              <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
+                <div class="row p-1 m-1 align-items-center card-body">
+                  <div class="col-auto pr-0" style="min-height: 72px">
+                    <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" alt="" class="rounded" width="72" height="72">
+                  </div>
+                  <div class="col">
+                    <?php echo $a_rand->judul ?>
+                    <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
+                      <span class="badge badge-secondary">New</span>
+                    <?php } ?>
+                  </div>
                 </div>
-                <div class="col">
-                  <?php echo $a_rand->judul ?>
-                  <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
-                    <span class="badge badge-secondary">New</span>
-                  <?php } ?>
-                </div>
-              </div>
-            </a>
-            <hr class="m-0">
-          <?php } ?>
+              </a>
+              <hr class="m-0">
+            <?php } ?>
+          </div>
+          <form id="article_rand_form" class="text-center p-2" action="<?php echo base_url('api/show_more') ?>" method="get">
+            <input type="hidden" name="type" value="article_rand">
+            <input type="hidden" name="random_id" value="<?php echo $random_id ?>">
+            <input type="hidden" name="last" value="5">
+            <input type="hidden" name="limit" value="5">
+            <button class="btn btn-white btn-sm w-100 h-100" type="submit" onclick="show_more('article_rand')"><i class="fa fa-angle-down"></i> Lainnya</button>
+          </form>
         </div>
       </div>
     </div>
@@ -159,22 +168,30 @@
       </div>
       <div class="card-body">
         <div class="card">
-          <?php foreach ($article_popular as $a_popular) { ?>
-            <a href="<?php echo base_url('b/'.$a_popular->name) ?>" class="text-secondary  mb-1 ">
-              <div class="row p-1 m-1 align-items-center card-body">
-                <div class="col-auto pr-0">
-                  <img src="<?php if($a_popular->img != '0') echo $a_popular->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
+          <div id="article_popular">
+            <?php foreach ($article_popular as $a_popular) { ?>
+              <a href="<?php echo base_url('b/'.$a_popular->name) ?>" class="text-secondary  mb-1 ">
+                <div class="row p-1 m-1 align-items-center card-body">
+                  <div class="col-auto pr-0">
+                    <img src="<?php if($a_popular->img != '0') echo $a_popular->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" alt="" class="rounded" width="72" height="72">
+                  </div>
+                  <div class="col">
+                    <?php echo $a_popular->judul ?>
+                    <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_popular->date_created))) <= 259200) { ?>
+                      <span class="badge badge-secondary">New</span>
+                    <?php } ?>
+                  </div>
                 </div>
-                <div class="col">
-                  <?php echo $a_popular->judul ?>
-                  <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_popular->date_created))) <= 259200) { ?>
-                    <span class="badge badge-secondary">New</span>
-                  <?php } ?>
-                </div>
-              </div>
-            </a>
-            <hr class="m-0">
-          <?php } ?>
+              </a>
+              <hr class="m-0">
+            <?php } ?>
+          </div>
+          <form id="article_popular_form" class="text-center p-2" action="<?php echo base_url('api/show_more') ?>" method="get">
+            <input type="hidden" name="type" value="article_popular">
+            <input type="hidden" name="last" value="5">
+            <input type="hidden" name="limit" value="5">
+            <button class="btn btn-white btn-sm w-100 h-100" type="submit" onclick="show_more('article_popular')"><i class="fa fa-angle-down"></i> Lainnya</button>
+          </form>
         </div>
       </div>
     </div>
@@ -188,7 +205,7 @@
     <center>
       <table>
         <tr>
-          <td><img src="https://i.ibb.co/qCjnXSL/rat.png" width="70" class="mr-2"></td>
+          <td><img src="https://i.ibb.co/qCjnXSL/rat.png" alt="" width="70" class="mr-2"></td>
           <td>
             <button id="app_cek" class="btn btn-info btn-sm" disabled><i class="fa fa-circle-notch fa-spin"></i> checking</button>
             <button id="app_install" class="btn btn-success btn-sm d-none"><i class="fa fa-download"></i> Install App</button>

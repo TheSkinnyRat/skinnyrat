@@ -80,24 +80,31 @@
         </fieldset>
 
         <div class="card">
-
-          <?php foreach ($article_rand as $a_rand) { ?>
-            <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
-              <div class="row p-1 m-1 align-items-center card-body">
-                <div class="col-auto pr-0">
-                  <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" style="width: 75px; height: 50px;" alt="" class="rounded" width="72" height="72">
+          <div id="article_rand">
+            <?php foreach ($article_rand as $a_rand) { ?>
+              <a href="<?php echo base_url('b/'.$a_rand->name) ?>" class="text-secondary  mb-1 ">
+                <div class="row p-1 m-1 align-items-center card-body">
+                  <div class="col-auto pr-0" style="min-height: 72px">
+                    <img src="<?php if($a_rand->img != '0') echo $a_rand->img; else echo base_url('assets/frontend/img/favicon/ratblog.png'); ?>" alt="" class="rounded" width="72" height="72">
+                  </div>
+                  <div class="col">
+                    <?php echo $a_rand->judul ?>
+                    <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
+                      <span class="badge badge-secondary">New</span>
+                    <?php } ?>
+                  </div>
                 </div>
-                <div class="col">
-                  <?php echo $a_rand->judul ?>
-                  <?php if (strtotime(date('Y-m-d')) - strtotime(date('Y-m-d',strtotime($a_rand->date_created))) <= 259200) { ?>
-                    <span class="badge badge-secondary">New</span>
-                  <?php } ?>
-                </div>
-              </div>
-            </a>
-            <hr class="m-0">
-          <?php } ?>
-
+              </a>
+              <hr class="m-0">
+            <?php } ?>
+          </div>
+          <form id="article_rand_form" class="text-center p-2" action="<?php echo base_url('api/show_more') ?>" method="get">
+            <input type="hidden" name="type" value="article_rand">
+            <input type="hidden" name="random_id" value="<?php echo $random_id ?>">
+            <input type="hidden" name="last" value="3">
+            <input type="hidden" name="limit" value="3">
+            <button class="btn btn-white btn-sm w-100 h-100" type="submit" onclick="show_more('article_rand')"><i class="fa fa-angle-down"></i> Lainnya</button>
+          </form>
         </div>
       <?php } ?>
 

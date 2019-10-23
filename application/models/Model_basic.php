@@ -271,12 +271,12 @@ class Model_basic extends CI_Model {
 		$this->db->order_by($order,$type);
 		return $this->db->get()->result();
 	}
-	function select_rand_where_limit($table,$column,$where,$limit) {
+	function select_rand_where_array_limit($table,$random_id,$where,$limit) {
 		$this->load->database('default',TRUE);
 		$this->db->select('*');
 		$this->db->from($table);
-		$this->db->where($column,$where);
-		$this->db->order_by('rand()');
+		$this->db->where($where);
+		$this->db->order_by($random_id, 'RANDOM');
 		$this->db->limit($limit);
 		$data = $this->db->get();
 		return $data;

@@ -12,31 +12,6 @@
 <?php } ?>
 
 <!-- START TOPBAR -->
-<div class="bg-primary p-1">
-  <div class="container">
-    <div class="text-center text-light">
-      <a href="<?php echo base_url('home/shorten_url_form') ?>" class="btn btn-link btn-sm text-light text-xs" data-toggle="" data-placement="right" title="Shorten Url">
-        <i class="fa fa-link"></i>
-      </a>
-      ·
-      <a href="<?php echo base_url('home/article_form') ?>" class="btn btn-link btn-sm text-light text-xs" data-toggle="" data-placement="right" title="Create Article">
-        <i class="fas fa-pencil-alt"></i>
-      </a>
-      ·
-      <a class="btn btn-link btn-sm text-light text-xs" href="#" id="menu_wa_top" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-placement="right" title="Whatsapp Feature">
-        <i class="fab fa-fw fa-whatsapp"></i>
-      </a>
-      <div class="dropdown-menu keep-open shadow-sm" aria-labelledby="menu_wa_top">
-        <a class="dropdown-item" href="<?php echo base_url('home/wa_ctc') ?>">Click To Chat</a>
-        <a class="dropdown-item" href="<?php echo base_url('home/wa_cws') ?>">Chat Without Save</a>
-      </div>
-      <span id="div_btn_pwa" class="d-none">·</span>
-      <a id="btn_pwa" href="#" class="btn btn-link btn-sm text-light text-xs d-none" data-toggle="" data-placement="right" title="Download Aplikasi">
-        <i class="fa fa-download"></i>
-      </a>
-    </div>
-  </div>
-</div>
 <!-- Topbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white topbar shadow-sm h-auto">
   <div class="d-none d-lg-block">
@@ -185,6 +160,33 @@
   </span>
 
 </nav>
+
+<div class="bg-primary">
+  <div class="container">
+    <div class="text-center text-light">
+      <a href="<?php echo base_url('home/shorten_url_form') ?>" class="btn btn-link btn-sm text-light text-xs" data-toggle="" data-placement="right" title="Shorten Url">
+        <i class="fa fa-link"></i>
+      </a>
+      ·
+      <a href="<?php echo base_url('home/article_form') ?>" class="btn btn-link btn-sm text-light text-xs" data-toggle="" data-placement="right" title="Create Article">
+        <i class="fas fa-pencil-alt"></i>
+      </a>
+      ·
+      <a class="btn btn-link btn-sm text-light text-xs" href="#" id="menu_wa_top" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-placement="right" title="Whatsapp Feature">
+        <i class="fab fa-fw fa-whatsapp"></i>
+      </a>
+      <div class="dropdown-menu keep-open shadow-sm" aria-labelledby="menu_wa_top">
+        <a class="dropdown-item" href="<?php echo base_url('home/wa_ctc') ?>">Click To Chat</a>
+        <a class="dropdown-item" href="<?php echo base_url('home/wa_cws') ?>">Chat Without Save</a>
+      </div>
+      <span id="div_btn_pwa" class="d-none">·</span>
+      <a id="btn_pwa" href="#" class="btn btn-link btn-sm text-light text-xs d-none" data-toggle="" data-placement="right" title="Download Aplikasi">
+        <i class="fa fa-download"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
 <div class="collapse" id="nav-toggler">
   <div class="bg-secondary py-4">
     <div class="container">

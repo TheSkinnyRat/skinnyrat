@@ -1,3 +1,16 @@
+# Group 1
+User-agent: Googlebot
+Disallow: /admin/
+
+# Group 2
+User-agent: *
+Disallow: /admin/
+Disallow: ?*
+Disallow: /search
+Disallow: ads.txt
+Disallow: assets/manifest/manifest.json
+
+Sitemap: https://www.nyrat.id/sitemap.xml
 
 #Begin Attracta SEO Tools Sitemap. Do not remove
 sitemap: http://cdn.attracta.com/sitemap/5921588.xml.gz
