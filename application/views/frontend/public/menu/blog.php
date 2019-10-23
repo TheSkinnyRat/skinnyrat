@@ -1,14 +1,16 @@
 <!-- Begin Page Content -->
 <div class="container p-2 pt-3">
 
-  <div class="card h-100">
+  <div class="card">
     <div class="card-body p-1">
-      <div class="row no-gutters align-items-center">
+      <div class="align-items-center" style="height: 90px">
         <!-- start blog Ads-->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1587350440311353" data-ad-slot="1263661778" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({}); 
-        </script>
+        <ins class="adsbygoogle"
+          style="display:inline-block; width:auto; height:auto"
+          data-ad-client="ca-pub-1587350440311353"
+          data-ad-slot="1263661778"></ins>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
         <!-- end blog Ads-->
       </div>
     </div>
