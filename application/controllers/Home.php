@@ -438,19 +438,24 @@ class Home extends PX_Controller {
 
 	function safelink(){
 		$id = $this->encrypt->decode($this->input->get('id'));
-
+		
 		$data = $this->get_app_settings();
+		$cek_data = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id)->num_rows();
 		$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id)->row();
-		if($this->session->userdata('member') == TRUE){
-			$data['userdata'] = $this->session_member;
-			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
-			$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		if ($cek_data != '0') {
+			if($this->session->userdata('member') == TRUE){
+				$data['userdata'] = $this->session_member;
+				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+			}else{
+				$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+				$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			}
+			$data['content'] = $this->load->view('frontend/public/menu/safelink',$data,true);
+			$this->load->view('frontend/index',$data);
 		}else{
-			$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
-			$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+			redirect('error/error_404');
 		}
-		$data['content'] = $this->load->view('frontend/public/menu/safelink',$data,true);
-		$this->load->view('frontend/index',$data);
 	}
 
 	function get_info(){

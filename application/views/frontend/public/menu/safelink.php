@@ -2,7 +2,7 @@
 <div class="card">
   <div class="card-body p-1">
     <div class="d-flex justify-content-center">
-      <!-- start blog Ads-->
+      <!-- start safelink_1 Ads-->
       <ins class="adsbygoogle"
         style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
         data-ad-client="ca-pub-1587350440311353"
@@ -10,13 +10,12 @@
         data-full-width-responsive="false"></ins>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
-      <!-- end blog Ads-->
+      <!-- end safelink_1 Ads-->
     </div>
   </div>
 </div>
 
 <hr>
-
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-link fa-sm"></i> Safelink - <?php echo $data_url->name; ?></h6>
@@ -28,16 +27,16 @@
       <div class="bg-light border text-center">klik tombol <b>GET LINK</b> di bawah untuk melanjutkan</div>
     <?php } ?>
     <hr>
-    <!-- start safelink ads-->
+    <!-- start safelink_2 ads-->
     <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-1587350440311353"
-       data-ad-slot="7257460145"
+       data-ad-slot="9229851512"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
-    <!-- end safelink ads-->
+    <!-- end safelink_2 ads-->
     <hr>
     <div class="d-flex justify-content-center text-center">
       <div class="w-auto border p-5 bg-light">
@@ -63,16 +62,16 @@
       </div>
     </div>
     <hr>
-    <!-- start safelink ads-->
+    <!-- start safelink_3 ads-->
     <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-1587350440311353"
-       data-ad-slot="7257460145"
+       data-ad-slot="2264987911"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
-    <!-- end safelink ads-->
+    <!-- end safelink_3 ads-->
     <hr>
     <?php if ($data_url->password != '0') { ?>
       <div class="bg-light border text-center">masukkan <b>PASSWORD</b> di atas untuk melanjutkan</div>
