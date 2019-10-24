@@ -97,10 +97,6 @@
   <!-- UP UP Service Worker -->
   <script src="<?php echo base_url('assets/sw/upup.min.js') ?>"></script>
 
-  <!-- Progress bar loading -->
-  <script src="<?php echo base_url('assets/frontend/vendor/pace/pace.min.js') ?>"></script>
-  <link rel="stylesheet" href="<?php echo base_url('assets/frontend/vendor/pace/pace.css') ?>">
-
 </head>
 
 <body class="p-0" id="page-top">
@@ -181,7 +177,7 @@
       <footer class="sticky-footer bg-white py-3">
         <div class="container my-auto">
           <div class="text-center my-auto">
-            <small>&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019 -
+            <small>&copy; BY <a href="<?php echo base_url('r_ig') ?>" target="_blank">スキニーラット。</a> 2019 -
               <?php echo $app_version ?>
               ·
               <a href="<?php echo base_url('b/sys_pp') ?>">Privacy Policy</a>

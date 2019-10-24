@@ -38,6 +38,16 @@
           </div>
         </div>
 
+        <div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="more_safelink" onclick="show_more_safelink()" <?php if($data!=null && $data->safelink != '0') echo "checked"; ?>>
+          <label class="custom-control-label" for="more_safelink">Safelink</label>
+        </div>
+        <div class="d-none" id="more_safelink_input">
+          <div class="form-group">
+            <label class="control-label">Safelink</label>
+            <input type="number" name="safelink" class="form-control" value="<?php if($data!=null && $data->safelink != '0') echo '1'; else echo "0" ?>" placeholder="Input 1 or 0" required>
+          </div>
+        </div>
+
         <div class="custom-control custom-switch pb-1"><input class="custom-control-input" type="checkbox" id="use_pass" onclick="pass()" <?php if($data!=null && $data->password != "0") echo 'checked'; ?>>
           <label class="custom-control-label" for="use_pass">Gunakan Password</label>
         </div>

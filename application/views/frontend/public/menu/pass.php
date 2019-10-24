@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-center text-center">
       <div class="w-auto border p-5 bg-light">
         <form class="form" method="post" id="pass_form" action="<?php echo base_url('home/pass_go') ?>">
-          <input type="hidden" name="id_shorten_url" value="<?php echo $data_url->id_shorten_url ?>">
+          <input type="hidden" name="id_shorten_url" value="<?php echo $this->encrypt->encode($data_url->id_shorten_url) ?>">
           <label class="text-dark" for="password"><i class="fas fa-lock"></i> This Link is Secured</label>
           <div class="input-group">
             <input type="password" name="password" class="form-control form-control-sm" placeholder="Input Password" required>

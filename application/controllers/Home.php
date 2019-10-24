@@ -14,7 +14,9 @@ class Home extends PX_Controller {
 		if($name){
 			$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 			if($get_data != null){
-					if ($get_data->password != '0') {
+					if($get_data->safelink != '0'){
+						redirect( 'safelink?id='.urlencode($this->encrypt->encode($get_data->id_shorten_url)) );
+					}else if ($get_data->password != '0') {
 						$data = $this->get_app_settings();
 						$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 						$data['content'] = $this->load->view('frontend/public/menu/pass',$data,true);
@@ -77,7 +79,7 @@ class Home extends PX_Controller {
 	}
 
 	function pass_go(){
-		$id_shorten_url = $this->input->post('id_shorten_url');
+		$id_shorten_url = $this->encrypt->decode($this->input->post('id_shorten_url'));
 		$password = $this->input->post('password');
 
 		$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id_shorten_url)->row();
@@ -432,6 +434,23 @@ class Home extends PX_Controller {
 
 		$redirect = $link;
 		$this->returnJson(array('status' => 'ok','msg' => 'Opening Whatsapp...', 'redirect' => $redirect));
+	}
+
+	function safelink(){
+		$id = $this->encrypt->decode($this->input->get('id'));
+
+		$data = $this->get_app_settings();
+		$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id)->row();
+		if($this->session->userdata('member') == TRUE){
+			$data['userdata'] = $this->session_member;
+			$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/member/topbar',$data,true);
+		}else{
+			$data['sidebar'] = $this->load->view('frontend/public/sidebar',$data,true);
+			$data['topbar'] = $this->load->view('frontend/public/topbar',$data,true);
+		}
+		$data['content'] = $this->load->view('frontend/public/menu/safelink',$data,true);
+		$this->load->view('frontend/index',$data);
 	}
 
 	function get_info(){

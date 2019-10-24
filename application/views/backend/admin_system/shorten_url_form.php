@@ -57,6 +57,21 @@
 			<div class="form-group">
 				<label class="col-md-4 col-xs-12 control-label"></label>
 				<div class="col-md-3 col-xs-12">
+					<input class="custom-control-input" type="checkbox" id="more_safelink" onclick="show_more_safelink()" <?php if($data!=null && $data->safelink != '0') echo "checked"; ?>>
+					<label class="custom-control-label" for="more_safelink">Safelink</label>
+				</div>
+			</div>
+			<div class="hidden" id="more_safelink_input">
+				<div class="form-group">
+					<label class="col-md-4 col-xs-12 control-label">Safelink</label>
+					<div class="col-md-3 col-xs-12">
+						<input type="number" name="safelink" class="form-control" value="<?php if($data!=null && $data->safelink!='0') echo $data->safelink; else echo "0" ?>" placeholder="Input 1 or 0" required>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 col-xs-12 control-label"></label>
+				<div class="col-md-3 col-xs-12">
 					<input type="checkbox" class="" value="" id="use_pass" onclick="pass()" <?php if($data!=null && $data->password != "0") echo 'checked'; ?>>
 					<label class="control-label" for="use_pass">Gunakan Password</label>
 				</div>

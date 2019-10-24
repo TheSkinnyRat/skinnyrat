@@ -1,5 +1,4 @@
 <!-- Begin Page Content -->
-<div class="container p-2 pt-3">
 
   <div class="card">
     <div class="card-body p-1">
@@ -422,7 +421,6 @@
     </div>
   </div>
 
-</div>
 <!-- /.container-fluid -->
 
 <!-- WARNING Custom scripts for Index pages-->

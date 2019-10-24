@@ -56,3 +56,11 @@
       });
     }
   });
+
+  function show_more_safelink(){
+    if ( $('#more_safelink').is(':checked') ) {
+      $('#more_safelink_input').children('div').children('div').children('input').val('1');
+    }else{
+      $('#more_safelink_input').children('div').children('div').children('input').val('0');
+    }
+  }

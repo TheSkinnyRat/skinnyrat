@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06 Okt 2019 pada 01.57
+-- Generation Time: 24 Okt 2019 pada 16.33
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -1653,16 +1653,17 @@ CREATE TABLE `px_shorten_url` (
   `password` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_created` datetime NOT NULL,
   `id_member` int(10) NOT NULL,
-  `click` bigint(225) NOT NULL
+  `click` bigint(225) NOT NULL,
+  `safelink` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `px_shorten_url`
 --
 
-INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `date_created`, `id_member`, `click`) VALUES
-(15, 'ggl', 'https://www.google.com', '0', '2019-04-15 21:58:27', 0, 11),
-(16, 'yt', 'https://youtube.com', '0', '2019-04-15 21:59:53', 0, 11);
+INSERT INTO `px_shorten_url` (`id_shorten_url`, `name`, `link`, `password`, `date_created`, `id_member`, `click`, `safelink`) VALUES
+(15, 'ggl', 'https://www.google.com', '0', '2019-04-15 21:58:27', 0, 11, 0),
+(16, 'yt', 'https://youtube.com', '0', '2019-04-15 21:59:53', 0, 11, 0);
 
 -- --------------------------------------------------------
 

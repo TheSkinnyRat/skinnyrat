@@ -18,6 +18,7 @@
             <!-- <th>Password</th> -->
             <th>Date Created</th>
             <th>Click</th>
+            <th>Safelink</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -43,8 +44,8 @@
               <?php if ($d->password != '0') { ?>
               <span class="text-info font-italic">Password encrypted</span>
               <?php }else{
-                          echo $d->link;
-                        } ?>
+                echo $d->link;
+              } ?>
             </td>
             <!-- <td>
                         <?php if ($d->password != '0') { ?>
@@ -58,6 +59,9 @@
             </td>
             <td>
               <?php echo $d->click ?>
+            </td>
+            <td>
+              <?php if($d->safelink != '0') echo "<span class='text-success'>YES</span>"; else echo "<span class='text-danger'>NO</span>"; ?>
             </td>
             <input type="text" class="d-none" id="url_<?php echo $d->name; ?>" value="<?php echo base_url($d->name); ?>">
             <td>
