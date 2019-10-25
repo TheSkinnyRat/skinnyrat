@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['home/(:any)'] = "home/$1";
 
-$route['safelink'] = "home/safelink";
+$route['safelink/(:any)'] = "home/safelink/$1";
 
 $route['admin'] = "admin";
 $route['admin/(:any)'] = "admin/$1";

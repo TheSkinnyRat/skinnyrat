@@ -18,6 +18,9 @@
     <!-- <a href="<?php echo base_url(); ?>" class="btn btn-link btn-sm text-primary" data-toggle="" data-placement="right" title="Search">
       <i class="fa fa-home"></i>
     </a> -->
+    <a href="<?php echo base_url('blog'); ?>" class="btn btn-link btn-sm text-primary animated infinite swing slower">
+      <i class="fa fa-blog"></i>
+    </a>
     <span class="nav-item dropdown no-arrow">
       <a class="btn btn-link btn-sm text-primary dropdown-toggle" href="#" id="urlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-link fa-fw"></i>
@@ -66,7 +69,14 @@
 
   <div class="collapse navbar-collapse" id="navToggler1">
     <hr class="d-lg-none m-0">
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+      <li class="nav-item p-1 p-lg-0">
+        <a href="<?php echo base_url('blog'); ?>" class="">
+          <button class="btn btn-link text-decoration-none mr-1 btn-sm" type="button">
+            <i class="fa fa-blog"></i> BLOG
+          </button>
+        </a>
+      </li>
       <li class="nav-item p-1 p-lg-0 dropdown">
         <a class="btn btn-link text-decoration-none mr-1 btn-sm dropdown-toggle" href="#" id="menu_feature" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-fw fa-th-large"></i> FEATURE

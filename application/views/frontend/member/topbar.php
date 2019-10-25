@@ -1,6 +1,6 @@
 <!-- START TOPBAR -->
 <!-- Topbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white topbar shadow-sm h-auto">
+<nav class="navbar navbar-expand-lg navbar-light bg-white topbar shadow-sm h-auto justify-content-center justify-content-md-between">
   <div class="d-none d-lg-block">
     <a class="navbar-brand d-flex mr-auto text-primary" href="<?php echo base_url() ?>">
       <!-- <span class="rotate-n-15">
@@ -86,6 +86,13 @@
   <div class="collapse navbar-collapse" id="navToggler1">
     <hr class="d-lg-none m-0">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item p-1 p-lg-0">
+        <a href="<?php echo base_url('blog'); ?>" class="">
+          <button class="btn btn-link text-decoration-none mr-1 btn-sm" type="button">
+            <i class="fa fa-blog"></i> BLOG
+          </button>
+        </a>
+      </li>
       <li class="nav-item p-1 p-lg-0 dropdown">
         <a class="btn btn-link text-decoration-none mr-1 btn-sm dropdown-toggle" href="#" id="menu_feature" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-fw fa-th-large"></i> FEATURE

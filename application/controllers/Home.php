@@ -15,7 +15,7 @@ class Home extends PX_Controller {
 			$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
 			if($get_data != null){
 					if($get_data->safelink != '0'){
-						redirect( 'safelink?id='.urlencode($this->encrypt->encode($get_data->id_shorten_url)) );
+						redirect( 'safelink/'.$get_data->name );
 					}else if ($get_data->password != '0') {
 						$data = $this->get_app_settings();
 						$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
@@ -437,12 +437,33 @@ class Home extends PX_Controller {
 	}
 
 	function safelink(){
-		$id = $this->encrypt->decode($this->input->get('id'));
-		
+		$name = $this->uri->segment(2);
+
 		$data = $this->get_app_settings();
-		$cek_data = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id)->num_rows();
-		$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$id)->row();
-		if ($cek_data != '0') {
+		$data['data_url'] = $this->model_basic->select_where($this->tbl_shorten_url,'name',$name)->row();
+		if ($data['data_url'] != null) {
+			if ($data['data_url']->password == '0') {
+				if ($this->agent->is_browser()){
+					$agent = $this->agent->browser().' '.$this->agent->version();
+				}elseif ($this->agent->is_robot()){
+					$agent = $this->agent->robot();
+				}elseif ($this->agent->is_mobile()){
+					$agent = $this->agent->mobile();
+				}else{
+					$agent = 'Unidentified User Agent';
+				}
+				$data_agent = array(
+					'id_log_user_agent' => '0',
+					'ket' => 'Akses Short Link = '.$name,
+					'date' => date('Y-m-d H:i:s'),
+					'agent' => $agent,
+					'platform' => $this->agent->platform(),
+					'ip_address' => $this->input->ip_address(),
+					'agent_string' => $this->agent->agent_string()
+				);
+				$insert_log_user_agent = $this->model_basic->insert_all($this->tbl_log_user_agent,$data_agent);
+				$up_click = $this->model_basic->update_one($this->tbl_shorten_url,'id_shorten_url',$data['data_url']->id_shorten_url,'click','+1');
+			}
 			if($this->session->userdata('member') == TRUE){
 				$data['userdata'] = $this->session_member;
 				$data['sidebar'] = $this->load->view('frontend/member/sidebar',$data,true);
