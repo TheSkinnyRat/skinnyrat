@@ -2,8 +2,8 @@
 
   <div class="card">
     <div class="card-body p-1">
-      <div class="d-flex justify-content-center">
-        <!-- start blog Ads-->
+      <div class="d-flex justify-content-center align-items-center">
+        <!-- start blog_1 Ads-->
         <ins class="adsbygoogle"
           style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
           data-ad-client="ca-pub-1587350440311353"
@@ -11,7 +11,7 @@
           data-full-width-responsive="false"></ins>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
-        <!-- end blog Ads-->
+        <!-- end blog_1 Ads-->
       </div>
     </div>
   </div>
@@ -179,7 +179,24 @@
 
   </div>
 
-  <div class="card mt-1">
+  <div class="card my-1">
+    <div class="card-body p-1">
+      <div class="justify-content-center align-items-center">
+        <!-- start blog_1 Ads-->
+        <ins class="adsbygoogle"
+        style="display:block;"
+        data-ad-client="ca-pub-1587350440311353"
+        data-ad-slot="7952977603"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+        <!-- end blog_1 Ads-->
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <!-- Card Header - Accordion -->
     <a href="#comment" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="comment">
       <h6 class="m-0 font-weight-bold text-primary"><?php echo $comment_count ?> Komentar</h6>
