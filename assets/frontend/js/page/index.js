@@ -80,7 +80,7 @@ function show_more(target_show){
             + "</div>"
             + "<div class='col'>"
             + response.data[i].judul
-            + (response.data[i].new == 'yes' ? "<span class='badge badge-secondary'>New</span>" : "")
+            + (response.data[i].new == 'yes' ? " <span class='badge badge-secondary'>New</span>" : "")
             + "</div>"
             + "</div>"
             + "</a>"

@@ -73,7 +73,8 @@ $route['blog'] = "blog";
 $route['blog/(:any)'] = "blog/index/$1";
 $route['blog_system/(:any)'] = "blog_system/$1";
 
-$route['b/(:any)'] = "blog/index/$1";
+$route['b'] = "b";
+$route['b/(:any)'] = "b/index/(:any)";
 
 $route['c'] = "c";
 $route['c/(:any)'] = "c/index/$1";
