@@ -26,7 +26,7 @@
             <label class="control-label">Article URL</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text">sknr.tk/blog/</div>
+                <div class="input-group-text">nyrat.id/blog/</div>
               </div>
               <input type="text" name="name" class="form-control" value="<?php if($data!=null) echo $data->name; ?>" placeholder="Input Article URL" required>
             </div>

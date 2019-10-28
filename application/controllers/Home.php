@@ -152,26 +152,30 @@ class Home extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = htmlspecialchars($this->input->post($field));
 		}
-		$insert['id_member'] = '0';
-		$insert['click'] = '0';
+		if ($insert['id_shorten_url'] != null) {
+			$insert['id_member'] = '0';
+			$insert['click'] = '0';
 
-		if ($insert['password'] != '0') {
-			$insert['password'] = $this->encrypt->encode($insert['password']);
-		}
-		$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
-		if ($cek_name != null) {
-			$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
-		}else{
-			if($insert){
-				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
-
-				$d = urlencode(base_url($insert['name']));
-				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
-				$redirect = base_url('home/success?d='.$d.'&m='.$m);
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
-			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			if ($insert['password'] != '0') {
+				$insert['password'] = $this->encrypt->encode($insert['password']);
 			}
+			$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
+			if ($cek_name != null) {
+				$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
+			}else{
+				if($insert){
+					$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
+
+					$d = urlencode(base_url($insert['name']));
+					$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+					$redirect = base_url('home/success?d='.$d.'&m='.$m);
+					$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+				}else{
+					$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				}
+			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 
@@ -261,25 +265,28 @@ class Home extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = htmlspecialchars($this->input->post($field));
 		}
-		$insert['konten'] = $this->input->post('konten');
-		$insert['id_article'] = '0';
-		$insert['id_member'] = '0';
-		$insert['click'] = '0';
+		if ($insert['id_article'] != null) {
+			$insert['konten'] = $this->input->post('konten');
+			$insert['id_member'] = '0';
+			$insert['click'] = '0';
 
-		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
-		if ($cek_name != null) {
-			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
-		}else{
-			if($insert){
-				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
-
-				$d = urlencode(base_url('blog/'.$insert['name']));
-				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
-				$redirect = base_url('home/success?d='.$d.'&m='.$m);
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+			$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+			if ($cek_name != null) {
+				$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
 			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				if($insert){
+					$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+
+					$d = urlencode(base_url('blog/'.$insert['name']));
+					$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
+					$redirect = base_url('home/success?d='.$d.'&m='.$m);
+					$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+				}else{
+					$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				}
 			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 

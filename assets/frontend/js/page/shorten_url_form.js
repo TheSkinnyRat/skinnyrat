@@ -54,7 +54,8 @@
             $('#shorten_url_form .alert-danger').removeClass('d-none').children('span').text(response.msg);
         },
         error: function(jqXHR, textStatus, errorThrown) {
-          alert(textStatus, errorThrown);
+          $('#shorten_url_form .alert-warning').addClass('d-none');
+          $('#shorten_url_form .alert-danger').removeClass('d-none').children('span').text("Anda belum login / sesi anda sudah habis. Error: " + textStatus, errorThrown);
         }
       });
     }

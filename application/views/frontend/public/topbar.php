@@ -100,6 +100,7 @@
         <div class="dropdown-menu keep-open dropdown-menu-right animated--grow-in shadow-sm ml-2 ml-lg-0" aria-labelledby="menu_dev">
           <a class="dropdown-item" href="<?php echo base_url('admin/index') ?>"><i class="fas fa-fw fa-user-cog"></i> Login Backend</a>
           <a class="dropdown-item" href="<?php echo base_url('home/change_log') ?>"><i class="fas fa-fw fa-clipboard-list"></i> Change Log</a>
+          <a class="dropdown-item" href="<?php echo base_url('bug') ?>"><i class="fas fa-fw fa-bug"></i> Repost Bugs</a>
         </div>
       </li>
       <li class="nav-item p-1 p-lg-0 dropdown">

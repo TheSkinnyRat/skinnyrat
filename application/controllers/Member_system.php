@@ -48,28 +48,32 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = $this->input->post($field);
 		}
-		$insert['id_member'] = $data['userdata']['id_member'];
-		$insert['click'] = '0';
+		if ($insert['id_shorten_url'] != null) {
+			$insert['id_member'] = $data['userdata']['id_member'];
+			$insert['click'] = '0';
 
-		if ($insert['password'] != '0') {
-			$insert['password'] = $this->encrypt->encode($insert['password']);
-		}
-		$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
-		if ($cek_name != null) {
-			$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
-		}else{
-			if($insert){
-				$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
-				$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
-
-				$d = urlencode(base_url($insert['name']));
-				$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
-				$id = urlencode($this->encrypt->encode($get_id->id_shorten_url));
-				$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=shorten_url&login=true');
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
-			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+			if ($insert['password'] != '0') {
+				$insert['password'] = $this->encrypt->encode($insert['password']);
 			}
+			$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
+			if ($cek_name != null) {
+				$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
+			}else{
+				if($insert){
+					$do_insert = $this->model_basic->insert_all($this->tbl_shorten_url,$insert);
+					$get_id = $this->model_basic->select_where($this->tbl_shorten_url,'name',$insert['name'])->row();
+
+					$d = urlencode(base_url($insert['name']));
+					$m = urlencode('SHORT URL ANDA SIAP DIBAGIKAN');
+					$id = urlencode($this->encrypt->encode($get_id->id_shorten_url));
+					$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=shorten_url&login=true');
+					$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+				}else{
+					$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				}
+			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 
@@ -80,27 +84,38 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$update[$field] = $this->input->post($field);
 		}
-		$update['id_shorten_url'] = $this->encrypt->decode($update['id_shorten_url']);
-		$update['id_member'] = $data['userdata']['id_member'];
+		if ($update['id_shorten_url'] != null) {
+			$update['id_shorten_url'] = $this->encrypt->decode($update['id_shorten_url']);
+			$update['id_member'] = $data['userdata']['id_member'];
 
-		if ($update['password'] != '0') {
-			$update['password'] = $this->encrypt->encode($update['password']);
-		}
-		$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$update['name'])->row();
-		if ($cek_name != null && $update['id_shorten_url'] != $cek_name->id_shorten_url) {
-			$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
-		}else{
-			if($update){
-				$do_update = $this->model_basic->update($this->tbl_shorten_url,$update,'id_shorten_url',$update['id_shorten_url']);
+			$get_data = $this->model_basic->select_where($this->tbl_shorten_url,'id_shorten_url',$update['id_shorten_url'])->row();
+			if ($get_data->id_member == $data['userdata']['id_member']) {
 
-				if ($this->input->post('save_here') != NULL) {
-					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
-				}else{
-					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'shorten_url'));
+				if ($update['password'] != '0') {
+					$update['password'] = $this->encrypt->encode($update['password']);
 				}
+				$cek_name = $this->model_basic->select_where($this->tbl_shorten_url,'name',$update['name'])->row();
+				if ($cek_name != null && $update['id_shorten_url'] != $cek_name->id_shorten_url) {
+					$this->returnJson(array('status' => 'error','msg' => 'Custom URL tidak tersedia!'));
+				}else{
+					if($update){
+						$do_update = $this->model_basic->update($this->tbl_shorten_url,$update,'id_shorten_url',$update['id_shorten_url']);
+
+						if ($this->input->post('save_here') != NULL) {
+							$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
+						}else{
+							$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'shorten_url'));
+						}
+					}else{
+						$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+					}
+				}
+
 			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				$this->returnJson(array('status' => 'error','msg' => '403 - ACCESS DENIED'));
 			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 
@@ -113,7 +128,7 @@ class Member_system extends PX_Controller {
 			if($do_delete){
 				redirect('member_system/shorten_url');
 			}
-		}	else{
+		}else{
 			redirect('error/error_403');
 		}
   }
@@ -274,26 +289,30 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$insert[$field] = htmlspecialchars($this->input->post($field));
 		}
-		$insert['konten'] = $this->input->post('konten');
-		$insert['id_member'] = $data['userdata']['id_member'];
-		$insert['click'] = '0';
+		if ($insert['id_article'] != null) {
+			$insert['konten'] = $this->input->post('konten');
+			$insert['id_member'] = $data['userdata']['id_member'];
+			$insert['click'] = '0';
 
-		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
-		if ($cek_name != null) {
-			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
-		}else{
-			if($insert){
-				$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
-				$get_id = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
-
-				$d = urlencode(base_url('blog/'.$insert['name']));
-				$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
-				$id = urlencode($this->encrypt->encode($get_id->id_article));
-				$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=article&login=true');
-				$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+			$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+			if ($cek_name != null) {
+				$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
 			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				if($insert){
+					$do_insert = $this->model_basic->insert_all($this->tbl_article,$insert);
+					$get_id = $this->model_basic->select_where($this->tbl_article,'name',$insert['name'])->row();
+
+					$d = urlencode(base_url('blog/'.$insert['name']));
+					$m = urlencode('URL ARTICLE ANDA SIAP DIBAGIKAN');
+					$id = urlencode($this->encrypt->encode($get_id->id_article));
+					$redirect = base_url('home/success?d='.$d.'&m='.$m.'&id='.$id.'&type=article&login=true');
+					$this->returnJson(array('status' => 'ok','msg' => 'Insert data berhasil', 'redirect' => $redirect));
+				}else{
+					$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				}
 			}
+		}else{
+			redirect('error/error_403');
 		}
 	}
 
@@ -305,24 +324,35 @@ class Member_system extends PX_Controller {
 		foreach ($table_field as $field) {
 			$update[$field] = $this->input->post($field);
 		}
-		$update['id_article'] = $this->encrypt->decode($update['id_article']);
-		$update['id_member'] = $data['userdata']['id_member'];
+		if ($update['id_article'] != null) {
+			$update['id_article'] = $this->encrypt->decode($update['id_article']);
+			$update['id_member'] = $data['userdata']['id_member'];
 
-		$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
-		if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {
-			$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
-		}else{
-			if($update){
-				$do_update = $this->model_basic->update($this->tbl_article,$update,'id_article',$update['id_article']);
+			$get_data = $this->model_basic->select_where($this->tbl_article,'id_article',$update['id_article'])->row();
+			if ($get_data->id_member == $data['userdata']['id_member']) {
 
-				if ($this->input->post('save_here') != NULL) {
-					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
+				$cek_name = $this->model_basic->select_where($this->tbl_article,'name',$update['name'])->row();
+				if ($cek_name != null && $update['id_article'] != $cek_name->id_article) {
+					$this->returnJson(array('status' => 'error','msg' => 'URL Article Tidak Tersedia!'));
 				}else{
-					$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
+					if($update){
+						$do_update = $this->model_basic->update($this->tbl_article,$update,'id_article',$update['id_article']);
+
+						if ($this->input->post('save_here') != NULL) {
+							$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => '#save_success'));
+						}else{
+							$this->returnJson(array('status' => 'ok','msg' => 'Update data berhasil', 'redirect' => 'article'));
+						}
+					}else{
+						$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+					}
 				}
+
 			}else{
-				$this->returnJson(array('status' => 'error','msg' => 'Periksa kembali form'));
+				$this->returnJson(array('status' => 'error','msg' => '403 - ACCESS DENIED'));
 			}
+		}else{
+			redirect('error/error_403');
 		}
   }
 

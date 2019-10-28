@@ -48,7 +48,8 @@ var jvalidate = $("#article_form").validate({
           $('#article_form .alert-danger').removeClass('d-none').children('span').text(response.msg);
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus, errorThrown);
+        $('#article_form .alert-warning').addClass('d-none');
+        $('#article_form .alert-danger').removeClass('d-none').children('span').text("Anda belum login / sesi anda sudah habis. Error: " + textStatus, errorThrown);
       }
     });
   }

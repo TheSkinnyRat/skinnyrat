@@ -9,6 +9,7 @@
   </div>
   <div class="card-body">
     <form class="form-horizontal" method="POST" id="article_form" action="<?php echo base_url('home/article_add') ?>">
+      <input type="hidden" name="id_article" value="0">
       <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
       <div class="panel-body">
 
@@ -17,7 +18,7 @@
             <label class="control-label">Article URL</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text">sknr.tk/blog/</div>
+                <div class="input-group-text">nyrat.id/blog/</div>
               </div>
               <input type="text" name="name" class="form-control" value="" placeholder="Input Article URL" required>
             </div>

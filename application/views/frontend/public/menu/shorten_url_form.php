@@ -18,7 +18,7 @@
             <label class="control-label">Custom URL</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text">sknr.tk/</div>
+                <div class="input-group-text">nyrat.id/</div>
               </div>
               <input type="text" name="name" class="form-control" value="" placeholder="Input Custom URL" required>
             </div>
