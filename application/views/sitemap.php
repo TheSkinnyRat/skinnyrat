@@ -4,10 +4,12 @@
   <url>
      <loc><?php echo base_url();?></loc>
      <priority>1.0</priority>
+     <changefreq>daily</changefreq>
   </url>
 	<url>
      <loc><?php echo base_url('blog');?></loc>
      <priority>0.8</priority>
+     <changefreq>daily</changefreq>
   </url>
 	<url>
      <loc><?php echo base_url('home/shorten_url_form');?></loc>
@@ -30,7 +32,7 @@
   <url>
      <loc><?php echo base_url('blog/'.$d->name); ?></loc>
      <priority>0.5</priority>
-     <lastmod><?php echo date("Y-m-dTH:i:sP",strtotime($d->date_created)) ?></lastmod>
+     <lastmod><?php echo date("Y-m-d",strtotime($d->date_created)) ?></lastmod>
   </url>
   <?php } ?>
 
