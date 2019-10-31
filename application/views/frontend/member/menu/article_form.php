@@ -11,7 +11,7 @@
     <form class="form-horizontal" method="POST" id="article_form" action="<?php if($data!=null) echo base_url('member_system/article_update'); else echo base_url('member_system/article_add'); ?>">
       <input type="hidden" name="id_article" value="<?php if($data!=null) echo $this->encrypt->encode($data->id_article); else echo "0"; ?>">
       <input type="hidden" name="click" value="<?php if($data!=null) echo $data->click; else echo "0"; ?>">
-      <input type="hidden" name="date_created" class="form-control" value="<?php echo date('Y-m-d H:i:s') ?>">
+      <input type="hidden" name="date_created" class="form-control" value="<?php if($data!=null) echo $data->date_created; else echo date('Y-m-d H:i:s'); ?>">
       <div class="panel-body">
 
         <div class="form-group">
