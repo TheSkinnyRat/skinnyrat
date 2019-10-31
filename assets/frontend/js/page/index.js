@@ -60,8 +60,8 @@ function show_more(target_show){
   var jvalidate = $("#"+target_show+"_form").validate({
     submitHandler: function(form) {
       var target = $(form).attr('action');
-      var last = $("input[name='last']").val();
-      var limit = $("input[name='limit']").val();
+      var last = $("#"+target_show+"_form input[name='last']").val();
+      var limit = $("#"+target_show+"_form input[name='limit']").val();
       $('#'+target_show+'_form .btn').html('<i class="fa fa-circle-notch fa-spin"></i> Loading...').prop('disabled', true);
       $.ajax({
         url: target,
