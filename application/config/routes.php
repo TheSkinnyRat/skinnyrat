@@ -81,6 +81,9 @@ $route['c/(:any)'] = "c/index/$1";
 
 $route['api/(:any)'] = "api/$1";
 
+$route['search'] = "search";
+$route['search/(:any)'] = "search/$1";
+
 $route['example'] = "example";
 $route['example/(:any)'] = "example/$1";
 

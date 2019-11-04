@@ -112,6 +112,7 @@ class Blog extends PX_Controller {
 		}else{
 			$data = $this->get_app_settings();
 			$data['random_id'] = rand();
+			$data['article_new'] = $this->model_basic->select_where_array_order_limit($this->tbl_article,array('private' => '0'),'date_created','DESC','5')->result();
 			$data['article_rand'] = $this->model_basic->select_rand_where_array_limit($this->tbl_article,$data['random_id'],array('private' => '0'),'5')->result();
 			$data['article_popular'] = $this->model_basic->select_where_array_order_limit($this->tbl_article,array('private' => '0'),'click','DESC','5')->result();
 			if($this->session->userdata('member') == TRUE){
