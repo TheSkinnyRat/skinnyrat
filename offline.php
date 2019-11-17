@@ -20,8 +20,12 @@
             <h1>OOPS..!</h1>
             <p style="color: red;">We Need An Internet Connection! </p>
             <p>Please Check Your Internet Connection..</p>
-            <p id="signature">&mdash; &copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019</p>
-            <button href="#" onclick="location.reload()">REFRESH PAGE</button>
+            <p id="signature">NYRAT.ID 
+			<br>
+			&mdash;
+			<br>
+			&copy; BY <a href="https://www.instagram.com/the.skinny.rat" target="_blank">スキニーラット。</a> 2019</p>
+            <button href="#" onclick="window.location.reload(true)">REFRESH PAGE</button>
         </article>
     </body>
 </html>

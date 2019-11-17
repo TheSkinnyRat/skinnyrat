@@ -47,7 +47,7 @@
   <link href="<?php echo base_url('assets/frontend/vendor/animate/animate.min.css') ?>" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/frontend/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 
   <!-- Custom styles for index page-->
   <link href="<?php echo base_url('assets/frontend/css/index.css') ?>" rel="stylesheet">
@@ -66,7 +66,7 @@
   <script src="<?php echo base_url('assets/frontend/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url('assets/frontend/vendor/chart.js/Chart.min.js') ?>"></script>
+  <!-- <script src="<?php echo base_url('assets/frontend/vendor/chart.js/Chart.min.js') ?>"></script> -->
 
   <!-- Page level custom scripts -->
   <!-- <script src="<?php echo base_url('assets/frontend/js/demo/chart-area-demo.js') ?>"></script>
@@ -82,7 +82,7 @@
   <script src="<?php echo base_url('assets/frontend/js/demo/datatables-demo.js') ?>"></script>
 
   <!-- Validation Plugin -->
-  <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.js') ?>"></script>
+  <script src="<?php echo base_url('assets/frontend/vendor/jquery-validation/jquery.validate.min.js') ?>"></script>
 
   <!-- Text Editor Plugin -->
   <script src="<?php echo base_url('assets/frontend/vendor/ckeditor/ckeditor.js') ?>"></script>

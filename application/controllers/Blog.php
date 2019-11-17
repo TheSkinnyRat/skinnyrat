@@ -104,6 +104,7 @@ class Blog extends PX_Controller {
 				}
 				$data['random_id'] = rand();
 				$data['article_rand'] = $this->model_basic->select_rand_where_array_limit($this->tbl_article,$data['random_id'],array('private' => '0'),'3')->result();
+				$data['article_new'] = $this->model_basic->select_where_array_order_limit($this->tbl_article,array('private' => '0'),'date_created','DESC','3')->result();
 				$data['content'] = $this->load->view('frontend/public/menu/blog',$data,true);
 				$this->load->view('frontend/index_blog',$data);
 			}else{

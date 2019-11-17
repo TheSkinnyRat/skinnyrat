@@ -49,11 +49,18 @@ setInterval(function() {
   }
 }, 1000);
 
+// PLACEHOLDER LOADING
 $(window).on('load',function() {
   $('#place_load').fadeOut("fast", function() {
     $('#main_content').css('visibility','visible').hide().fadeIn();
   });
 });
+
+setTimeout(function(){
+  $('#place_load').is(':visible').fadeOut("fast", function() {
+    $('#main_content').css('visibility','visible').hide().fadeIn();
+  });
+}, 3000);
 
 // SHOW MORE FUNCTION
 function show_more(target_show){

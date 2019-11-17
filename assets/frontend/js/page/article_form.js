@@ -12,7 +12,7 @@ var jvalidate = $("#article_form").validate({
       required: true
     },
     konten: {
-      required: function() {
+      required: true, function() {
         CKEDITOR.instances.cktext.updateElement();
       },
     },
