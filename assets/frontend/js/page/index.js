@@ -51,9 +51,11 @@ setInterval(function() {
 
 // PLACEHOLDER LOADING
 $(window).on('load',function() {
-  $('#place_load').fadeOut("fast", function() {
-    $('#main_content').css('visibility','visible').hide().fadeIn();
-  });
+  if ($('#place_load').is(':visible')) {
+    $('#place_load').fadeOut("fast", function() {
+      $('#main_content').css('visibility','visible').hide().fadeIn();
+    });
+  }
 });
 
 setTimeout(function(){
