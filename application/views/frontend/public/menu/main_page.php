@@ -125,6 +125,22 @@
           </div>
         </div>
 
+        <div class="card shadow mb-2 mb-lg-4">
+          <div class="card-body p-1">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- start blog_1 Ads-->
+              <ins class="adsbygoogle"
+                style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
+                data-ad-client="ca-pub-1587350440311353"
+                data-ad-slot="8995945005"
+                data-full-width-responsive="false"></ins>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+              <!-- end blog_1 Ads-->
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-sm">
             <div class="card shadow mb-2 mb-lg-4">
@@ -151,6 +167,7 @@
                       <hr class="m-0">
                     <?php } ?>
                   </div>
+
                   <form id="article_rand_form" class="text-center p-2" action="<?php echo base_url('api/show_more') ?>" method="get">
                     <input type="hidden" name="type" value="article_rand">
                     <input type="hidden" name="random_id" value="<?php echo $random_id ?>">
@@ -198,6 +215,23 @@
             </div>
           </div>
         </div>
+
+        <div class="card shadow mb-2 mb-lg-4">
+          <div class="card-body p-1">
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- start blog_1 Ads-->
+              <ins class="adsbygoogle"
+                style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
+                data-ad-client="ca-pub-1587350440311353"
+                data-ad-slot="5791197164"
+                data-full-width-responsive="false"></ins>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+              <!-- end blog_1 Ads-->
+            </div>
+          </div>
+        </div>
+
         <div class="card shadow mb-2 mb-lg-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">SKNR APP</h6>
