@@ -23,7 +23,7 @@
 			<br/>
 			<h1 style="">UNDER MAINTENANCE</h1>
             <p><a href="https://nyrat.id/admin">Run Debug Mode</a></p>
-			<p><a href="#" onclick="location.reload(true);">Refresh Page</a></p>
+			<p><a href="https://nyrat.id">Try to Home</a></p>
 			<hr/>
             <!-- start blog_1 Ads-->
         <ins class="adsbygoogle"
