@@ -25,6 +25,11 @@
             <p><a href="https://nyrat.id/admin">Run Debug Mode</a></p>
 			<p><a href="https://nyrat.id">Try to Home</a></p>
 			<hr/>
+			<p>
+			    Uh, oh! it's Friday?
+			    <pre>Go to [password].nyrat.id</pre>
+			</p>
+			<hr/>
             <!-- start blog_1 Ads-->
         <ins class="adsbygoogle"
           style="display:inline-block; min-width:300px; max-width:1000px; width:100%; height:90px"
